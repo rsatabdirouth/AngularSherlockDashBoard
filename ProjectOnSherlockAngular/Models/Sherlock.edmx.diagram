@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1adfce65b5da4876b71fdfbdf2140749" Name="Diagram1">
+        <EntityTypeShape EntityType="SatabdiModel.ASULead" Width="1.5" PointX="6" PointY="41.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SatabdiModel.BuyerMaster" Width="1.5" PointX="3" PointY="42.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SatabdiModel.BuyerProductSchedule" Width="1.5" PointX="5.25" PointY="47.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SatabdiModel.CommonLead" Width="1.5" PointX="8.25" PointY="42.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SatabdiModel.CorporateHealthLead" Width="1.5" PointX="13.5" PointY="44.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SatabdiModel.DebtLead" Width="1.5" PointX="10.5" PointY="50" IsExpanded="true" />
+        <EntityTypeShape EntityType="SatabdiModel.EquityReleaseLead" Width="1.5" PointX="13.5" PointY="49.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SatabdiModel.HealthLead" Width="1.5" PointX="16.5" PointY="45.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SatabdiModel.LeadStatusByName" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SatabdiModel.LifeLead" Width="1.5" PointX="10.5" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SatabdiModel.LoanLead" Width="1.5" PointX="13.5" PointY="35.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SatabdiModel.MortgageLead" Width="1.5" PointX="16.5" PointY="37.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SatabdiModel.OrganizationMaster" Width="1.5" PointX="6" PointY="53.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SatabdiModel.PensionLead" Width="1.5" PointX="16.5" PointY="51.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SatabdiModel.PrepaidFuneralLead" Width="1.5" PointX="10.5" PointY="97.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SatabdiModel.ProductMaster" Width="1.5" PointX="3" PointY="48.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SatabdiModel.ProductSlab" Width="1.5" PointX="11.25" PointY="44.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SatabdiModel.TransferLog" Width="1.5" PointX="8.25" PointY="37.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SatabdiModel.UserMaster" Width="1.5" PointX="0.75" PointY="40.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SatabdiModel.WebsiteMaster" Width="1.5" PointX="3" PointY="53.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SatabdiModel.ILDS_SEARCH_DASHBOARD_ALLDATA" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="SatabdiModel.FK_ASULeads_CommonLeads" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_ASULeads_UserMasters" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_CommonLeads_BuyerMasters" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_dbo_BuyerMasters_dbo_UserMasters_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_dbo_BuyerProductSchedules_dbo_BuyerMasters_BuyerMasterId" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_TransferLogs_BuyerMasters" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_dbo_BuyerProductSchedules_dbo_ProductMasters_ProductMasterId" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_dbo_BuyerProductSchedules_dbo_UserMasters_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_CommonLeads_OrganizationMasters" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_CommonLeads_ProductMasters" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_CommonLeads_UserMasters" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_CommonLeads_WebsiteMasters" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_CorporateHealthLeads_CommonLeads" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_DebtLeads_CommonLeads" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_EquityReleaseLeads_CommonLeads" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_HealthLeads_CommonLeads" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_LifeLeads_CommonLeads" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_LoanLeads_CommonLeads" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_MortgageLeads_CommonLeads" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_PensionLeads_CommonLeads" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_PrepaidFuneralLeads_PrepaidFuneralLeads" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_CorporateHealthLeads_UserMasters" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_DebtLeads_UserMasters" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_EquityReleaseLeads_UserMasters" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_HealthLeads_UserMasters" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_LifeLeads_UserMasters" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_LoanLeads_UserMasters" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_dbo_MortgageLeads_dbo_UserMasters_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_PensionLeads_UserMasters" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_dbo_ProductMasters_dbo_UserMasters_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_dbo_ProductSlabs_dbo_ProductMasters_ProductMasterId" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_dbo_ProductSlabs_dbo_UserMasters_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_TransferLogs_ProductSlabs" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_TransferLogs_UserMasters" ManuallyRouted="false" />
+        <AssociationConnector Association="SatabdiModel.FK_dbo_WebsiteMasters_dbo_UserMasters_CreatedBy" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,1722 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SatabdiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="Fn_GetChildProducts_Result">
+    <Property Name="Id" Type="Int32" />
+    <Property Name="ParenProductId" Type="Int32" />
+    <Property Name="ProductName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <EntityType Name="ASULead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="LeadId" Type="Int32" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Dob" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Smoker" Type="Boolean" Nullable="false" />
+    <Property Name="Period" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Int32" Nullable="false" />
+    <Property Name="GeneratedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PremiumType" Type="Int32" Nullable="false" />
+    <Property Name="CoverType" Type="Int32" Nullable="false" />
+    <Property Name="CoverFormType" Type="Int32" Nullable="false" />
+    <Property Name="IPASUEmploymentStatus" Type="Int32" Nullable="false" />
+    <Property Name="AdditionalInformation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="DeleteStatus" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CommonLead" Relationship="Self.FK_ASULeads_CommonLeads" FromRole="ASULeads" ToRole="CommonLeads" />
+    <NavigationProperty Name="UserMaster" Relationship="Self.FK_ASULeads_UserMasters" FromRole="ASULeads" ToRole="UserMasters" />
+  </EntityType>
+  <EntityType Name="BuyerMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BuyerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BuyerAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerPincode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerPocName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerContactNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerPocContactNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IcoNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FcaNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IcoExpDate" Type="DateTime" Precision="3" />
+    <Property Name="CompanyRegistrationNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="DeleteStatus" Type="Int32" Nullable="false" />
+    <Property Name="IsSendNotifyMail" Type="Boolean" />
+    <NavigationProperty Name="CommonLeads" Relationship="Self.FK_CommonLeads_BuyerMasters" FromRole="BuyerMasters" ToRole="CommonLeads" />
+    <NavigationProperty Name="UserMaster" Relationship="Self.FK_dbo_BuyerMasters_dbo_UserMasters_CreatedBy" FromRole="BuyerMasters" ToRole="UserMasters" />
+    <NavigationProperty Name="BuyerProductSchedules" Relationship="Self.FK_dbo_BuyerProductSchedules_dbo_BuyerMasters_BuyerMasterId" FromRole="BuyerMasters" ToRole="BuyerProductSchedules" />
+    <NavigationProperty Name="TransferLogs" Relationship="Self.FK_TransferLogs_BuyerMasters" FromRole="BuyerMasters" ToRole="TransferLogs" />
+  </EntityType>
+  <EntityType Name="BuyerProductSchedule">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BuyerMasterId" Type="Int32" Nullable="false" />
+    <Property Name="ProductMasterId" Type="Int32" Nullable="false" />
+    <Property Name="StartDateTime" Type="DateTime" Precision="3" />
+    <Property Name="EndDateTime" Type="DateTime" Precision="3" />
+    <Property Name="ActiveState" Type="Int32" Nullable="false" />
+    <Property Name="Demand" Type="Int32" Nullable="false" />
+    <Property Name="TimePeriod" Type="Int32" Nullable="false" />
+    <Property Name="DailyDemand" Type="Int32" Nullable="false" />
+    <Property Name="PaymentMode" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="DeleteStatus" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BuyerMaster" Relationship="Self.FK_dbo_BuyerProductSchedules_dbo_BuyerMasters_BuyerMasterId" FromRole="BuyerProductSchedules" ToRole="BuyerMasters" />
+    <NavigationProperty Name="ProductMaster" Relationship="Self.FK_dbo_BuyerProductSchedules_dbo_ProductMasters_ProductMasterId" FromRole="BuyerProductSchedules" ToRole="ProductMasters" />
+    <NavigationProperty Name="UserMaster" Relationship="Self.FK_dbo_BuyerProductSchedules_dbo_UserMasters_CreatedBy" FromRole="BuyerProductSchedules" ToRole="UserMasters" />
+  </EntityType>
+  <EntityType Name="CommonLead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PostCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WorkPhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Homephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WebsiteMasterId" Type="Int32" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductMasterId" Type="Int32" Nullable="false" />
+    <Property Name="IpAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MatchType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Keyword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LeadStatus" Type="Int32" />
+    <Property Name="DNC" Type="Int32" />
+    <Property Name="SourceUid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PostcodeOutWard" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PostcodeInWard" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OrganizationMasterId" Type="Int32" Nullable="false" />
+    <Property Name="OperatorName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContactTime" Type="Int32" Nullable="false" />
+    <Property Name="LeadCategory" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="OrganizationHashCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="DeleteStatus" Type="Int32" Nullable="false" />
+    <Property Name="BuyerMaster_ID" Type="Int32" />
+    <Property Name="OperatorSpecificComments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LeadType" Type="Int32" />
+    <Property Name="Opt" Type="Boolean" Nullable="false" />
+    <Property Name="LeadComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NotifyPrice" Type="Double" Nullable="false" />
+    <Property Name="AdditionalInformation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserAgent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ASULeads" Relationship="Self.FK_ASULeads_CommonLeads" FromRole="CommonLeads" ToRole="ASULeads" />
+    <NavigationProperty Name="BuyerMaster" Relationship="Self.FK_CommonLeads_BuyerMasters" FromRole="CommonLeads" ToRole="BuyerMasters" />
+    <NavigationProperty Name="OrganizationMaster" Relationship="Self.FK_CommonLeads_OrganizationMasters" FromRole="CommonLeads" ToRole="OrganizationMasters" />
+    <NavigationProperty Name="ProductMaster" Relationship="Self.FK_CommonLeads_ProductMasters" FromRole="CommonLeads" ToRole="ProductMasters" />
+    <NavigationProperty Name="UserMaster" Relationship="Self.FK_CommonLeads_UserMasters" FromRole="CommonLeads" ToRole="UserMasters" />
+    <NavigationProperty Name="WebsiteMaster" Relationship="Self.FK_CommonLeads_WebsiteMasters" FromRole="CommonLeads" ToRole="WebsiteMasters" />
+    <NavigationProperty Name="CorporateHealthLeads" Relationship="Self.FK_CorporateHealthLeads_CommonLeads" FromRole="CommonLeads" ToRole="CorporateHealthLeads" />
+    <NavigationProperty Name="DebtLeads" Relationship="Self.FK_DebtLeads_CommonLeads" FromRole="CommonLeads" ToRole="DebtLeads" />
+    <NavigationProperty Name="EquityReleaseLeads" Relationship="Self.FK_EquityReleaseLeads_CommonLeads" FromRole="CommonLeads" ToRole="EquityReleaseLeads" />
+    <NavigationProperty Name="HealthLeads" Relationship="Self.FK_HealthLeads_CommonLeads" FromRole="CommonLeads" ToRole="HealthLeads" />
+    <NavigationProperty Name="LifeLeads" Relationship="Self.FK_LifeLeads_CommonLeads" FromRole="CommonLeads" ToRole="LifeLeads" />
+    <NavigationProperty Name="LoanLeads" Relationship="Self.FK_LoanLeads_CommonLeads" FromRole="CommonLeads" ToRole="LoanLeads" />
+    <NavigationProperty Name="MortgageLeads" Relationship="Self.FK_MortgageLeads_CommonLeads" FromRole="CommonLeads" ToRole="MortgageLeads" />
+    <NavigationProperty Name="PensionLeads" Relationship="Self.FK_PensionLeads_CommonLeads" FromRole="CommonLeads" ToRole="PensionLeads" />
+    <NavigationProperty Name="PrepaidFuneralLeads" Relationship="Self.FK_PrepaidFuneralLeads_PrepaidFuneralLeads" FromRole="CommonLeads" ToRole="PrepaidFuneralLeads" />
+  </EntityType>
+  <EntityType Name="CorporateHealthLead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="LeadId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="DeleteStatus" Type="Int32" Nullable="false" />
+    <Property Name="GeneratedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Dob" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AgeType" Type="Int32" Nullable="false" />
+    <Property Name="EquityType" Type="Int32" Nullable="false" />
+    <Property Name="HomeValue" Type="Int32" Nullable="false" />
+    <Property Name="OutstandingMortgageValue" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CommonLead" Relationship="Self.FK_CorporateHealthLeads_CommonLeads" FromRole="CorporateHealthLeads" ToRole="CommonLeads" />
+    <NavigationProperty Name="UserMaster" Relationship="Self.FK_CorporateHealthLeads_UserMasters" FromRole="CorporateHealthLeads" ToRole="UserMasters" />
+  </EntityType>
+  <EntityType Name="DebtLead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="LeadId" Type="Int32" Nullable="false" />
+    <Property Name="DebtEmploymentStatus" Type="Int32" Nullable="false" />
+    <Property Name="ResidentialStatus" Type="Int32" Nullable="false" />
+    <Property Name="HadCcj" Type="Boolean" Nullable="false" />
+    <Property Name="DebtType" Type="Int32" Nullable="false" />
+    <Property Name="TotalUnsecuredDebt" Type="Int32" Nullable="false" />
+    <Property Name="TotalCreditors" Type="Int32" Nullable="false" />
+    <Property Name="MonthlyRepayments" Type="Int32" Nullable="false" />
+    <Property Name="MonthlyIncome" Type="Int32" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Dob" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="GeneratedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="DeleteStatus" Type="Int32" Nullable="false" />
+    <Property Name="DebtCategory" Type="Int32" Nullable="false" />
+    <Property Name="DebtTypes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="CommonLead" Relationship="Self.FK_DebtLeads_CommonLeads" FromRole="DebtLeads" ToRole="CommonLeads" />
+    <NavigationProperty Name="UserMaster" Relationship="Self.FK_DebtLeads_UserMasters" FromRole="DebtLeads" ToRole="UserMasters" />
+  </EntityType>
+  <EntityType Name="EquityReleaseLead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="LeadId" Type="Int32" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Dob" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="HomeValue" Type="Int32" Nullable="false" />
+    <Property Name="OutstandingMortgageValue" Type="Int32" Nullable="false" />
+    <Property Name="AgeType" Type="Int32" Nullable="false" />
+    <Property Name="EquityType" Type="Int32" Nullable="false" />
+    <Property Name="GeneratedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeleteStatus" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CommonLead" Relationship="Self.FK_EquityReleaseLeads_CommonLeads" FromRole="EquityReleaseLeads" ToRole="CommonLeads" />
+    <NavigationProperty Name="UserMaster" Relationship="Self.FK_EquityReleaseLeads_UserMasters" FromRole="EquityReleaseLeads" ToRole="UserMasters" />
+  </EntityType>
+  <EntityType Name="HealthLead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="LeadId" Type="Int32" Nullable="false" />
+    <Property Name="Dob" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Period" Type="Int32" Nullable="false" />
+    <Property Name="PremiumtypeId" Type="Int32" Nullable="false" />
+    <Property Name="InsuranceTypeid" Type="Int32" Nullable="false" />
+    <Property Name="FamilyMember" Type="Int32" Nullable="false" />
+    <Property Name="Smoker" Type="Boolean" Nullable="false" />
+    <Property Name="PartnerGender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Amount" Type="Int32" Nullable="false" />
+    <Property Name="CoverTypeHealth" Type="Int32" Nullable="false" />
+    <Property Name="GeneratedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="DeleteStatus" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CommonLead" Relationship="Self.FK_HealthLeads_CommonLeads" FromRole="HealthLeads" ToRole="CommonLeads" />
+    <NavigationProperty Name="UserMaster" Relationship="Self.FK_HealthLeads_UserMasters" FromRole="HealthLeads" ToRole="UserMasters" />
+  </EntityType>
+  <EntityType Name="LeadStatusByName">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="LeadStatusName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LifeLead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="LeadId" Type="Int32" Nullable="false" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="Dob" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Single" Type="Boolean" Nullable="false" />
+    <Property Name="Smoker" Type="Boolean" Nullable="false" />
+    <Property Name="Period" Type="Int32" Nullable="false" />
+    <Property Name="PremiumType" Type="Int32" Nullable="false" />
+    <Property Name="InsuranceType" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Int32" Nullable="false" />
+    <Property Name="GeneratedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ProductType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PartnerTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PartnerFirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PartnerLastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PartnerSmoker" Type="Boolean" Nullable="false" />
+    <Property Name="PartnerDob" Type="DateTime" Precision="3" />
+    <Property Name="AdditionalInformation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="DeleteStatus" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CommonLead" Relationship="Self.FK_LifeLeads_CommonLeads" FromRole="LifeLeads" ToRole="CommonLeads" />
+    <NavigationProperty Name="UserMaster" Relationship="Self.FK_LifeLeads_UserMasters" FromRole="LifeLeads" ToRole="UserMasters" />
+  </EntityType>
+  <EntityType Name="LoanLead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="LeadId" Type="Int32" Nullable="false" />
+    <Property Name="Dob" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="LoanPurpose" Type="Int32" Nullable="false" />
+    <Property Name="PreviousAddressSince" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PreviousPostCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PreviousCity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PreviousAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmployerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmployedSince" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Occupation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BeenInDebt" Type="Boolean" Nullable="false" />
+    <Property Name="LoanGurantor" Type="Boolean" Nullable="false" />
+    <Property Name="TotalCreditors" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GeneratedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="GurantorName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GurantorPhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GurantorEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Period" Type="Int32" Nullable="false" />
+    <Property Name="LoanEmploymentStatus" Type="Int32" Nullable="false" />
+    <Property Name="LoanCreditRating" Type="Int32" Nullable="false" />
+    <Property Name="LoanAnnualIncome" Type="Int32" Nullable="false" />
+    <Property Name="LoanCountryOfResidence" Type="Int32" Nullable="false" />
+    <Property Name="LoanMaritalStatus" Type="Int32" Nullable="false" />
+    <Property Name="MortgageBalance" Type="Int32" Nullable="false" />
+    <Property Name="LoanPropertyValue" Type="Int32" Nullable="false" />
+    <Property Name="HomeOwner" Type="Boolean" Nullable="false" />
+    <Property Name="MortgageLoanValue" Type="Int32" Nullable="false" />
+    <Property Name="AddressStartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="HadBankruptcy" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="DeleteStatus" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CommonLead" Relationship="Self.FK_LoanLeads_CommonLeads" FromRole="LoanLeads" ToRole="CommonLeads" />
+    <NavigationProperty Name="UserMaster" Relationship="Self.FK_LoanLeads_UserMasters" FromRole="LoanLeads" ToRole="UserMasters" />
+  </EntityType>
+  <EntityType Name="MortgageLead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeadId" Type="Int32" Nullable="false" />
+    <Property Name="Dob" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="EmploymentStatus" Type="Int32" Nullable="false" />
+    <Property Name="GeneratedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Period" Type="Int32" Nullable="false" />
+    <Property Name="PropertyValue" Type="Int32" Nullable="false" />
+    <Property Name="LoanValue" Type="Int32" Nullable="false" />
+    <Property Name="CurrentDebt" Type="Int32" Nullable="false" />
+    <Property Name="PropertyType" Type="Int32" Nullable="false" />
+    <Property Name="PropertyLocation" Type="Int32" Nullable="false" />
+    <Property Name="CreditHistory" Type="Int32" Nullable="false" />
+    <Property Name="AnnualIncome" Type="Int32" Nullable="false" />
+    <Property Name="MissAnyLoan" Type="Boolean" Nullable="false" />
+    <Property Name="HadBankruptcy" Type="Boolean" Nullable="false" />
+    <Property Name="AppliedIva" Type="Boolean" Nullable="false" />
+    <Property Name="HadCcj" Type="Boolean" Nullable="false" />
+    <Property Name="RateType" Type="Int32" Nullable="false" />
+    <Property Name="RepaymentType" Type="Int32" Nullable="false" />
+    <Property Name="LTV" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdverseCredit" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="DeleteStatus" Type="Int32" Nullable="false" />
+    <Property Name="CommonLead_ID" Type="Int32" />
+    <NavigationProperty Name="CommonLead" Relationship="Self.FK_MortgageLeads_CommonLeads" FromRole="MortgageLeads" ToRole="CommonLeads" />
+    <NavigationProperty Name="UserMaster" Relationship="Self.FK_dbo_MortgageLeads_dbo_UserMasters_CreatedBy" FromRole="MortgageLeads" ToRole="UserMasters" />
+  </EntityType>
+  <EntityType Name="OrganizationMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="OrganizationName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="State" Type="Int32" Nullable="false" />
+    <Property Name="OrganizationHashCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="CommonLeads" Relationship="Self.FK_CommonLeads_OrganizationMasters" FromRole="OrganizationMasters" ToRole="CommonLeads" />
+  </EntityType>
+  <EntityType Name="PensionLead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="LeadId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="DeleteStatus" Type="Int32" Nullable="false" />
+    <Property Name="GeneratedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Dob" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PersonalPensionType" Type="Int32" />
+    <Property Name="PensionPremiumType" Type="Int32" />
+    <Property Name="Pensionvalue" Type="Int32" />
+    <Property Name="Pensiontype" Type="Int32" />
+    <Property Name="PensionAccessFund" Type="Int32" />
+    <Property Name="ExistPensions" Type="Int32" />
+    <Property Name="PensionTypeOther" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsCurrentlyPayingMoney" Type="Boolean" Nullable="false" />
+    <Property Name="TotalPensionValue" Type="Int32" />
+    <NavigationProperty Name="CommonLead" Relationship="Self.FK_PensionLeads_CommonLeads" FromRole="PensionLeads" ToRole="CommonLeads" />
+    <NavigationProperty Name="UserMaster" Relationship="Self.FK_PensionLeads_UserMasters" FromRole="PensionLeads" ToRole="UserMasters" />
+  </EntityType>
+  <EntityType Name="PrepaidFuneralLead">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="LeadId" Type="Int32" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Dob" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="GeneratedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="DeleteStatus" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CommonLead" Relationship="Self.FK_PrepaidFuneralLeads_PrepaidFuneralLeads" FromRole="PrepaidFuneralLeads" ToRole="CommonLeads" />
+  </EntityType>
+  <EntityType Name="ProductMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ParentProductId" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="DeleteStatus" Type="Int32" Nullable="false" />
+    <Property Name="IsMultipleBuyer" Type="Boolean" Nullable="false" />
+    <Property Name="State" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BuyerProductSchedules" Relationship="Self.FK_dbo_BuyerProductSchedules_dbo_ProductMasters_ProductMasterId" FromRole="ProductMasters" ToRole="BuyerProductSchedules" />
+    <NavigationProperty Name="CommonLeads" Relationship="Self.FK_CommonLeads_ProductMasters" FromRole="ProductMasters" ToRole="CommonLeads" />
+    <NavigationProperty Name="UserMaster" Relationship="Self.FK_dbo_ProductMasters_dbo_UserMasters_CreatedBy" FromRole="ProductMasters" ToRole="UserMasters" />
+    <NavigationProperty Name="ProductSlabs" Relationship="Self.FK_dbo_ProductSlabs_dbo_ProductMasters_ProductMasterId" FromRole="ProductMasters" ToRole="ProductSlabs" />
+  </EntityType>
+  <EntityType Name="ProductSlab">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductMasterId" Type="Int32" Nullable="false" />
+    <Property Name="SlabName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BuyerSlabName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="Int32" Nullable="false" />
+    <Property Name="ProductFormula" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CommonFormula" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="DeleteStatus" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ProductMaster" Relationship="Self.FK_dbo_ProductSlabs_dbo_ProductMasters_ProductMasterId" FromRole="ProductSlabs" ToRole="ProductMasters" />
+    <NavigationProperty Name="UserMaster" Relationship="Self.FK_dbo_ProductSlabs_dbo_UserMasters_CreatedBy" FromRole="ProductSlabs" ToRole="UserMasters" />
+    <NavigationProperty Name="TransferLogs" Relationship="Self.FK_TransferLogs_ProductSlabs" FromRole="ProductSlabs" ToRole="TransferLogs" />
+  </EntityType>
+  <EntityType Name="TransferLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="GeneratedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="TransferDateTime" Type="DateTime" Precision="3" />
+    <Property Name="BuyerIntegrationTypeID" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TransferredTo" Type="Int32" />
+    <Property Name="ProductSlabId" Type="Int32" />
+    <Property Name="IsActualPrice" Type="Boolean" />
+    <Property Name="LeadId" Type="Int32" />
+    <Property Name="BuyerReturnLeadId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="Return" Type="Boolean" />
+    <Property Name="Price" Type="Double" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="BuyerProductScheduleId" Type="Int32" />
+    <NavigationProperty Name="BuyerMaster" Relationship="Self.FK_TransferLogs_BuyerMasters" FromRole="TransferLogs" ToRole="BuyerMasters" />
+    <NavigationProperty Name="ProductSlab" Relationship="Self.FK_TransferLogs_ProductSlabs" FromRole="TransferLogs" ToRole="ProductSlabs" />
+    <NavigationProperty Name="UserMaster" Relationship="Self.FK_TransferLogs_UserMasters" FromRole="TransferLogs" ToRole="UserMasters" />
+  </EntityType>
+  <EntityType Name="UserMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Verificationcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmailVerified" Type="Boolean" />
+    <Property Name="CompanyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="Int32" />
+    <Property Name="GeneratedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="OrganizationMasterId" Type="Int32" />
+    <NavigationProperty Name="ASULeads" Relationship="Self.FK_ASULeads_UserMasters" FromRole="UserMasters" ToRole="ASULeads" />
+    <NavigationProperty Name="BuyerMasters" Relationship="Self.FK_dbo_BuyerMasters_dbo_UserMasters_CreatedBy" FromRole="UserMasters" ToRole="BuyerMasters" />
+    <NavigationProperty Name="BuyerProductSchedules" Relationship="Self.FK_dbo_BuyerProductSchedules_dbo_UserMasters_CreatedBy" FromRole="UserMasters" ToRole="BuyerProductSchedules" />
+    <NavigationProperty Name="CommonLeads" Relationship="Self.FK_CommonLeads_UserMasters" FromRole="UserMasters" ToRole="CommonLeads" />
+    <NavigationProperty Name="CorporateHealthLeads" Relationship="Self.FK_CorporateHealthLeads_UserMasters" FromRole="UserMasters" ToRole="CorporateHealthLeads" />
+    <NavigationProperty Name="DebtLeads" Relationship="Self.FK_DebtLeads_UserMasters" FromRole="UserMasters" ToRole="DebtLeads" />
+    <NavigationProperty Name="EquityReleaseLeads" Relationship="Self.FK_EquityReleaseLeads_UserMasters" FromRole="UserMasters" ToRole="EquityReleaseLeads" />
+    <NavigationProperty Name="HealthLeads" Relationship="Self.FK_HealthLeads_UserMasters" FromRole="UserMasters" ToRole="HealthLeads" />
+    <NavigationProperty Name="LifeLeads" Relationship="Self.FK_LifeLeads_UserMasters" FromRole="UserMasters" ToRole="LifeLeads" />
+    <NavigationProperty Name="LoanLeads" Relationship="Self.FK_LoanLeads_UserMasters" FromRole="UserMasters" ToRole="LoanLeads" />
+    <NavigationProperty Name="MortgageLeads" Relationship="Self.FK_dbo_MortgageLeads_dbo_UserMasters_CreatedBy" FromRole="UserMasters" ToRole="MortgageLeads" />
+    <NavigationProperty Name="PensionLeads" Relationship="Self.FK_PensionLeads_UserMasters" FromRole="UserMasters" ToRole="PensionLeads" />
+    <NavigationProperty Name="ProductMasters" Relationship="Self.FK_dbo_ProductMasters_dbo_UserMasters_CreatedBy" FromRole="UserMasters" ToRole="ProductMasters" />
+    <NavigationProperty Name="ProductSlabs" Relationship="Self.FK_dbo_ProductSlabs_dbo_UserMasters_CreatedBy" FromRole="UserMasters" ToRole="ProductSlabs" />
+    <NavigationProperty Name="TransferLogs" Relationship="Self.FK_TransferLogs_UserMasters" FromRole="UserMasters" ToRole="TransferLogs" />
+    <NavigationProperty Name="WebsiteMasters" Relationship="Self.FK_dbo_WebsiteMasters_dbo_UserMasters_CreatedBy" FromRole="UserMasters" ToRole="WebsiteMasters" />
+  </EntityType>
+  <EntityType Name="WebsiteMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="WebsiteAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WebsiteStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WebsiteName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="DeleteStatus" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CommonLeads" Relationship="Self.FK_CommonLeads_WebsiteMasters" FromRole="WebsiteMasters" ToRole="CommonLeads" />
+    <NavigationProperty Name="UserMaster" Relationship="Self.FK_dbo_WebsiteMasters_dbo_UserMasters_CreatedBy" FromRole="WebsiteMasters" ToRole="UserMasters" />
+  </EntityType>
+  <EntityType Name="ILDS_SEARCH_DASHBOARD_ALLDATA">
+    <Key>
+      <PropertyRef Name="commonleadID" />
+      <PropertyRef Name="Title" />
+      <PropertyRef Name="FirstName" />
+      <PropertyRef Name="LastName" />
+      <PropertyRef Name="City" />
+      <PropertyRef Name="PostCode" />
+      <PropertyRef Name="WorkPhone" />
+      <PropertyRef Name="Address" />
+      <PropertyRef Name="WebsiteID" />
+      <PropertyRef Name="WebsiteName" />
+      <PropertyRef Name="WebsiteAddress" />
+      <PropertyRef Name="WebsiteStatus" />
+      <PropertyRef Name="WebsiteCreatedOn" />
+      <PropertyRef Name="WebsiteIsWebsiteDeleted" />
+      <PropertyRef Name="ProductMasterId" />
+      <PropertyRef Name="IsMultipleBuyer" />
+      <PropertyRef Name="ProductCreatedOn" />
+      <PropertyRef Name="ProductIsProductDeleted" />
+      <PropertyRef Name="IpAddress" />
+      <PropertyRef Name="LeadStatus" />
+      <PropertyRef Name="OrganizationMasterId" />
+      <PropertyRef Name="OrganizationName" />
+      <PropertyRef Name="OrganizationHashCode" />
+      <PropertyRef Name="ContactTime" />
+      <PropertyRef Name="LeadCategory" />
+      <PropertyRef Name="CreatedOn" />
+      <PropertyRef Name="IsDeleted" />
+      <PropertyRef Name="OperatorSpecificComments" />
+      <PropertyRef Name="Opt" />
+      <PropertyRef Name="NotifyPrice" />
+      <PropertyRef Name="TransferlogID" />
+    </Key>
+    <Property Name="commonleadID" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PostCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WorkPhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HomePhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WebsiteID" Type="Int32" Nullable="false" />
+    <Property Name="WebsiteName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WebsiteAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WebsiteStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WebsiteCreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="WebsiteUpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="WebsiteCreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WebsiteUpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WebsiteIsWebsiteDeleted" Type="Int32" Nullable="false" />
+    <Property Name="SiteCreatorCompany" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SiteDeveloperCompany" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductMasterId" Type="Int32" Nullable="false" />
+    <Property Name="ParentProductId" Type="Int32" />
+    <Property Name="IsMultipleBuyer" Type="Boolean" Nullable="false" />
+    <Property Name="ProductCreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ProductUpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="ProductCreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductUpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductIsProductDeleted" Type="Int32" Nullable="false" />
+    <Property Name="IpAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MatchType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Keyword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LeadStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DNC" Type="Int32" />
+    <Property Name="SourceUid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PostcodeOutWard" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PostcodeInWard" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OrganizationMasterId" Type="Int32" Nullable="false" />
+    <Property Name="OrganizationName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrganizationHashCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OperatorName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContactTime" Type="Int32" Nullable="false" />
+    <Property Name="LeadCategory" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Int32" Nullable="false" />
+    <Property Name="OperatorSpecificComments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LeadType" Type="Int32" />
+    <Property Name="Opt" Type="Boolean" Nullable="false" />
+    <Property Name="LeadComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NotifyPrice" Type="Double" Nullable="false" />
+    <Property Name="AdditionalInformation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserAgent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TransferlogID" Type="Int32" Nullable="false" />
+    <Property Name="TransferlogDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Transferloggeneratedon" Type="DateTime" Precision="3" />
+    <Property Name="TransferlogTransferredOn" Type="DateTime" Precision="3" />
+    <Property Name="TransferlogUpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="TransferlogPrice" Type="Double" />
+    <Property Name="TransferlogIsActualPrice" Type="Boolean" />
+    <Property Name="TransferlogBuyerIntegrationTypeID" Type="Int32" />
+    <Property Name="TransferlogUserId" Type="Int32" />
+    <Property Name="BuyerScheduleBuyerProductScheduleId" Type="Int32" />
+    <Property Name="BuyerScheduleStartDateTime" Type="DateTime" Precision="3" />
+    <Property Name="BuyerScheduleEndDateTime" Type="DateTime" Precision="3" />
+    <Property Name="BuyerScheduleTimePeriod" Type="Int32" />
+    <Property Name="BuyerScheduleActiveState" Type="Int32" />
+    <Property Name="BuyerScheduleCreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="BuyerScheduleUpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="BuyerScheduleCreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerScheduleUpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerScheduleDemand" Type="Int32" />
+    <Property Name="BuyerScheduleDailyDemand" Type="Int32" />
+    <Property Name="BuyerSchedulePaymentMode" Type="Int32" />
+    <Property Name="BuyerScheduleIsBuyerDeleted" Type="Int32" />
+    <Property Name="BuyerAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerPincode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerPocName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerContactNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerPocContactNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerIcoNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerFcaNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerIcoExpDate" Type="DateTime" Precision="3" />
+    <Property Name="BuyerCompanyRegistrationNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerCreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="BuyerUpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="BuyerCreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerUpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BuyerIsDeleted" Type="Int32" />
+    <Property Name="TransferlogProductSlabId" Type="Int32" />
+    <Property Name="ProductSlabSlabName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ProductSlabBuyerSlabName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductSlabProductFormula" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductSlabCommonFormula" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductSlabCreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="ProductSlabUpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="ProductSlabCreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductSlabUpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductSlabIsDeleted" Type="Int32" />
+    <Property Name="MortgageID" Type="Int32" />
+    <Property Name="MortgageDOB" Type="DateTime" Precision="3" />
+    <Property Name="MortgageAge" Type="Int32" />
+    <Property Name="MortgageEmplomentStatus" Type="Int32" />
+    <Property Name="MortgageGeneratedDate" Type="DateTime" Precision="3" />
+    <Property Name="MortgagePeriod" Type="Int32" />
+    <Property Name="MortgagePropertyValue" Type="Int32" />
+    <Property Name="MortgagePropertyLocation" Type="Int32" />
+    <Property Name="MortgageCreditHistory" Type="Int32" />
+    <Property Name="MortgageLoanValue" Type="Int32" />
+    <Property Name="MortgageCurrentDebt" Type="Int32" />
+    <Property Name="MortgageAnnualIncome" Type="Int32" />
+    <Property Name="MortgagePropertyType" Type="Int32" />
+    <Property Name="MortgageMissAnyLoan" Type="Boolean" />
+    <Property Name="MortgageHadBankruptcy" Type="Boolean" />
+    <Property Name="MortgageHadCCJ" Type="Boolean" />
+    <Property Name="MortgageAppliedIva" Type="Boolean" />
+    <Property Name="MortgageRateType" Type="Int32" />
+    <Property Name="MortgageRepaymentType" Type="Int32" />
+    <Property Name="LTV" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MortgageIsAdverseCredit" Type="Boolean" />
+    <Property Name="MortgageCreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="MortgageUpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="MortgageCreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MortgageUpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MortgageIsLeadDeleted" Type="Int32" />
+    <Property Name="HealthID" Type="Int32" />
+    <Property Name="HealthDOB" Type="DateTime" Precision="3" />
+    <Property Name="HealthAge" Type="Int32" />
+    <Property Name="HealthPeriod" Type="Int32" />
+    <Property Name="HealthPremiumType" Type="Int32" />
+    <Property Name="HealthInsuranceTypeId" Type="Int32" />
+    <Property Name="HealthFamilyMember" Type="Int32" />
+    <Property Name="HealthIsSmoker" Type="Boolean" />
+    <Property Name="HealthPartnerGender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HealthPremiumAmount" Type="Int32" />
+    <Property Name="HealthCoverTypeHealth" Type="Int32" />
+    <Property Name="HealthGeneratedDate" Type="DateTime" Precision="3" />
+    <Property Name="HealthCreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="HealthUpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="HealthCreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HealthUpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HealthDeleteStatus" Type="Int32" />
+    <Property Name="PensionID" Type="Int32" />
+    <Property Name="PensionGeneratedDate" Type="DateTime" Precision="3" />
+    <Property Name="PensionAge" Type="Int32" />
+    <Property Name="PensionDOB" Type="DateTime" Precision="3" />
+    <Property Name="PersonalPensionType" Type="Int32" />
+    <Property Name="PensionPremiumType" Type="Int32" />
+    <Property Name="PensionValue" Type="Int32" />
+    <Property Name="PensionType" Type="Int32" />
+    <Property Name="PensionAccessFund" Type="Int32" />
+    <Property Name="PensionExistPensions" Type="Int32" />
+    <Property Name="PensionTypeOther" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PensionIsCurrentlyPayingMoney" Type="Boolean" />
+    <Property Name="PensionCreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="PensionUpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="PensionTotalPensionValue" Type="Int32" />
+    <Property Name="PensionCreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PensionUpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PensionDeleteStatus" Type="Int32" />
+    <Property Name="LifeID" Type="Int32" />
+    <Property Name="LifeAge" Type="Int32" />
+    <Property Name="LifeDob" Type="DateTime" Precision="3" />
+    <Property Name="LifeSingleOwnership" Type="Boolean" />
+    <Property Name="LifePeriod" Type="Int32" />
+    <Property Name="LifeCreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="LifeUpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="LifeGeneratedDate" Type="DateTime" Precision="3" />
+    <Property Name="LifeProductType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LifePartnersName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LifeAdditionalInformation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LifePartnerSmoker" Type="Boolean" />
+    <Property Name="LifeIsSmoker" Type="Boolean" />
+    <Property Name="LifePremiumType" Type="Int32" />
+    <Property Name="LifeInsuranceType" Type="Int32" />
+    <Property Name="LifeAmount" Type="Int32" />
+    <Property Name="LifePartnerDob" Type="DateTime" Precision="3" />
+    <Property Name="LifeCreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LifeUpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LifeIsDeleted" Type="Int32" />
+    <Property Name="DebtID" Type="Int32" />
+    <Property Name="DebtEmploymentStatus" Type="Int32" />
+    <Property Name="DebtLeadsResidentialStatus" Type="Int32" />
+    <Property Name="DebtType" Type="Int32" />
+    <Property Name="DebtHadCCJ" Type="Boolean" />
+    <Property Name="DebtTotalUnsecuredDebt" Type="Int32" />
+    <Property Name="DebtTotalCreditors" Type="Int32" />
+    <Property Name="DebtMonthlyRepayments" Type="Int32" />
+    <Property Name="DebtMonthlyIncome" Type="Int32" />
+    <Property Name="DebtAge" Type="Int32" />
+    <Property Name="DebtDob" Type="DateTime" Precision="3" />
+    <Property Name="DebtGeneratedDate" Type="DateTime" Precision="3" />
+    <Property Name="DebtCreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="DebtUpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="DebtCreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DebtUpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DebtCategory" Type="Int32" />
+    <Property Name="DeptTypes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DebtIsDeleted" Type="Int32" />
+    <Property Name="AsuID" Type="Int32" />
+    <Property Name="AsuAge" Type="Int32" />
+    <Property Name="AsuDob" Type="DateTime" Precision="3" />
+    <Property Name="AsuPeriod" Type="Int32" />
+    <Property Name="AsuSmoker" Type="Boolean" />
+    <Property Name="AsuAmount" Type="Int32" />
+    <Property Name="AsuGeneratedDate" Type="DateTime" Precision="3" />
+    <Property Name="AsuCreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="AsuUpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="AsuAdditionalInformation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AsuCreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AsuUpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AsuIsDeleted" Type="Int32" />
+    <Property Name="AsuCoverType" Type="Int32" />
+    <Property Name="AsuCoverFromType" Type="Int32" />
+    <Property Name="AsuIPASUEmploymentStatus" Type="Int32" />
+    <Property Name="AsuPremiumType" Type="Int32" />
+    <Property Name="FuneralID" Type="Int32" />
+    <Property Name="FuneralAge" Type="Int32" />
+    <Property Name="FuneralDob" Type="DateTime" Precision="3" />
+    <Property Name="FuneralGeneratedDate" Type="DateTime" Precision="3" />
+    <Property Name="FuneralCreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="FuneralUpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="FuneralCreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FuneralUpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FuneralIsDeleted" Type="Int32" />
+    <Property Name="EquityreleaseID" Type="Int32" />
+    <Property Name="EquityreleaseAge" Type="Int32" />
+    <Property Name="EquityreleaseDob" Type="DateTime" Precision="3" />
+    <Property Name="EquityreleaseHomeValue" Type="Int32" />
+    <Property Name="EquityreleaseOutstandingMortgageValue" Type="Int32" />
+    <Property Name="EquityreleaseAgeType" Type="Int32" />
+    <Property Name="EquityreleaseEquityType" Type="Int32" />
+    <Property Name="EquityreleaseGeneratedDate" Type="DateTime" Precision="3" />
+    <Property Name="EquityreleaseCreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="EquityreleaseUpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="EquityreleaseCreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EquityreleaseUpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EquityreleaseIsDeleted" Type="Int32" />
+    <Property Name="loanID" Type="Int32" />
+    <Property Name="LoanDob" Type="DateTime" Precision="3" />
+    <Property Name="LoanAge" Type="Int32" />
+    <Property Name="LoanPurpose" Type="Int32" />
+    <Property Name="LoanPreviousAddressSince" Type="DateTime" Precision="3" />
+    <Property Name="LoanPreviousAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LoanPreviousPostCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LoanPreviousCity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LoanEmployerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LoanEmployerSince" Type="DateTime" Precision="3" />
+    <Property Name="LoanOccupation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LoanBeenInDebt" Type="Boolean" />
+    <Property Name="LoanGurantor" Type="Boolean" />
+    <Property Name="LoanGeneratedDate" Type="DateTime" Precision="3" />
+    <Property Name="LoanTotalCreditors" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LoanGuarantorName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LoanGuarantorPhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LoanGuarantorEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LoanPeriod" Type="Int32" />
+    <Property Name="LoanEmploymentStatus" Type="Int32" />
+    <Property Name="LoanMortgageLoanValue" Type="Int32" />
+    <Property Name="LoanCreditRating" Type="Int32" />
+    <Property Name="LoanAnnualIncome" Type="Int32" />
+    <Property Name="LoanCountryOfResidence" Type="Int32" />
+    <Property Name="LoanMaritalStatus" Type="Int32" />
+    <Property Name="LoanMortgageBalance" Type="Int32" />
+    <Property Name="LoanPropertyValue" Type="Int32" />
+    <Property Name="LoanAddressStartDate" Type="DateTime" Precision="3" />
+    <Property Name="loanHomeOwner" Type="Boolean" />
+    <Property Name="LoanHadBankruptcy" Type="Boolean" />
+    <Property Name="LoanCreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="LoanUpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="LoanCreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LoanUpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LoanDeleteStatus" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_ASULeads_CommonLeads">
+    <End Role="CommonLeads" Type="Self.CommonLead" Multiplicity="1" />
+    <End Role="ASULeads" Type="Self.ASULead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommonLeads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ASULeads">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASULeads_UserMasters">
+    <End Role="UserMasters" Type="Self.UserMaster" Multiplicity="1" />
+    <End Role="ASULeads" Type="Self.ASULead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ASULeads">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommonLeads_BuyerMasters">
+    <End Role="BuyerMasters" Type="Self.BuyerMaster" Multiplicity="0..1" />
+    <End Role="CommonLeads" Type="Self.CommonLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BuyerMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CommonLeads">
+        <PropertyRef Name="BuyerMaster_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_BuyerMasters_dbo_UserMasters_CreatedBy">
+    <End Role="UserMasters" Type="Self.UserMaster" Multiplicity="1" />
+    <End Role="BuyerMasters" Type="Self.BuyerMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BuyerMasters">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_BuyerProductSchedules_dbo_BuyerMasters_BuyerMasterId">
+    <End Role="BuyerMasters" Type="Self.BuyerMaster" Multiplicity="1" />
+    <End Role="BuyerProductSchedules" Type="Self.BuyerProductSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BuyerMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BuyerProductSchedules">
+        <PropertyRef Name="BuyerMasterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransferLogs_BuyerMasters">
+    <End Role="BuyerMasters" Type="Self.BuyerMaster" Multiplicity="0..1" />
+    <End Role="TransferLogs" Type="Self.TransferLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BuyerMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TransferLogs">
+        <PropertyRef Name="TransferredTo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_BuyerProductSchedules_dbo_ProductMasters_ProductMasterId">
+    <End Role="ProductMasters" Type="Self.ProductMaster" Multiplicity="1" />
+    <End Role="BuyerProductSchedules" Type="Self.BuyerProductSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BuyerProductSchedules">
+        <PropertyRef Name="ProductMasterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_BuyerProductSchedules_dbo_UserMasters_CreatedBy">
+    <End Role="UserMasters" Type="Self.UserMaster" Multiplicity="1" />
+    <End Role="BuyerProductSchedules" Type="Self.BuyerProductSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BuyerProductSchedules">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommonLeads_OrganizationMasters">
+    <End Role="OrganizationMasters" Type="Self.OrganizationMaster" Multiplicity="1" />
+    <End Role="CommonLeads" Type="Self.CommonLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrganizationMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CommonLeads">
+        <PropertyRef Name="OrganizationMasterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommonLeads_ProductMasters">
+    <End Role="ProductMasters" Type="Self.ProductMaster" Multiplicity="1" />
+    <End Role="CommonLeads" Type="Self.CommonLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CommonLeads">
+        <PropertyRef Name="ProductMasterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommonLeads_UserMasters">
+    <End Role="UserMasters" Type="Self.UserMaster" Multiplicity="1" />
+    <End Role="CommonLeads" Type="Self.CommonLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CommonLeads">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommonLeads_WebsiteMasters">
+    <End Role="WebsiteMasters" Type="Self.WebsiteMaster" Multiplicity="1" />
+    <End Role="CommonLeads" Type="Self.CommonLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WebsiteMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CommonLeads">
+        <PropertyRef Name="WebsiteMasterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CorporateHealthLeads_CommonLeads">
+    <End Role="CommonLeads" Type="Self.CommonLead" Multiplicity="1" />
+    <End Role="CorporateHealthLeads" Type="Self.CorporateHealthLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommonLeads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CorporateHealthLeads">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DebtLeads_CommonLeads">
+    <End Role="CommonLeads" Type="Self.CommonLead" Multiplicity="1" />
+    <End Role="DebtLeads" Type="Self.DebtLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommonLeads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DebtLeads">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EquityReleaseLeads_CommonLeads">
+    <End Role="CommonLeads" Type="Self.CommonLead" Multiplicity="1" />
+    <End Role="EquityReleaseLeads" Type="Self.EquityReleaseLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommonLeads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EquityReleaseLeads">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HealthLeads_CommonLeads">
+    <End Role="CommonLeads" Type="Self.CommonLead" Multiplicity="1" />
+    <End Role="HealthLeads" Type="Self.HealthLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommonLeads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HealthLeads">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LifeLeads_CommonLeads">
+    <End Role="CommonLeads" Type="Self.CommonLead" Multiplicity="1" />
+    <End Role="LifeLeads" Type="Self.LifeLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommonLeads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LifeLeads">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoanLeads_CommonLeads">
+    <End Role="CommonLeads" Type="Self.CommonLead" Multiplicity="1" />
+    <End Role="LoanLeads" Type="Self.LoanLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommonLeads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LoanLeads">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MortgageLeads_CommonLeads">
+    <End Role="CommonLeads" Type="Self.CommonLead" Multiplicity="1" />
+    <End Role="MortgageLeads" Type="Self.MortgageLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommonLeads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MortgageLeads">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PensionLeads_CommonLeads">
+    <End Role="CommonLeads" Type="Self.CommonLead" Multiplicity="1" />
+    <End Role="PensionLeads" Type="Self.PensionLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommonLeads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PensionLeads">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PrepaidFuneralLeads_PrepaidFuneralLeads">
+    <End Role="CommonLeads" Type="Self.CommonLead" Multiplicity="1" />
+    <End Role="PrepaidFuneralLeads" Type="Self.PrepaidFuneralLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommonLeads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PrepaidFuneralLeads">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CorporateHealthLeads_UserMasters">
+    <End Role="UserMasters" Type="Self.UserMaster" Multiplicity="1" />
+    <End Role="CorporateHealthLeads" Type="Self.CorporateHealthLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CorporateHealthLeads">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DebtLeads_UserMasters">
+    <End Role="UserMasters" Type="Self.UserMaster" Multiplicity="1" />
+    <End Role="DebtLeads" Type="Self.DebtLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DebtLeads">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EquityReleaseLeads_UserMasters">
+    <End Role="UserMasters" Type="Self.UserMaster" Multiplicity="1" />
+    <End Role="EquityReleaseLeads" Type="Self.EquityReleaseLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EquityReleaseLeads">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HealthLeads_UserMasters">
+    <End Role="UserMasters" Type="Self.UserMaster" Multiplicity="1" />
+    <End Role="HealthLeads" Type="Self.HealthLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HealthLeads">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LifeLeads_UserMasters">
+    <End Role="UserMasters" Type="Self.UserMaster" Multiplicity="1" />
+    <End Role="LifeLeads" Type="Self.LifeLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LifeLeads">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoanLeads_UserMasters">
+    <End Role="UserMasters" Type="Self.UserMaster" Multiplicity="1" />
+    <End Role="LoanLeads" Type="Self.LoanLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LoanLeads">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_MortgageLeads_dbo_UserMasters_CreatedBy">
+    <End Role="UserMasters" Type="Self.UserMaster" Multiplicity="1" />
+    <End Role="MortgageLeads" Type="Self.MortgageLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MortgageLeads">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PensionLeads_UserMasters">
+    <End Role="UserMasters" Type="Self.UserMaster" Multiplicity="1" />
+    <End Role="PensionLeads" Type="Self.PensionLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PensionLeads">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ProductMasters_dbo_UserMasters_CreatedBy">
+    <End Role="UserMasters" Type="Self.UserMaster" Multiplicity="1" />
+    <End Role="ProductMasters" Type="Self.ProductMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProductMasters">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ProductSlabs_dbo_ProductMasters_ProductMasterId">
+    <End Role="ProductMasters" Type="Self.ProductMaster" Multiplicity="1" />
+    <End Role="ProductSlabs" Type="Self.ProductSlab" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProductSlabs">
+        <PropertyRef Name="ProductMasterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ProductSlabs_dbo_UserMasters_CreatedBy">
+    <End Role="UserMasters" Type="Self.UserMaster" Multiplicity="1" />
+    <End Role="ProductSlabs" Type="Self.ProductSlab" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProductSlabs">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransferLogs_ProductSlabs">
+    <End Role="ProductSlabs" Type="Self.ProductSlab" Multiplicity="0..1" />
+    <End Role="TransferLogs" Type="Self.TransferLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductSlabs">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TransferLogs">
+        <PropertyRef Name="ProductSlabId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransferLogs_UserMasters">
+    <End Role="UserMasters" Type="Self.UserMaster" Multiplicity="0..1" />
+    <End Role="TransferLogs" Type="Self.TransferLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TransferLogs">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_WebsiteMasters_dbo_UserMasters_CreatedBy">
+    <End Role="UserMasters" Type="Self.UserMaster" Multiplicity="1" />
+    <End Role="WebsiteMasters" Type="Self.WebsiteMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="WebsiteMasters">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SatabdiEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ASULeads" EntityType="Self.ASULead" />
+    <EntitySet Name="BuyerMasters" EntityType="Self.BuyerMaster" />
+    <EntitySet Name="BuyerProductSchedules" EntityType="Self.BuyerProductSchedule" />
+    <EntitySet Name="CommonLeads" EntityType="Self.CommonLead" />
+    <EntitySet Name="CorporateHealthLeads" EntityType="Self.CorporateHealthLead" />
+    <EntitySet Name="DebtLeads" EntityType="Self.DebtLead" />
+    <EntitySet Name="EquityReleaseLeads" EntityType="Self.EquityReleaseLead" />
+    <EntitySet Name="HealthLeads" EntityType="Self.HealthLead" />
+    <EntitySet Name="LeadStatusByNames" EntityType="Self.LeadStatusByName" />
+    <EntitySet Name="LifeLeads" EntityType="Self.LifeLead" />
+    <EntitySet Name="LoanLeads" EntityType="Self.LoanLead" />
+    <EntitySet Name="MortgageLeads" EntityType="Self.MortgageLead" />
+    <EntitySet Name="OrganizationMasters" EntityType="Self.OrganizationMaster" />
+    <EntitySet Name="PensionLeads" EntityType="Self.PensionLead" />
+    <EntitySet Name="PrepaidFuneralLeads" EntityType="Self.PrepaidFuneralLead" />
+    <EntitySet Name="ProductMasters" EntityType="Self.ProductMaster" />
+    <EntitySet Name="ProductSlabs" EntityType="Self.ProductSlab" />
+    <EntitySet Name="TransferLogs" EntityType="Self.TransferLog" />
+    <EntitySet Name="UserMasters" EntityType="Self.UserMaster" />
+    <EntitySet Name="WebsiteMasters" EntityType="Self.WebsiteMaster" />
+    <EntitySet Name="ILDS_SEARCH_DASHBOARD_ALLDATA" EntityType="Self.ILDS_SEARCH_DASHBOARD_ALLDATA" />
+    <AssociationSet Name="FK_ASULeads_CommonLeads" Association="Self.FK_ASULeads_CommonLeads">
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+      <End Role="ASULeads" EntitySet="ASULeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASULeads_UserMasters" Association="Self.FK_ASULeads_UserMasters">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="ASULeads" EntitySet="ASULeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommonLeads_BuyerMasters" Association="Self.FK_CommonLeads_BuyerMasters">
+      <End Role="BuyerMasters" EntitySet="BuyerMasters" />
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_BuyerMasters_dbo_UserMasters_CreatedBy" Association="Self.FK_dbo_BuyerMasters_dbo_UserMasters_CreatedBy">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="BuyerMasters" EntitySet="BuyerMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_BuyerProductSchedules_dbo_BuyerMasters_BuyerMasterId" Association="Self.FK_dbo_BuyerProductSchedules_dbo_BuyerMasters_BuyerMasterId">
+      <End Role="BuyerMasters" EntitySet="BuyerMasters" />
+      <End Role="BuyerProductSchedules" EntitySet="BuyerProductSchedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransferLogs_BuyerMasters" Association="Self.FK_TransferLogs_BuyerMasters">
+      <End Role="BuyerMasters" EntitySet="BuyerMasters" />
+      <End Role="TransferLogs" EntitySet="TransferLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_BuyerProductSchedules_dbo_ProductMasters_ProductMasterId" Association="Self.FK_dbo_BuyerProductSchedules_dbo_ProductMasters_ProductMasterId">
+      <End Role="ProductMasters" EntitySet="ProductMasters" />
+      <End Role="BuyerProductSchedules" EntitySet="BuyerProductSchedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_BuyerProductSchedules_dbo_UserMasters_CreatedBy" Association="Self.FK_dbo_BuyerProductSchedules_dbo_UserMasters_CreatedBy">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="BuyerProductSchedules" EntitySet="BuyerProductSchedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommonLeads_OrganizationMasters" Association="Self.FK_CommonLeads_OrganizationMasters">
+      <End Role="OrganizationMasters" EntitySet="OrganizationMasters" />
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommonLeads_ProductMasters" Association="Self.FK_CommonLeads_ProductMasters">
+      <End Role="ProductMasters" EntitySet="ProductMasters" />
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommonLeads_UserMasters" Association="Self.FK_CommonLeads_UserMasters">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommonLeads_WebsiteMasters" Association="Self.FK_CommonLeads_WebsiteMasters">
+      <End Role="WebsiteMasters" EntitySet="WebsiteMasters" />
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CorporateHealthLeads_CommonLeads" Association="Self.FK_CorporateHealthLeads_CommonLeads">
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+      <End Role="CorporateHealthLeads" EntitySet="CorporateHealthLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DebtLeads_CommonLeads" Association="Self.FK_DebtLeads_CommonLeads">
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+      <End Role="DebtLeads" EntitySet="DebtLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EquityReleaseLeads_CommonLeads" Association="Self.FK_EquityReleaseLeads_CommonLeads">
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+      <End Role="EquityReleaseLeads" EntitySet="EquityReleaseLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HealthLeads_CommonLeads" Association="Self.FK_HealthLeads_CommonLeads">
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+      <End Role="HealthLeads" EntitySet="HealthLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LifeLeads_CommonLeads" Association="Self.FK_LifeLeads_CommonLeads">
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+      <End Role="LifeLeads" EntitySet="LifeLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoanLeads_CommonLeads" Association="Self.FK_LoanLeads_CommonLeads">
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+      <End Role="LoanLeads" EntitySet="LoanLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MortgageLeads_CommonLeads" Association="Self.FK_MortgageLeads_CommonLeads">
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+      <End Role="MortgageLeads" EntitySet="MortgageLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PensionLeads_CommonLeads" Association="Self.FK_PensionLeads_CommonLeads">
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+      <End Role="PensionLeads" EntitySet="PensionLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PrepaidFuneralLeads_PrepaidFuneralLeads" Association="Self.FK_PrepaidFuneralLeads_PrepaidFuneralLeads">
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+      <End Role="PrepaidFuneralLeads" EntitySet="PrepaidFuneralLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CorporateHealthLeads_UserMasters" Association="Self.FK_CorporateHealthLeads_UserMasters">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="CorporateHealthLeads" EntitySet="CorporateHealthLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DebtLeads_UserMasters" Association="Self.FK_DebtLeads_UserMasters">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="DebtLeads" EntitySet="DebtLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EquityReleaseLeads_UserMasters" Association="Self.FK_EquityReleaseLeads_UserMasters">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="EquityReleaseLeads" EntitySet="EquityReleaseLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HealthLeads_UserMasters" Association="Self.FK_HealthLeads_UserMasters">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="HealthLeads" EntitySet="HealthLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LifeLeads_UserMasters" Association="Self.FK_LifeLeads_UserMasters">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="LifeLeads" EntitySet="LifeLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoanLeads_UserMasters" Association="Self.FK_LoanLeads_UserMasters">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="LoanLeads" EntitySet="LoanLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_MortgageLeads_dbo_UserMasters_CreatedBy" Association="Self.FK_dbo_MortgageLeads_dbo_UserMasters_CreatedBy">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="MortgageLeads" EntitySet="MortgageLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PensionLeads_UserMasters" Association="Self.FK_PensionLeads_UserMasters">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="PensionLeads" EntitySet="PensionLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ProductMasters_dbo_UserMasters_CreatedBy" Association="Self.FK_dbo_ProductMasters_dbo_UserMasters_CreatedBy">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="ProductMasters" EntitySet="ProductMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ProductSlabs_dbo_ProductMasters_ProductMasterId" Association="Self.FK_dbo_ProductSlabs_dbo_ProductMasters_ProductMasterId">
+      <End Role="ProductMasters" EntitySet="ProductMasters" />
+      <End Role="ProductSlabs" EntitySet="ProductSlabs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ProductSlabs_dbo_UserMasters_CreatedBy" Association="Self.FK_dbo_ProductSlabs_dbo_UserMasters_CreatedBy">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="ProductSlabs" EntitySet="ProductSlabs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransferLogs_ProductSlabs" Association="Self.FK_TransferLogs_ProductSlabs">
+      <End Role="ProductSlabs" EntitySet="ProductSlabs" />
+      <End Role="TransferLogs" EntitySet="TransferLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransferLogs_UserMasters" Association="Self.FK_TransferLogs_UserMasters">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="TransferLogs" EntitySet="TransferLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_WebsiteMasters_dbo_UserMasters_CreatedBy" Association="Self.FK_dbo_WebsiteMasters_dbo_UserMasters_CreatedBy">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="WebsiteMasters" EntitySet="WebsiteMasters" />
+    </AssociationSet>
+    <FunctionImport Name="Fn_GetChildProducts" IsComposable="true" ReturnType="Collection(SatabdiModel.Fn_GetChildProducts_Result)">
+      <Parameter Name="parenId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_LEADINFO_DATA" ReturnType="Collection(SatabdiModel.SP_LEADINFO_DATA_Result)">
+      <Parameter Name="productid" Mode="In" Type="Int32" />
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="endDate" Mode="In" Type="DateTime" />
+      <Parameter Name="trnsfrStart" Mode="In" Type="DateTime" />
+      <Parameter Name="trnsfrEnd" Mode="In" Type="DateTime" />
+      <Parameter Name="websiteName" Mode="In" Type="String" />
+      <Parameter Name="leadStatus" Mode="In" Type="String" />
+      <Parameter Name="buyerName" Mode="In" Type="String" />
+      <Parameter Name="fullName" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="workPhone" Mode="In" Type="String" />
+      <Parameter Name="homePhone" Mode="In" Type="String" />
+      <Parameter Name="leadId" Mode="In" Type="Int32" />
+      <Parameter Name="sortColumnName" Mode="In" Type="String" />
+      <Parameter Name="RowsPerPage" Mode="In" Type="Int32" />
+      <Parameter Name="PageNumber" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="SP_LEADINFO_DATA_Result">
+    <Property Type="Int32" Name="commonleadID" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" />
+    <Property Type="String" Name="LastName" Nullable="false" />
+    <Property Type="String" Name="FullName" Nullable="true" />
+    <Property Type="String" Name="City" Nullable="false" />
+    <Property Type="String" Name="PostCode" Nullable="false" />
+    <Property Type="String" Name="WorkPhone" Nullable="false" />
+    <Property Type="String" Name="HomePhone" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="false" />
+    <Property Type="String" Name="Email" Nullable="true" />
+    <Property Type="Int32" Name="WebsiteID" Nullable="false" />
+    <Property Type="String" Name="WebsiteName" Nullable="false" />
+    <Property Type="String" Name="WebsiteAddress" Nullable="false" />
+    <Property Type="String" Name="WebsiteStatus" Nullable="false" />
+    <Property Type="DateTime" Name="WebsiteCreatedOn" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="WebsiteUpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="WebsiteCreatedBy" Nullable="true" />
+    <Property Type="String" Name="WebsiteUpdatedBy" Nullable="true" />
+    <Property Type="Int32" Name="WebsiteIsWebsiteDeleted" Nullable="false" />
+    <Property Type="String" Name="SiteCreatorCompany" Nullable="true" />
+    <Property Type="String" Name="SiteDeveloperCompany" Nullable="true" />
+    <Property Type="String" Name="ProductName" Nullable="true" />
+    <Property Type="Int32" Name="ProductMasterId" Nullable="false" />
+    <Property Type="Int32" Name="ParentProductId" Nullable="true" />
+    <Property Type="Boolean" Name="IsMultipleBuyer" Nullable="false" />
+    <Property Type="DateTime" Name="ProductCreatedOn" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="ProductUpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ProductCreatedBy" Nullable="true" />
+    <Property Type="String" Name="ProductUpdatedBy" Nullable="true" />
+    <Property Type="Int32" Name="ProductIsProductDeleted" Nullable="false" />
+    <Property Type="String" Name="IpAddress" Nullable="false" />
+    <Property Type="String" Name="Source" Nullable="true" />
+    <Property Type="String" Name="MatchType" Nullable="true" />
+    <Property Type="String" Name="Keyword" Nullable="true" />
+    <Property Type="String" Name="LeadStatus" Nullable="false" />
+    <Property Type="Int32" Name="DNC" Nullable="true" />
+    <Property Type="String" Name="SourceUid" Nullable="true" />
+    <Property Type="String" Name="PostcodeOutWard" Nullable="true" />
+    <Property Type="String" Name="PostcodeInWard" Nullable="true" />
+    <Property Type="Int32" Name="OrganizationMasterId" Nullable="false" />
+    <Property Type="String" Name="OrganizationName" Nullable="false" />
+    <Property Type="String" Name="OrganizationHashCode" Nullable="false" />
+    <Property Type="String" Name="OperatorName" Nullable="true" />
+    <Property Type="Int32" Name="ContactTime" Nullable="false" />
+    <Property Type="Int32" Name="LeadCategory" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="UpdatedBy" Nullable="true" />
+    <Property Type="Int32" Name="IsDeleted" Nullable="false" />
+    <Property Type="String" Name="OperatorSpecificComments" Nullable="false" />
+    <Property Type="Int32" Name="LeadType" Nullable="true" />
+    <Property Type="Boolean" Name="Opt" Nullable="false" />
+    <Property Type="String" Name="LeadComment" Nullable="true" />
+    <Property Type="Double" Name="NotifyPrice" Nullable="false" />
+    <Property Type="String" Name="AdditionalInformation" Nullable="true" />
+    <Property Type="String" Name="UserAgent" Nullable="true" />
+    <Property Type="Int32" Name="TransferlogID" Nullable="false" />
+    <Property Type="String" Name="TransferlogDescription" Nullable="true" />
+    <Property Type="String" Name="BuyerName" Nullable="true" />
+    <Property Type="DateTime" Name="Transferloggeneratedon" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="TransferlogTransferredOn" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="TransferlogUpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="Double" Name="TransferlogPrice" Nullable="true" />
+    <Property Type="Boolean" Name="TransferlogIsActualPrice" Nullable="true" />
+    <Property Type="Int32" Name="TransferlogBuyerIntegrationTypeID" Nullable="true" />
+    <Property Type="Int32" Name="TransferlogUserId" Nullable="true" />
+    <Property Type="Int32" Name="BuyerScheduleBuyerProductScheduleId" Nullable="true" />
+    <Property Type="DateTime" Name="BuyerScheduleStartDateTime" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="BuyerScheduleEndDateTime" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="BuyerScheduleTimePeriod" Nullable="true" />
+    <Property Type="Int32" Name="BuyerScheduleActiveState" Nullable="true" />
+    <Property Type="DateTime" Name="BuyerScheduleCreatedOn" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="BuyerScheduleUpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="BuyerScheduleCreatedBy" Nullable="true" />
+    <Property Type="String" Name="BuyerScheduleUpdatedBy" Nullable="true" />
+    <Property Type="Int32" Name="BuyerScheduleDemand" Nullable="true" />
+    <Property Type="Int32" Name="BuyerScheduleDailyDemand" Nullable="true" />
+    <Property Type="Int32" Name="BuyerSchedulePaymentMode" Nullable="true" />
+    <Property Type="Int32" Name="BuyerScheduleIsBuyerDeleted" Nullable="true" />
+    <Property Type="String" Name="BuyerAddress" Nullable="true" />
+    <Property Type="String" Name="BuyerPincode" Nullable="true" />
+    <Property Type="String" Name="BuyerPocName" Nullable="true" />
+    <Property Type="String" Name="BuyerContactNumber" Nullable="true" />
+    <Property Type="String" Name="BuyerPocContactNumber" Nullable="true" />
+    <Property Type="String" Name="BuyerType" Nullable="true" />
+    <Property Type="String" Name="BuyerIcoNo" Nullable="true" />
+    <Property Type="String" Name="BuyerEmail" Nullable="true" />
+    <Property Type="String" Name="BuyerFcaNo" Nullable="true" />
+    <Property Type="DateTime" Name="BuyerIcoExpDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="BuyerCompanyRegistrationNo" Nullable="true" />
+    <Property Type="DateTime" Name="BuyerCreatedOn" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="BuyerUpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="BuyerCreatedBy" Nullable="true" />
+    <Property Type="String" Name="BuyerUpdatedBy" Nullable="true" />
+    <Property Type="Int32" Name="BuyerIsDeleted" Nullable="true" />
+    <Property Type="Int32" Name="TransferlogProductSlabId" Nullable="true" />
+    <Property Type="String" Name="ProductSlabSlabName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ProductSlabBuyerSlabName" Nullable="true" />
+    <Property Type="String" Name="ProductSlabProductFormula" Nullable="true" />
+    <Property Type="String" Name="ProductSlabCommonFormula" Nullable="true" />
+    <Property Type="DateTime" Name="ProductSlabCreatedOn" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ProductSlabUpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ProductSlabCreatedBy" Nullable="true" />
+    <Property Type="String" Name="ProductSlabUpdatedBy" Nullable="true" />
+    <Property Type="Int32" Name="ProductSlabIsDeleted" Nullable="true" />
+    <Property Type="Int32" Name="MortgageID" Nullable="true" />
+    <Property Type="DateTime" Name="MortgageDOB" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="MortgageAge" Nullable="true" />
+    <Property Type="Int32" Name="MortgageEmplomentStatus" Nullable="true" />
+    <Property Type="DateTime" Name="MortgageGeneratedDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="MortgagePeriod" Nullable="true" />
+    <Property Type="Int32" Name="MortgagePropertyValue" Nullable="true" />
+    <Property Type="Int32" Name="MortgagePropertyLocation" Nullable="true" />
+    <Property Type="Int32" Name="MortgageCreditHistory" Nullable="true" />
+    <Property Type="Int32" Name="MortgageLoanValue" Nullable="true" />
+    <Property Type="Int32" Name="MortgageCurrentDebt" Nullable="true" />
+    <Property Type="Int32" Name="MortgageAnnualIncome" Nullable="true" />
+    <Property Type="Int32" Name="MortgagePropertyType" Nullable="true" />
+    <Property Type="Boolean" Name="MortgageMissAnyLoan" Nullable="true" />
+    <Property Type="Boolean" Name="MortgageHadBankruptcy" Nullable="true" />
+    <Property Type="Boolean" Name="MortgageHadCCJ" Nullable="true" />
+    <Property Type="Boolean" Name="MortgageAppliedIva" Nullable="true" />
+    <Property Type="Int32" Name="MortgageRateType" Nullable="true" />
+    <Property Type="Int32" Name="MortgageRepaymentType" Nullable="true" />
+    <Property Type="Decimal" Name="LTV" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Boolean" Name="MortgageIsAdverseCredit" Nullable="true" />
+    <Property Type="DateTime" Name="MortgageCreatedOn" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="MortgageUpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="MortgageCreatedBy" Nullable="true" />
+    <Property Type="String" Name="MortgageUpdatedBy" Nullable="true" />
+    <Property Type="Int32" Name="MortgageIsLeadDeleted" Nullable="true" />
+    <Property Type="Int32" Name="HealthID" Nullable="true" />
+    <Property Type="DateTime" Name="HealthDOB" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="HealthAge" Nullable="true" />
+    <Property Type="Int32" Name="HealthPeriod" Nullable="true" />
+    <Property Type="Int32" Name="HealthPremiumType" Nullable="true" />
+    <Property Type="Int32" Name="HealthInsuranceTypeId" Nullable="true" />
+    <Property Type="Int32" Name="HealthFamilyMember" Nullable="true" />
+    <Property Type="Boolean" Name="HealthIsSmoker" Nullable="true" />
+    <Property Type="String" Name="HealthPartnerGender" Nullable="true" />
+    <Property Type="Int32" Name="HealthPremiumAmount" Nullable="true" />
+    <Property Type="Int32" Name="HealthCoverTypeHealth" Nullable="true" />
+    <Property Type="DateTime" Name="HealthGeneratedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="HealthCreatedOn" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="HealthUpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="HealthCreatedBy" Nullable="true" />
+    <Property Type="String" Name="HealthUpdatedBy" Nullable="true" />
+    <Property Type="Int32" Name="HealthDeleteStatus" Nullable="true" />
+    <Property Type="Int32" Name="PensionID" Nullable="true" />
+    <Property Type="DateTime" Name="PensionGeneratedDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="PensionAge" Nullable="true" />
+    <Property Type="DateTime" Name="PensionDOB" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="PersonalPensionType" Nullable="true" />
+    <Property Type="Int32" Name="PensionPremiumType" Nullable="true" />
+    <Property Type="Int32" Name="PensionValue" Nullable="true" />
+    <Property Type="Int32" Name="PensionType" Nullable="true" />
+    <Property Type="Int32" Name="PensionAccessFund" Nullable="true" />
+    <Property Type="Int32" Name="PensionExistPensions" Nullable="true" />
+    <Property Type="String" Name="PensionTypeOther" Nullable="true" />
+    <Property Type="Boolean" Name="PensionIsCurrentlyPayingMoney" Nullable="true" />
+    <Property Type="DateTime" Name="PensionCreatedOn" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="PensionUpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="PensionTotalPensionValue" Nullable="true" />
+    <Property Type="String" Name="PensionCreatedBy" Nullable="true" />
+    <Property Type="String" Name="PensionUpdatedBy" Nullable="true" />
+    <Property Type="Int32" Name="PensionDeleteStatus" Nullable="true" />
+    <Property Type="Int32" Name="LifeID" Nullable="true" />
+    <Property Type="Int32" Name="LifeAge" Nullable="true" />
+    <Property Type="DateTime" Name="LifeDob" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="LifeSingleOwnership" Nullable="true" />
+    <Property Type="Int32" Name="LifePeriod" Nullable="true" />
+    <Property Type="DateTime" Name="LifeCreatedOn" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="LifeUpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="LifeGeneratedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LifeProductType" Nullable="true" />
+    <Property Type="String" Name="LifePartnersName" Nullable="true" />
+    <Property Type="String" Name="LifeAdditionalInformation" Nullable="true" />
+    <Property Type="Boolean" Name="LifePartnerSmoker" Nullable="true" />
+    <Property Type="Boolean" Name="LifeIsSmoker" Nullable="true" />
+    <Property Type="Int32" Name="LifePremiumType" Nullable="true" />
+    <Property Type="Int32" Name="LifeInsuranceType" Nullable="true" />
+    <Property Type="Int32" Name="LifeAmount" Nullable="true" />
+    <Property Type="DateTime" Name="LifePartnerDob" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LifeCreatedBy" Nullable="true" />
+    <Property Type="String" Name="LifeUpdatedBy" Nullable="true" />
+    <Property Type="Int32" Name="LifeIsDeleted" Nullable="true" />
+    <Property Type="Int32" Name="DebtID" Nullable="true" />
+    <Property Type="Int32" Name="DebtEmploymentStatus" Nullable="true" />
+    <Property Type="Int32" Name="DebtLeadsResidentialStatus" Nullable="true" />
+    <Property Type="Int32" Name="DebtType" Nullable="true" />
+    <Property Type="Boolean" Name="DebtHadCCJ" Nullable="true" />
+    <Property Type="Int32" Name="DebtTotalUnsecuredDebt" Nullable="true" />
+    <Property Type="Int32" Name="DebtTotalCreditors" Nullable="true" />
+    <Property Type="Int32" Name="DebtMonthlyRepayments" Nullable="true" />
+    <Property Type="Int32" Name="DebtMonthlyIncome" Nullable="true" />
+    <Property Type="Int32" Name="DebtAge" Nullable="true" />
+    <Property Type="DateTime" Name="DebtDob" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DebtGeneratedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DebtCreatedOn" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DebtUpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="DebtCreatedBy" Nullable="true" />
+    <Property Type="String" Name="DebtUpdatedBy" Nullable="true" />
+    <Property Type="Int32" Name="DebtCategory" Nullable="true" />
+    <Property Type="String" Name="DeptTypes" Nullable="true" />
+    <Property Type="Int32" Name="DebtIsDeleted" Nullable="true" />
+    <Property Type="Int32" Name="AsuID" Nullable="true" />
+    <Property Type="Int32" Name="AsuAge" Nullable="true" />
+    <Property Type="DateTime" Name="AsuDob" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="AsuPeriod" Nullable="true" />
+    <Property Type="Boolean" Name="AsuSmoker" Nullable="true" />
+    <Property Type="Int32" Name="AsuAmount" Nullable="true" />
+    <Property Type="DateTime" Name="AsuGeneratedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="AsuCreatedOn" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="AsuUpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="AsuAdditionalInformation" Nullable="true" />
+    <Property Type="String" Name="AsuCreatedBy" Nullable="true" />
+    <Property Type="String" Name="AsuUpdatedBy" Nullable="true" />
+    <Property Type="Int32" Name="AsuIsDeleted" Nullable="true" />
+    <Property Type="Int32" Name="AsuCoverType" Nullable="true" />
+    <Property Type="Int32" Name="AsuCoverFromType" Nullable="true" />
+    <Property Type="Int32" Name="AsuIPASUEmploymentStatus" Nullable="true" />
+    <Property Type="Int32" Name="AsuPremiumType" Nullable="true" />
+    <Property Type="Int32" Name="FuneralID" Nullable="true" />
+    <Property Type="Int32" Name="FuneralAge" Nullable="true" />
+    <Property Type="DateTime" Name="FuneralDob" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FuneralGeneratedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FuneralCreatedOn" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FuneralUpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="FuneralCreatedBy" Nullable="true" />
+    <Property Type="String" Name="FuneralUpdatedBy" Nullable="true" />
+    <Property Type="Int32" Name="FuneralIsDeleted" Nullable="true" />
+    <Property Type="Int32" Name="EquityreleaseID" Nullable="true" />
+    <Property Type="Int32" Name="EquityreleaseAge" Nullable="true" />
+    <Property Type="DateTime" Name="EquityreleaseDob" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="EquityreleaseHomeValue" Nullable="true" />
+    <Property Type="Int32" Name="EquityreleaseOutstandingMortgageValue" Nullable="true" />
+    <Property Type="Int32" Name="EquityreleaseAgeType" Nullable="true" />
+    <Property Type="Int32" Name="EquityreleaseEquityType" Nullable="true" />
+    <Property Type="DateTime" Name="EquityreleaseGeneratedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="EquityreleaseCreatedOn" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="EquityreleaseUpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="EquityreleaseCreatedBy" Nullable="true" />
+    <Property Type="String" Name="EquityreleaseUpdatedBy" Nullable="true" />
+    <Property Type="Int32" Name="EquityreleaseIsDeleted" Nullable="true" />
+    <Property Type="Int32" Name="loanID" Nullable="true" />
+    <Property Type="DateTime" Name="LoanDob" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="LoanAge" Nullable="true" />
+    <Property Type="Int32" Name="LoanPurpose" Nullable="true" />
+    <Property Type="DateTime" Name="LoanPreviousAddressSince" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LoanPreviousAddress" Nullable="true" />
+    <Property Type="String" Name="LoanPreviousPostCode" Nullable="true" />
+    <Property Type="String" Name="LoanPreviousCity" Nullable="true" />
+    <Property Type="String" Name="LoanEmployerName" Nullable="true" />
+    <Property Type="DateTime" Name="LoanEmployerSince" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LoanOccupation" Nullable="true" />
+    <Property Type="Boolean" Name="LoanBeenInDebt" Nullable="true" />
+    <Property Type="Boolean" Name="LoanGurantor" Nullable="true" />
+    <Property Type="DateTime" Name="LoanGeneratedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LoanTotalCreditors" Nullable="true" />
+    <Property Type="String" Name="LoanGuarantorName" Nullable="true" />
+    <Property Type="String" Name="LoanGuarantorPhone" Nullable="true" />
+    <Property Type="String" Name="LoanGuarantorEmail" Nullable="true" />
+    <Property Type="Int32" Name="LoanPeriod" Nullable="true" />
+    <Property Type="Int32" Name="LoanEmploymentStatus" Nullable="true" />
+    <Property Type="Int32" Name="LoanMortgageLoanValue" Nullable="true" />
+    <Property Type="Int32" Name="LoanCreditRating" Nullable="true" />
+    <Property Type="Int32" Name="LoanAnnualIncome" Nullable="true" />
+    <Property Type="Int32" Name="LoanCountryOfResidence" Nullable="true" />
+    <Property Type="Int32" Name="LoanMaritalStatus" Nullable="true" />
+    <Property Type="Int32" Name="LoanMortgageBalance" Nullable="true" />
+    <Property Type="Int32" Name="LoanPropertyValue" Nullable="true" />
+    <Property Type="DateTime" Name="LoanAddressStartDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="loanHomeOwner" Nullable="true" />
+    <Property Type="Boolean" Name="LoanHadBankruptcy" Nullable="true" />
+    <Property Type="DateTime" Name="LoanCreatedOn" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="LoanUpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LoanCreatedBy" Nullable="true" />
+    <Property Type="String" Name="LoanUpdatedBy" Nullable="true" />
+    <Property Type="Int32" Name="LoanDeleteStatus" Nullable="true" />
+  </ComplexType>
+</Schema>

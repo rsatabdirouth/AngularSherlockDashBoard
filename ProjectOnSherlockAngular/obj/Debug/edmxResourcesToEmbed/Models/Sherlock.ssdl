@@ -1,0 +1,1659 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SatabdiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ASULeads">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="LeadId" Type="int" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Dob" Type="datetime" Nullable="false" />
+    <Property Name="Smoker" Type="bit" Nullable="false" />
+    <Property Name="Period" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="int" Nullable="false" />
+    <Property Name="GeneratedDate" Type="datetime" Nullable="false" />
+    <Property Name="PremiumType" Type="int" Nullable="false" />
+    <Property Name="CoverType" Type="int" Nullable="false" />
+    <Property Name="CoverFormType" Type="int" Nullable="false" />
+    <Property Name="IPASUEmploymentStatus" Type="int" Nullable="false" />
+    <Property Name="AdditionalInformation" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="DeleteStatus" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BuyerMasters">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BuyerName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BuyerAddress" Type="nvarchar(max)" />
+    <Property Name="BuyerPincode" Type="nvarchar(max)" />
+    <Property Name="BuyerPocName" Type="nvarchar(max)" />
+    <Property Name="BuyerContactNumber" Type="nvarchar(max)" />
+    <Property Name="BuyerPocContactNumber" Type="nvarchar(max)" />
+    <Property Name="BuyerType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IcoNo" Type="nvarchar(max)" />
+    <Property Name="BuyerEmail" Type="nvarchar(max)" />
+    <Property Name="FcaNo" Type="nvarchar(max)" />
+    <Property Name="IcoExpDate" Type="datetime" />
+    <Property Name="CompanyRegistrationNo" Type="nvarchar(max)" />
+    <Property Name="State" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="DeleteStatus" Type="int" Nullable="false" />
+    <Property Name="IsSendNotifyMail" Type="bit" />
+  </EntityType>
+  <EntityType Name="BuyerProductSchedules">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BuyerMasterId" Type="int" Nullable="false" />
+    <Property Name="ProductMasterId" Type="int" Nullable="false" />
+    <Property Name="StartDateTime" Type="datetime" />
+    <Property Name="EndDateTime" Type="datetime" />
+    <Property Name="ActiveState" Type="int" Nullable="false" />
+    <Property Name="Demand" Type="int" Nullable="false" />
+    <Property Name="TimePeriod" Type="int" Nullable="false" />
+    <Property Name="DailyDemand" Type="int" Nullable="false" />
+    <Property Name="PaymentMode" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="DeleteStatus" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CommonLeads">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PostCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="WorkPhone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Homephone" Type="nvarchar(max)" />
+    <Property Name="Address1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="WebsiteMasterId" Type="int" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar(max)" />
+    <Property Name="ProductMasterId" Type="int" Nullable="false" />
+    <Property Name="IpAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Source" Type="nvarchar(max)" />
+    <Property Name="MatchType" Type="nvarchar(max)" />
+    <Property Name="Keyword" Type="nvarchar(max)" />
+    <Property Name="LeadStatus" Type="int" />
+    <Property Name="DNC" Type="int" />
+    <Property Name="SourceUid" Type="nvarchar(max)" />
+    <Property Name="PostcodeOutWard" Type="nvarchar(max)" />
+    <Property Name="PostcodeInWard" Type="nvarchar(max)" />
+    <Property Name="OrganizationMasterId" Type="int" Nullable="false" />
+    <Property Name="OperatorName" Type="nvarchar(max)" />
+    <Property Name="ContactTime" Type="int" Nullable="false" />
+    <Property Name="LeadCategory" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="OrganizationHashCode" Type="nvarchar(max)" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="DeleteStatus" Type="int" Nullable="false" />
+    <Property Name="BuyerMaster_ID" Type="int" />
+    <Property Name="OperatorSpecificComments" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LeadType" Type="int" />
+    <Property Name="Opt" Type="bit" Nullable="false" />
+    <Property Name="LeadComment" Type="nvarchar(max)" />
+    <Property Name="NotifyPrice" Type="float" Nullable="false" />
+    <Property Name="AdditionalInformation" Type="nvarchar(max)" />
+    <Property Name="UserAgent" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="CorporateHealthLeads">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="LeadId" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="DeleteStatus" Type="int" Nullable="false" />
+    <Property Name="GeneratedDate" Type="datetime" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Dob" Type="datetime" Nullable="false" />
+    <Property Name="AgeType" Type="int" Nullable="false" />
+    <Property Name="EquityType" Type="int" Nullable="false" />
+    <Property Name="HomeValue" Type="int" Nullable="false" />
+    <Property Name="OutstandingMortgageValue" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DebtLeads">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="LeadId" Type="int" Nullable="false" />
+    <Property Name="DebtEmploymentStatus" Type="int" Nullable="false" />
+    <Property Name="ResidentialStatus" Type="int" Nullable="false" />
+    <Property Name="HadCcj" Type="bit" Nullable="false" />
+    <Property Name="DebtType" Type="int" Nullable="false" />
+    <Property Name="TotalUnsecuredDebt" Type="int" Nullable="false" />
+    <Property Name="TotalCreditors" Type="int" Nullable="false" />
+    <Property Name="MonthlyRepayments" Type="int" Nullable="false" />
+    <Property Name="MonthlyIncome" Type="int" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Dob" Type="datetime" Nullable="false" />
+    <Property Name="GeneratedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="DeleteStatus" Type="int" Nullable="false" />
+    <Property Name="DebtCategory" Type="int" Nullable="false" />
+    <Property Name="DebtTypes" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EquityReleaseLeads">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="LeadId" Type="int" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Dob" Type="datetime" Nullable="false" />
+    <Property Name="HomeValue" Type="int" Nullable="false" />
+    <Property Name="OutstandingMortgageValue" Type="int" Nullable="false" />
+    <Property Name="AgeType" Type="int" Nullable="false" />
+    <Property Name="EquityType" Type="int" Nullable="false" />
+    <Property Name="GeneratedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+    <Property Name="DeleteStatus" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HealthLeads">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="LeadId" Type="int" Nullable="false" />
+    <Property Name="Dob" Type="datetime" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Period" Type="int" Nullable="false" />
+    <Property Name="PremiumtypeId" Type="int" Nullable="false" />
+    <Property Name="InsuranceTypeid" Type="int" Nullable="false" />
+    <Property Name="FamilyMember" Type="int" Nullable="false" />
+    <Property Name="Smoker" Type="bit" Nullable="false" />
+    <Property Name="PartnerGender" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Amount" Type="int" Nullable="false" />
+    <Property Name="CoverTypeHealth" Type="int" Nullable="false" />
+    <Property Name="GeneratedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="DeleteStatus" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LeadStatusByName">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="LeadStatusName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LifeLeads">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="LeadId" Type="int" Nullable="false" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Dob" Type="datetime" Nullable="false" />
+    <Property Name="Single" Type="bit" Nullable="false" />
+    <Property Name="Smoker" Type="bit" Nullable="false" />
+    <Property Name="Period" Type="int" Nullable="false" />
+    <Property Name="PremiumType" Type="int" Nullable="false" />
+    <Property Name="InsuranceType" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="int" Nullable="false" />
+    <Property Name="GeneratedDate" Type="datetime" Nullable="false" />
+    <Property Name="ProductType" Type="nvarchar(max)" />
+    <Property Name="PartnerTitle" Type="nvarchar(max)" />
+    <Property Name="PartnerFirstName" Type="nvarchar(max)" />
+    <Property Name="PartnerLastName" Type="nvarchar(max)" />
+    <Property Name="PartnerSmoker" Type="bit" Nullable="false" />
+    <Property Name="PartnerDob" Type="datetime" />
+    <Property Name="AdditionalInformation" Type="nvarchar(max)" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="DeleteStatus" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoanLeads">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="LeadId" Type="int" Nullable="false" />
+    <Property Name="Dob" Type="datetime" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="LoanPurpose" Type="int" Nullable="false" />
+    <Property Name="PreviousAddressSince" Type="datetime" Nullable="false" />
+    <Property Name="PreviousPostCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PreviousCity" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PreviousAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EmployerName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EmployedSince" Type="datetime" Nullable="false" />
+    <Property Name="Occupation" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BeenInDebt" Type="bit" Nullable="false" />
+    <Property Name="LoanGurantor" Type="bit" Nullable="false" />
+    <Property Name="TotalCreditors" Type="nvarchar(max)" />
+    <Property Name="GeneratedDate" Type="datetime" Nullable="false" />
+    <Property Name="GurantorName" Type="nvarchar(max)" />
+    <Property Name="GurantorPhone" Type="nvarchar(max)" />
+    <Property Name="GurantorEmail" Type="nvarchar(max)" />
+    <Property Name="Period" Type="int" Nullable="false" />
+    <Property Name="LoanEmploymentStatus" Type="int" Nullable="false" />
+    <Property Name="LoanCreditRating" Type="int" Nullable="false" />
+    <Property Name="LoanAnnualIncome" Type="int" Nullable="false" />
+    <Property Name="LoanCountryOfResidence" Type="int" Nullable="false" />
+    <Property Name="LoanMaritalStatus" Type="int" Nullable="false" />
+    <Property Name="MortgageBalance" Type="int" Nullable="false" />
+    <Property Name="LoanPropertyValue" Type="int" Nullable="false" />
+    <Property Name="HomeOwner" Type="bit" Nullable="false" />
+    <Property Name="MortgageLoanValue" Type="int" Nullable="false" />
+    <Property Name="AddressStartDate" Type="datetime" Nullable="false" />
+    <Property Name="HadBankruptcy" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="DeleteStatus" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MortgageLeads">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LeadId" Type="int" Nullable="false" />
+    <Property Name="Dob" Type="datetime" Nullable="false" />
+    <Property Name="Age" Type="int" />
+    <Property Name="EmploymentStatus" Type="int" Nullable="false" />
+    <Property Name="GeneratedDate" Type="datetime" Nullable="false" />
+    <Property Name="Period" Type="int" Nullable="false" />
+    <Property Name="PropertyValue" Type="int" Nullable="false" />
+    <Property Name="LoanValue" Type="int" Nullable="false" />
+    <Property Name="CurrentDebt" Type="int" Nullable="false" />
+    <Property Name="PropertyType" Type="int" Nullable="false" />
+    <Property Name="PropertyLocation" Type="int" Nullable="false" />
+    <Property Name="CreditHistory" Type="int" Nullable="false" />
+    <Property Name="AnnualIncome" Type="int" Nullable="false" />
+    <Property Name="MissAnyLoan" Type="bit" Nullable="false" />
+    <Property Name="HadBankruptcy" Type="bit" Nullable="false" />
+    <Property Name="AppliedIva" Type="bit" Nullable="false" />
+    <Property Name="HadCcj" Type="bit" Nullable="false" />
+    <Property Name="RateType" Type="int" Nullable="false" />
+    <Property Name="RepaymentType" Type="int" Nullable="false" />
+    <Property Name="LTV" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="AdverseCredit" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="DeleteStatus" Type="int" Nullable="false" />
+    <Property Name="CommonLead_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="OrganizationMasters">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="OrganizationName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="State" Type="int" Nullable="false" />
+    <Property Name="OrganizationHashCode" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PensionLeads">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="LeadId" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="DeleteStatus" Type="int" Nullable="false" />
+    <Property Name="GeneratedDate" Type="datetime" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Dob" Type="datetime" Nullable="false" />
+    <Property Name="PersonalPensionType" Type="int" />
+    <Property Name="PensionPremiumType" Type="int" />
+    <Property Name="Pensionvalue" Type="int" />
+    <Property Name="Pensiontype" Type="int" />
+    <Property Name="PensionAccessFund" Type="int" />
+    <Property Name="ExistPensions" Type="int" />
+    <Property Name="PensionTypeOther" Type="nvarchar(max)" />
+    <Property Name="IsCurrentlyPayingMoney" Type="bit" Nullable="false" />
+    <Property Name="TotalPensionValue" Type="int" />
+  </EntityType>
+  <EntityType Name="PrepaidFuneralLeads">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="LeadId" Type="int" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Dob" Type="datetime" Nullable="false" />
+    <Property Name="GeneratedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="DeleteStatus" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductMasters">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ParentProductId" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="DeleteStatus" Type="int" Nullable="false" />
+    <Property Name="IsMultipleBuyer" Type="bit" Nullable="false" />
+    <Property Name="State" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductSlabs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductMasterId" Type="int" Nullable="false" />
+    <Property Name="SlabName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="BuyerSlabName" Type="nvarchar(max)" />
+    <Property Name="State" Type="int" Nullable="false" />
+    <Property Name="ProductFormula" Type="nvarchar(max)" />
+    <Property Name="CommonFormula" Type="nvarchar(max)" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="DeleteStatus" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TransferLogs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="GeneratedDateTime" Type="datetime" />
+    <Property Name="TransferDateTime" Type="datetime" />
+    <Property Name="BuyerIntegrationTypeID" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="TransferredTo" Type="int" />
+    <Property Name="ProductSlabId" Type="int" />
+    <Property Name="IsActualPrice" Type="bit" />
+    <Property Name="LeadId" Type="int" />
+    <Property Name="BuyerReturnLeadId" Type="nvarchar(max)" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Return" Type="bit" />
+    <Property Name="Price" Type="float" />
+    <Property Name="Status" Type="int" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="BuyerProductScheduleId" Type="int" />
+  </EntityType>
+  <EntityType Name="UserMasters">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" />
+    <Property Name="FirstName" Type="nvarchar(max)" />
+    <Property Name="LastName" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="Verificationcode" Type="nvarchar(max)" />
+    <Property Name="EmailVerified" Type="bit" />
+    <Property Name="CompanyName" Type="nvarchar(max)" />
+    <Property Name="State" Type="int" />
+    <Property Name="GeneratedDateTime" Type="datetime" />
+    <Property Name="OrganizationMasterId" Type="int" />
+  </EntityType>
+  <EntityType Name="WebsiteMasters">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="WebsiteAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="WebsiteStatus" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="WebsiteName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="DeleteStatus" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Satabdi.dbo.ILDS_SEARCH_DASHBOARD_ALLDATA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ILDS_SEARCH_DASHBOARD_ALLDATA">
+    <Key>
+      <PropertyRef Name="commonleadID" />
+      <PropertyRef Name="Title" />
+      <PropertyRef Name="FirstName" />
+      <PropertyRef Name="LastName" />
+      <PropertyRef Name="City" />
+      <PropertyRef Name="PostCode" />
+      <PropertyRef Name="WorkPhone" />
+      <PropertyRef Name="Address" />
+      <PropertyRef Name="WebsiteID" />
+      <PropertyRef Name="WebsiteName" />
+      <PropertyRef Name="WebsiteAddress" />
+      <PropertyRef Name="WebsiteStatus" />
+      <PropertyRef Name="WebsiteCreatedOn" />
+      <PropertyRef Name="WebsiteIsWebsiteDeleted" />
+      <PropertyRef Name="ProductMasterId" />
+      <PropertyRef Name="IsMultipleBuyer" />
+      <PropertyRef Name="ProductCreatedOn" />
+      <PropertyRef Name="ProductIsProductDeleted" />
+      <PropertyRef Name="IpAddress" />
+      <PropertyRef Name="LeadStatus" />
+      <PropertyRef Name="OrganizationMasterId" />
+      <PropertyRef Name="OrganizationName" />
+      <PropertyRef Name="OrganizationHashCode" />
+      <PropertyRef Name="ContactTime" />
+      <PropertyRef Name="LeadCategory" />
+      <PropertyRef Name="CreatedOn" />
+      <PropertyRef Name="IsDeleted" />
+      <PropertyRef Name="OperatorSpecificComments" />
+      <PropertyRef Name="Opt" />
+      <PropertyRef Name="NotifyPrice" />
+      <PropertyRef Name="TransferlogID" />
+    </Key>
+    <Property Name="commonleadID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PostCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="WorkPhone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HomePhone" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="WebsiteID" Type="int" Nullable="false" />
+    <Property Name="WebsiteName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="WebsiteAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="WebsiteStatus" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="WebsiteCreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="WebsiteUpdatedOn" Type="datetime" />
+    <Property Name="WebsiteCreatedBy" Type="nvarchar(max)" />
+    <Property Name="WebsiteUpdatedBy" Type="nvarchar(max)" />
+    <Property Name="WebsiteIsWebsiteDeleted" Type="int" Nullable="false" />
+    <Property Name="SiteCreatorCompany" Type="nvarchar(max)" />
+    <Property Name="SiteDeveloperCompany" Type="nvarchar(max)" />
+    <Property Name="ProductName" Type="nvarchar(max)" />
+    <Property Name="ProductMasterId" Type="int" Nullable="false" />
+    <Property Name="ParentProductId" Type="int" />
+    <Property Name="IsMultipleBuyer" Type="bit" Nullable="false" />
+    <Property Name="ProductCreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="ProductUpdatedOn" Type="datetime" />
+    <Property Name="ProductCreatedBy" Type="nvarchar(max)" />
+    <Property Name="ProductUpdatedBy" Type="nvarchar(max)" />
+    <Property Name="ProductIsProductDeleted" Type="int" Nullable="false" />
+    <Property Name="IpAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Source" Type="nvarchar(max)" />
+    <Property Name="MatchType" Type="nvarchar(max)" />
+    <Property Name="Keyword" Type="nvarchar(max)" />
+    <Property Name="LeadStatus" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DNC" Type="int" />
+    <Property Name="SourceUid" Type="nvarchar(max)" />
+    <Property Name="PostcodeOutWard" Type="nvarchar(max)" />
+    <Property Name="PostcodeInWard" Type="nvarchar(max)" />
+    <Property Name="OrganizationMasterId" Type="int" Nullable="false" />
+    <Property Name="OrganizationName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OrganizationHashCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OperatorName" Type="nvarchar(max)" />
+    <Property Name="ContactTime" Type="int" Nullable="false" />
+    <Property Name="LeadCategory" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar(max)" />
+    <Property Name="UpdatedBy" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="int" Nullable="false" />
+    <Property Name="OperatorSpecificComments" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LeadType" Type="int" />
+    <Property Name="Opt" Type="bit" Nullable="false" />
+    <Property Name="LeadComment" Type="nvarchar(max)" />
+    <Property Name="NotifyPrice" Type="float" Nullable="false" />
+    <Property Name="AdditionalInformation" Type="nvarchar(max)" />
+    <Property Name="UserAgent" Type="nvarchar(max)" />
+    <Property Name="TransferlogID" Type="int" Nullable="false" />
+    <Property Name="TransferlogDescription" Type="nvarchar(max)" />
+    <Property Name="BuyerName" Type="nvarchar(max)" />
+    <Property Name="Transferloggeneratedon" Type="datetime" />
+    <Property Name="TransferlogTransferredOn" Type="datetime" />
+    <Property Name="TransferlogUpdatedOn" Type="datetime" />
+    <Property Name="TransferlogPrice" Type="float" />
+    <Property Name="TransferlogIsActualPrice" Type="bit" />
+    <Property Name="TransferlogBuyerIntegrationTypeID" Type="int" />
+    <Property Name="TransferlogUserId" Type="int" />
+    <Property Name="BuyerScheduleBuyerProductScheduleId" Type="int" />
+    <Property Name="BuyerScheduleStartDateTime" Type="datetime" />
+    <Property Name="BuyerScheduleEndDateTime" Type="datetime" />
+    <Property Name="BuyerScheduleTimePeriod" Type="int" />
+    <Property Name="BuyerScheduleActiveState" Type="int" />
+    <Property Name="BuyerScheduleCreatedOn" Type="datetime" />
+    <Property Name="BuyerScheduleUpdatedOn" Type="datetime" />
+    <Property Name="BuyerScheduleCreatedBy" Type="nvarchar(max)" />
+    <Property Name="BuyerScheduleUpdatedBy" Type="nvarchar(max)" />
+    <Property Name="BuyerScheduleDemand" Type="int" />
+    <Property Name="BuyerScheduleDailyDemand" Type="int" />
+    <Property Name="BuyerSchedulePaymentMode" Type="int" />
+    <Property Name="BuyerScheduleIsBuyerDeleted" Type="int" />
+    <Property Name="BuyerAddress" Type="nvarchar(max)" />
+    <Property Name="BuyerPincode" Type="nvarchar(max)" />
+    <Property Name="BuyerPocName" Type="nvarchar(max)" />
+    <Property Name="BuyerContactNumber" Type="nvarchar(max)" />
+    <Property Name="BuyerPocContactNumber" Type="nvarchar(max)" />
+    <Property Name="BuyerType" Type="nvarchar(max)" />
+    <Property Name="BuyerIcoNo" Type="nvarchar(max)" />
+    <Property Name="BuyerEmail" Type="nvarchar(max)" />
+    <Property Name="BuyerFcaNo" Type="nvarchar(max)" />
+    <Property Name="BuyerIcoExpDate" Type="datetime" />
+    <Property Name="BuyerCompanyRegistrationNo" Type="nvarchar(max)" />
+    <Property Name="BuyerCreatedOn" Type="datetime" />
+    <Property Name="BuyerUpdatedOn" Type="datetime" />
+    <Property Name="BuyerCreatedBy" Type="nvarchar(max)" />
+    <Property Name="BuyerUpdatedBy" Type="nvarchar(max)" />
+    <Property Name="BuyerIsDeleted" Type="int" />
+    <Property Name="TransferlogProductSlabId" Type="int" />
+    <Property Name="ProductSlabSlabName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ProductSlabBuyerSlabName" Type="nvarchar(max)" />
+    <Property Name="ProductSlabProductFormula" Type="nvarchar(max)" />
+    <Property Name="ProductSlabCommonFormula" Type="nvarchar(max)" />
+    <Property Name="ProductSlabCreatedOn" Type="datetime" />
+    <Property Name="ProductSlabUpdatedOn" Type="datetime" />
+    <Property Name="ProductSlabCreatedBy" Type="nvarchar(max)" />
+    <Property Name="ProductSlabUpdatedBy" Type="nvarchar(max)" />
+    <Property Name="ProductSlabIsDeleted" Type="int" />
+    <Property Name="MortgageID" Type="int" />
+    <Property Name="MortgageDOB" Type="datetime" />
+    <Property Name="MortgageAge" Type="int" />
+    <Property Name="MortgageEmplomentStatus" Type="int" />
+    <Property Name="MortgageGeneratedDate" Type="datetime" />
+    <Property Name="MortgagePeriod" Type="int" />
+    <Property Name="MortgagePropertyValue" Type="int" />
+    <Property Name="MortgagePropertyLocation" Type="int" />
+    <Property Name="MortgageCreditHistory" Type="int" />
+    <Property Name="MortgageLoanValue" Type="int" />
+    <Property Name="MortgageCurrentDebt" Type="int" />
+    <Property Name="MortgageAnnualIncome" Type="int" />
+    <Property Name="MortgagePropertyType" Type="int" />
+    <Property Name="MortgageMissAnyLoan" Type="bit" />
+    <Property Name="MortgageHadBankruptcy" Type="bit" />
+    <Property Name="MortgageHadCCJ" Type="bit" />
+    <Property Name="MortgageAppliedIva" Type="bit" />
+    <Property Name="MortgageRateType" Type="int" />
+    <Property Name="MortgageRepaymentType" Type="int" />
+    <Property Name="LTV" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="MortgageIsAdverseCredit" Type="bit" />
+    <Property Name="MortgageCreatedOn" Type="datetime" />
+    <Property Name="MortgageUpdatedOn" Type="datetime" />
+    <Property Name="MortgageCreatedBy" Type="nvarchar(max)" />
+    <Property Name="MortgageUpdatedBy" Type="nvarchar(max)" />
+    <Property Name="MortgageIsLeadDeleted" Type="int" />
+    <Property Name="HealthID" Type="int" />
+    <Property Name="HealthDOB" Type="datetime" />
+    <Property Name="HealthAge" Type="int" />
+    <Property Name="HealthPeriod" Type="int" />
+    <Property Name="HealthPremiumType" Type="int" />
+    <Property Name="HealthInsuranceTypeId" Type="int" />
+    <Property Name="HealthFamilyMember" Type="int" />
+    <Property Name="HealthIsSmoker" Type="bit" />
+    <Property Name="HealthPartnerGender" Type="nvarchar(max)" />
+    <Property Name="HealthPremiumAmount" Type="int" />
+    <Property Name="HealthCoverTypeHealth" Type="int" />
+    <Property Name="HealthGeneratedDate" Type="datetime" />
+    <Property Name="HealthCreatedOn" Type="datetime" />
+    <Property Name="HealthUpdatedOn" Type="datetime" />
+    <Property Name="HealthCreatedBy" Type="nvarchar(max)" />
+    <Property Name="HealthUpdatedBy" Type="nvarchar(max)" />
+    <Property Name="HealthDeleteStatus" Type="int" />
+    <Property Name="PensionID" Type="int" />
+    <Property Name="PensionGeneratedDate" Type="datetime" />
+    <Property Name="PensionAge" Type="int" />
+    <Property Name="PensionDOB" Type="datetime" />
+    <Property Name="PersonalPensionType" Type="int" />
+    <Property Name="PensionPremiumType" Type="int" />
+    <Property Name="PensionValue" Type="int" />
+    <Property Name="PensionType" Type="int" />
+    <Property Name="PensionAccessFund" Type="int" />
+    <Property Name="PensionExistPensions" Type="int" />
+    <Property Name="PensionTypeOther" Type="nvarchar(max)" />
+    <Property Name="PensionIsCurrentlyPayingMoney" Type="bit" />
+    <Property Name="PensionCreatedOn" Type="datetime" />
+    <Property Name="PensionUpdatedOn" Type="datetime" />
+    <Property Name="PensionTotalPensionValue" Type="int" />
+    <Property Name="PensionCreatedBy" Type="nvarchar(max)" />
+    <Property Name="PensionUpdatedBy" Type="nvarchar(max)" />
+    <Property Name="PensionDeleteStatus" Type="int" />
+    <Property Name="LifeID" Type="int" />
+    <Property Name="LifeAge" Type="int" />
+    <Property Name="LifeDob" Type="datetime" />
+    <Property Name="LifeSingleOwnership" Type="bit" />
+    <Property Name="LifePeriod" Type="int" />
+    <Property Name="LifeCreatedOn" Type="datetime" />
+    <Property Name="LifeUpdatedOn" Type="datetime" />
+    <Property Name="LifeGeneratedDate" Type="datetime" />
+    <Property Name="LifeProductType" Type="nvarchar(max)" />
+    <Property Name="LifePartnersName" Type="nvarchar(max)" />
+    <Property Name="LifeAdditionalInformation" Type="nvarchar(max)" />
+    <Property Name="LifePartnerSmoker" Type="bit" />
+    <Property Name="LifeIsSmoker" Type="bit" />
+    <Property Name="LifePremiumType" Type="int" />
+    <Property Name="LifeInsuranceType" Type="int" />
+    <Property Name="LifeAmount" Type="int" />
+    <Property Name="LifePartnerDob" Type="datetime" />
+    <Property Name="LifeCreatedBy" Type="nvarchar(max)" />
+    <Property Name="LifeUpdatedBy" Type="nvarchar(max)" />
+    <Property Name="LifeIsDeleted" Type="int" />
+    <Property Name="DebtID" Type="int" />
+    <Property Name="DebtEmploymentStatus" Type="int" />
+    <Property Name="DebtLeadsResidentialStatus" Type="int" />
+    <Property Name="DebtType" Type="int" />
+    <Property Name="DebtHadCCJ" Type="bit" />
+    <Property Name="DebtTotalUnsecuredDebt" Type="int" />
+    <Property Name="DebtTotalCreditors" Type="int" />
+    <Property Name="DebtMonthlyRepayments" Type="int" />
+    <Property Name="DebtMonthlyIncome" Type="int" />
+    <Property Name="DebtAge" Type="int" />
+    <Property Name="DebtDob" Type="datetime" />
+    <Property Name="DebtGeneratedDate" Type="datetime" />
+    <Property Name="DebtCreatedOn" Type="datetime" />
+    <Property Name="DebtUpdatedOn" Type="datetime" />
+    <Property Name="DebtCreatedBy" Type="nvarchar(max)" />
+    <Property Name="DebtUpdatedBy" Type="nvarchar(max)" />
+    <Property Name="DebtCategory" Type="int" />
+    <Property Name="DeptTypes" Type="nvarchar(max)" />
+    <Property Name="DebtIsDeleted" Type="int" />
+    <Property Name="AsuID" Type="int" />
+    <Property Name="AsuAge" Type="int" />
+    <Property Name="AsuDob" Type="datetime" />
+    <Property Name="AsuPeriod" Type="int" />
+    <Property Name="AsuSmoker" Type="bit" />
+    <Property Name="AsuAmount" Type="int" />
+    <Property Name="AsuGeneratedDate" Type="datetime" />
+    <Property Name="AsuCreatedOn" Type="datetime" />
+    <Property Name="AsuUpdatedOn" Type="datetime" />
+    <Property Name="AsuAdditionalInformation" Type="nvarchar(max)" />
+    <Property Name="AsuCreatedBy" Type="nvarchar(max)" />
+    <Property Name="AsuUpdatedBy" Type="nvarchar(max)" />
+    <Property Name="AsuIsDeleted" Type="int" />
+    <Property Name="AsuCoverType" Type="int" />
+    <Property Name="AsuCoverFromType" Type="int" />
+    <Property Name="AsuIPASUEmploymentStatus" Type="int" />
+    <Property Name="AsuPremiumType" Type="int" />
+    <Property Name="FuneralID" Type="int" />
+    <Property Name="FuneralAge" Type="int" />
+    <Property Name="FuneralDob" Type="datetime" />
+    <Property Name="FuneralGeneratedDate" Type="datetime" />
+    <Property Name="FuneralCreatedOn" Type="datetime" />
+    <Property Name="FuneralUpdatedOn" Type="datetime" />
+    <Property Name="FuneralCreatedBy" Type="nvarchar(max)" />
+    <Property Name="FuneralUpdatedBy" Type="nvarchar(max)" />
+    <Property Name="FuneralIsDeleted" Type="int" />
+    <Property Name="EquityreleaseID" Type="int" />
+    <Property Name="EquityreleaseAge" Type="int" />
+    <Property Name="EquityreleaseDob" Type="datetime" />
+    <Property Name="EquityreleaseHomeValue" Type="int" />
+    <Property Name="EquityreleaseOutstandingMortgageValue" Type="int" />
+    <Property Name="EquityreleaseAgeType" Type="int" />
+    <Property Name="EquityreleaseEquityType" Type="int" />
+    <Property Name="EquityreleaseGeneratedDate" Type="datetime" />
+    <Property Name="EquityreleaseCreatedOn" Type="datetime" />
+    <Property Name="EquityreleaseUpdatedOn" Type="datetime" />
+    <Property Name="EquityreleaseCreatedBy" Type="nvarchar(max)" />
+    <Property Name="EquityreleaseUpdatedBy" Type="nvarchar(max)" />
+    <Property Name="EquityreleaseIsDeleted" Type="int" />
+    <Property Name="loanID" Type="int" />
+    <Property Name="LoanDob" Type="datetime" />
+    <Property Name="LoanAge" Type="int" />
+    <Property Name="LoanPurpose" Type="int" />
+    <Property Name="LoanPreviousAddressSince" Type="datetime" />
+    <Property Name="LoanPreviousAddress" Type="nvarchar(max)" />
+    <Property Name="LoanPreviousPostCode" Type="nvarchar(max)" />
+    <Property Name="LoanPreviousCity" Type="nvarchar(max)" />
+    <Property Name="LoanEmployerName" Type="nvarchar(max)" />
+    <Property Name="LoanEmployerSince" Type="datetime" />
+    <Property Name="LoanOccupation" Type="nvarchar(max)" />
+    <Property Name="LoanBeenInDebt" Type="bit" />
+    <Property Name="LoanGurantor" Type="bit" />
+    <Property Name="LoanGeneratedDate" Type="datetime" />
+    <Property Name="LoanTotalCreditors" Type="nvarchar(max)" />
+    <Property Name="LoanGuarantorName" Type="nvarchar(max)" />
+    <Property Name="LoanGuarantorPhone" Type="nvarchar(max)" />
+    <Property Name="LoanGuarantorEmail" Type="nvarchar(max)" />
+    <Property Name="LoanPeriod" Type="int" />
+    <Property Name="LoanEmploymentStatus" Type="int" />
+    <Property Name="LoanMortgageLoanValue" Type="int" />
+    <Property Name="LoanCreditRating" Type="int" />
+    <Property Name="LoanAnnualIncome" Type="int" />
+    <Property Name="LoanCountryOfResidence" Type="int" />
+    <Property Name="LoanMaritalStatus" Type="int" />
+    <Property Name="LoanMortgageBalance" Type="int" />
+    <Property Name="LoanPropertyValue" Type="int" />
+    <Property Name="LoanAddressStartDate" Type="datetime" />
+    <Property Name="loanHomeOwner" Type="bit" />
+    <Property Name="LoanHadBankruptcy" Type="bit" />
+    <Property Name="LoanCreatedOn" Type="datetime" />
+    <Property Name="LoanUpdatedOn" Type="datetime" />
+    <Property Name="LoanCreatedBy" Type="nvarchar(max)" />
+    <Property Name="LoanUpdatedBy" Type="nvarchar(max)" />
+    <Property Name="LoanDeleteStatus" Type="int" />
+  </EntityType>
+  <Association Name="FK_ASULeads_CommonLeads">
+    <End Role="CommonLeads" Type="Self.CommonLeads" Multiplicity="1" />
+    <End Role="ASULeads" Type="Self.ASULeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommonLeads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ASULeads">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASULeads_UserMasters">
+    <End Role="UserMasters" Type="Self.UserMasters" Multiplicity="1" />
+    <End Role="ASULeads" Type="Self.ASULeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ASULeads">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommonLeads_BuyerMasters">
+    <End Role="BuyerMasters" Type="Self.BuyerMasters" Multiplicity="0..1" />
+    <End Role="CommonLeads" Type="Self.CommonLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BuyerMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CommonLeads">
+        <PropertyRef Name="BuyerMaster_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommonLeads_OrganizationMasters">
+    <End Role="OrganizationMasters" Type="Self.OrganizationMasters" Multiplicity="1" />
+    <End Role="CommonLeads" Type="Self.CommonLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrganizationMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CommonLeads">
+        <PropertyRef Name="OrganizationMasterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommonLeads_ProductMasters">
+    <End Role="ProductMasters" Type="Self.ProductMasters" Multiplicity="1" />
+    <End Role="CommonLeads" Type="Self.CommonLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CommonLeads">
+        <PropertyRef Name="ProductMasterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommonLeads_UserMasters">
+    <End Role="UserMasters" Type="Self.UserMasters" Multiplicity="1" />
+    <End Role="CommonLeads" Type="Self.CommonLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CommonLeads">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommonLeads_WebsiteMasters">
+    <End Role="WebsiteMasters" Type="Self.WebsiteMasters" Multiplicity="1" />
+    <End Role="CommonLeads" Type="Self.CommonLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WebsiteMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CommonLeads">
+        <PropertyRef Name="WebsiteMasterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CorporateHealthLeads_CommonLeads">
+    <End Role="CommonLeads" Type="Self.CommonLeads" Multiplicity="1" />
+    <End Role="CorporateHealthLeads" Type="Self.CorporateHealthLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommonLeads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CorporateHealthLeads">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CorporateHealthLeads_UserMasters">
+    <End Role="UserMasters" Type="Self.UserMasters" Multiplicity="1" />
+    <End Role="CorporateHealthLeads" Type="Self.CorporateHealthLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CorporateHealthLeads">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_BuyerMasters_dbo_UserMasters_CreatedBy">
+    <End Role="UserMasters" Type="Self.UserMasters" Multiplicity="1" />
+    <End Role="BuyerMasters" Type="Self.BuyerMasters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BuyerMasters">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_BuyerProductSchedules_dbo_BuyerMasters_BuyerMasterId">
+    <End Role="BuyerMasters" Type="Self.BuyerMasters" Multiplicity="1" />
+    <End Role="BuyerProductSchedules" Type="Self.BuyerProductSchedules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BuyerMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BuyerProductSchedules">
+        <PropertyRef Name="BuyerMasterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_BuyerProductSchedules_dbo_ProductMasters_ProductMasterId">
+    <End Role="ProductMasters" Type="Self.ProductMasters" Multiplicity="1" />
+    <End Role="BuyerProductSchedules" Type="Self.BuyerProductSchedules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BuyerProductSchedules">
+        <PropertyRef Name="ProductMasterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_BuyerProductSchedules_dbo_UserMasters_CreatedBy">
+    <End Role="UserMasters" Type="Self.UserMasters" Multiplicity="1" />
+    <End Role="BuyerProductSchedules" Type="Self.BuyerProductSchedules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BuyerProductSchedules">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_MortgageLeads_dbo_UserMasters_CreatedBy">
+    <End Role="UserMasters" Type="Self.UserMasters" Multiplicity="1" />
+    <End Role="MortgageLeads" Type="Self.MortgageLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MortgageLeads">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ProductMasters_dbo_UserMasters_CreatedBy">
+    <End Role="UserMasters" Type="Self.UserMasters" Multiplicity="1" />
+    <End Role="ProductMasters" Type="Self.ProductMasters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProductMasters">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ProductSlabs_dbo_ProductMasters_ProductMasterId">
+    <End Role="ProductMasters" Type="Self.ProductMasters" Multiplicity="1" />
+    <End Role="ProductSlabs" Type="Self.ProductSlabs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProductSlabs">
+        <PropertyRef Name="ProductMasterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ProductSlabs_dbo_UserMasters_CreatedBy">
+    <End Role="UserMasters" Type="Self.UserMasters" Multiplicity="1" />
+    <End Role="ProductSlabs" Type="Self.ProductSlabs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProductSlabs">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_WebsiteMasters_dbo_UserMasters_CreatedBy">
+    <End Role="UserMasters" Type="Self.UserMasters" Multiplicity="1" />
+    <End Role="WebsiteMasters" Type="Self.WebsiteMasters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="WebsiteMasters">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DebtLeads_CommonLeads">
+    <End Role="CommonLeads" Type="Self.CommonLeads" Multiplicity="1" />
+    <End Role="DebtLeads" Type="Self.DebtLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommonLeads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DebtLeads">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DebtLeads_UserMasters">
+    <End Role="UserMasters" Type="Self.UserMasters" Multiplicity="1" />
+    <End Role="DebtLeads" Type="Self.DebtLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DebtLeads">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EquityReleaseLeads_CommonLeads">
+    <End Role="CommonLeads" Type="Self.CommonLeads" Multiplicity="1" />
+    <End Role="EquityReleaseLeads" Type="Self.EquityReleaseLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommonLeads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EquityReleaseLeads">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EquityReleaseLeads_UserMasters">
+    <End Role="UserMasters" Type="Self.UserMasters" Multiplicity="1" />
+    <End Role="EquityReleaseLeads" Type="Self.EquityReleaseLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EquityReleaseLeads">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HealthLeads_CommonLeads">
+    <End Role="CommonLeads" Type="Self.CommonLeads" Multiplicity="1" />
+    <End Role="HealthLeads" Type="Self.HealthLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommonLeads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HealthLeads">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HealthLeads_UserMasters">
+    <End Role="UserMasters" Type="Self.UserMasters" Multiplicity="1" />
+    <End Role="HealthLeads" Type="Self.HealthLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HealthLeads">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LifeLeads_CommonLeads">
+    <End Role="CommonLeads" Type="Self.CommonLeads" Multiplicity="1" />
+    <End Role="LifeLeads" Type="Self.LifeLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommonLeads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LifeLeads">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LifeLeads_UserMasters">
+    <End Role="UserMasters" Type="Self.UserMasters" Multiplicity="1" />
+    <End Role="LifeLeads" Type="Self.LifeLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LifeLeads">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoanLeads_CommonLeads">
+    <End Role="CommonLeads" Type="Self.CommonLeads" Multiplicity="1" />
+    <End Role="LoanLeads" Type="Self.LoanLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommonLeads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LoanLeads">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoanLeads_UserMasters">
+    <End Role="UserMasters" Type="Self.UserMasters" Multiplicity="1" />
+    <End Role="LoanLeads" Type="Self.LoanLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LoanLeads">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MortgageLeads_CommonLeads">
+    <End Role="CommonLeads" Type="Self.CommonLeads" Multiplicity="1" />
+    <End Role="MortgageLeads" Type="Self.MortgageLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommonLeads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MortgageLeads">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PensionLeads_CommonLeads">
+    <End Role="CommonLeads" Type="Self.CommonLeads" Multiplicity="1" />
+    <End Role="PensionLeads" Type="Self.PensionLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommonLeads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PensionLeads">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PensionLeads_UserMasters">
+    <End Role="UserMasters" Type="Self.UserMasters" Multiplicity="1" />
+    <End Role="PensionLeads" Type="Self.PensionLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PensionLeads">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PrepaidFuneralLeads_PrepaidFuneralLeads">
+    <End Role="CommonLeads" Type="Self.CommonLeads" Multiplicity="1" />
+    <End Role="PrepaidFuneralLeads" Type="Self.PrepaidFuneralLeads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommonLeads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PrepaidFuneralLeads">
+        <PropertyRef Name="LeadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransferLogs_BuyerMasters">
+    <End Role="BuyerMasters" Type="Self.BuyerMasters" Multiplicity="0..1" />
+    <End Role="TransferLogs" Type="Self.TransferLogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BuyerMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TransferLogs">
+        <PropertyRef Name="TransferredTo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransferLogs_ProductSlabs">
+    <End Role="ProductSlabs" Type="Self.ProductSlabs" Multiplicity="0..1" />
+    <End Role="TransferLogs" Type="Self.TransferLogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductSlabs">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TransferLogs">
+        <PropertyRef Name="ProductSlabId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransferLogs_UserMasters">
+    <End Role="UserMasters" Type="Self.UserMasters" Multiplicity="0..1" />
+    <End Role="TransferLogs" Type="Self.TransferLogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMasters">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TransferLogs">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Fn_GetChildProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parenId" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="Id" Type="int" />
+          <Property Name="ParenProductId" Type="int" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="256" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="SP_LEADINFO_DATA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="productid" Type="int" Mode="In" />
+    <Parameter Name="startDate" Type="datetime" Mode="In" />
+    <Parameter Name="endDate" Type="datetime" Mode="In" />
+    <Parameter Name="trnsfrStart" Type="datetime" Mode="In" />
+    <Parameter Name="trnsfrEnd" Type="datetime" Mode="In" />
+    <Parameter Name="websiteName" Type="nvarchar" Mode="In" />
+    <Parameter Name="leadStatus" Type="nvarchar" Mode="In" />
+    <Parameter Name="buyerName" Type="nvarchar" Mode="In" />
+    <Parameter Name="fullName" Type="nvarchar" Mode="In" />
+    <Parameter Name="email" Type="nvarchar" Mode="In" />
+    <Parameter Name="workPhone" Type="nvarchar" Mode="In" />
+    <Parameter Name="homePhone" Type="nvarchar" Mode="In" />
+    <Parameter Name="leadId" Type="int" Mode="In" />
+    <Parameter Name="sortColumnName" Type="nvarchar" Mode="In" />
+    <Parameter Name="RowsPerPage" Type="int" Mode="In" />
+    <Parameter Name="PageNumber" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="SatabdiModelStoreContainer">
+    <EntitySet Name="ASULeads" EntityType="Self.ASULeads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BuyerMasters" EntityType="Self.BuyerMasters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BuyerProductSchedules" EntityType="Self.BuyerProductSchedules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CommonLeads" EntityType="Self.CommonLeads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CorporateHealthLeads" EntityType="Self.CorporateHealthLeads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DebtLeads" EntityType="Self.DebtLeads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EquityReleaseLeads" EntityType="Self.EquityReleaseLeads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HealthLeads" EntityType="Self.HealthLeads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeadStatusByName" EntityType="Self.LeadStatusByName" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LifeLeads" EntityType="Self.LifeLeads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoanLeads" EntityType="Self.LoanLeads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MortgageLeads" EntityType="Self.MortgageLeads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrganizationMasters" EntityType="Self.OrganizationMasters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PensionLeads" EntityType="Self.PensionLeads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrepaidFuneralLeads" EntityType="Self.PrepaidFuneralLeads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductMasters" EntityType="Self.ProductMasters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductSlabs" EntityType="Self.ProductSlabs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TransferLogs" EntityType="Self.TransferLogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserMasters" EntityType="Self.UserMasters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WebsiteMasters" EntityType="Self.WebsiteMasters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ILDS_SEARCH_DASHBOARD_ALLDATA" EntityType="Self.ILDS_SEARCH_DASHBOARD_ALLDATA" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[commonleadID] AS [commonleadID], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[Title] AS [Title], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[FirstName] AS [FirstName], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LastName] AS [LastName], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[FullName] AS [FullName], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[City] AS [City], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PostCode] AS [PostCode], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[WorkPhone] AS [WorkPhone], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[HomePhone] AS [HomePhone], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[Address] AS [Address], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[Email] AS [Email], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[WebsiteID] AS [WebsiteID], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[WebsiteName] AS [WebsiteName], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[WebsiteAddress] AS [WebsiteAddress], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[WebsiteStatus] AS [WebsiteStatus], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[WebsiteCreatedOn] AS [WebsiteCreatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[WebsiteUpdatedOn] AS [WebsiteUpdatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[WebsiteCreatedBy] AS [WebsiteCreatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[WebsiteUpdatedBy] AS [WebsiteUpdatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[WebsiteIsWebsiteDeleted] AS [WebsiteIsWebsiteDeleted], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[SiteCreatorCompany] AS [SiteCreatorCompany], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[SiteDeveloperCompany] AS [SiteDeveloperCompany], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[ProductName] AS [ProductName], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[ProductMasterId] AS [ProductMasterId], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[ParentProductId] AS [ParentProductId], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[IsMultipleBuyer] AS [IsMultipleBuyer], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[ProductCreatedOn] AS [ProductCreatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[ProductUpdatedOn] AS [ProductUpdatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[ProductCreatedBy] AS [ProductCreatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[ProductUpdatedBy] AS [ProductUpdatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[ProductIsProductDeleted] AS [ProductIsProductDeleted], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[IpAddress] AS [IpAddress], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[Source] AS [Source], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MatchType] AS [MatchType], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[Keyword] AS [Keyword], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LeadStatus] AS [LeadStatus], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[DNC] AS [DNC], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[SourceUid] AS [SourceUid], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PostcodeOutWard] AS [PostcodeOutWard], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PostcodeInWard] AS [PostcodeInWard], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[OrganizationMasterId] AS [OrganizationMasterId], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[OrganizationName] AS [OrganizationName], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[OrganizationHashCode] AS [OrganizationHashCode], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[OperatorName] AS [OperatorName], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[ContactTime] AS [ContactTime], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LeadCategory] AS [LeadCategory], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[CreatedOn] AS [CreatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[UpdatedOn] AS [UpdatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[CreatedBy] AS [CreatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[UpdatedBy] AS [UpdatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[IsDeleted] AS [IsDeleted], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[OperatorSpecificComments] AS [OperatorSpecificComments], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LeadType] AS [LeadType], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[Opt] AS [Opt], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LeadComment] AS [LeadComment], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[NotifyPrice] AS [NotifyPrice], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[AdditionalInformation] AS [AdditionalInformation], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[UserAgent] AS [UserAgent], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[TransferlogID] AS [TransferlogID], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[TransferlogDescription] AS [TransferlogDescription], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerName] AS [BuyerName], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[Transferloggeneratedon] AS [Transferloggeneratedon], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[TransferlogTransferredOn] AS [TransferlogTransferredOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[TransferlogUpdatedOn] AS [TransferlogUpdatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[TransferlogPrice] AS [TransferlogPrice], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[TransferlogIsActualPrice] AS [TransferlogIsActualPrice], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[TransferlogBuyerIntegrationTypeID] AS [TransferlogBuyerIntegrationTypeID], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[TransferlogUserId] AS [TransferlogUserId], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerScheduleBuyerProductScheduleId] AS [BuyerScheduleBuyerProductScheduleId], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerScheduleStartDateTime] AS [BuyerScheduleStartDateTime], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerScheduleEndDateTime] AS [BuyerScheduleEndDateTime], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerScheduleTimePeriod] AS [BuyerScheduleTimePeriod], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerScheduleActiveState] AS [BuyerScheduleActiveState], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerScheduleCreatedOn] AS [BuyerScheduleCreatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerScheduleUpdatedOn] AS [BuyerScheduleUpdatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerScheduleCreatedBy] AS [BuyerScheduleCreatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerScheduleUpdatedBy] AS [BuyerScheduleUpdatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerScheduleDemand] AS [BuyerScheduleDemand], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerScheduleDailyDemand] AS [BuyerScheduleDailyDemand], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerSchedulePaymentMode] AS [BuyerSchedulePaymentMode], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerScheduleIsBuyerDeleted] AS [BuyerScheduleIsBuyerDeleted], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerAddress] AS [BuyerAddress], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerPincode] AS [BuyerPincode], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerPocName] AS [BuyerPocName], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerContactNumber] AS [BuyerContactNumber], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerPocContactNumber] AS [BuyerPocContactNumber], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerType] AS [BuyerType], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerIcoNo] AS [BuyerIcoNo], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerEmail] AS [BuyerEmail], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerFcaNo] AS [BuyerFcaNo], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerIcoExpDate] AS [BuyerIcoExpDate], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerCompanyRegistrationNo] AS [BuyerCompanyRegistrationNo], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerCreatedOn] AS [BuyerCreatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerUpdatedOn] AS [BuyerUpdatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerCreatedBy] AS [BuyerCreatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerUpdatedBy] AS [BuyerUpdatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[BuyerIsDeleted] AS [BuyerIsDeleted], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[TransferlogProductSlabId] AS [TransferlogProductSlabId], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[ProductSlabSlabName] AS [ProductSlabSlabName], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[ProductSlabBuyerSlabName] AS [ProductSlabBuyerSlabName], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[ProductSlabProductFormula] AS [ProductSlabProductFormula], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[ProductSlabCommonFormula] AS [ProductSlabCommonFormula], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[ProductSlabCreatedOn] AS [ProductSlabCreatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[ProductSlabUpdatedOn] AS [ProductSlabUpdatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[ProductSlabCreatedBy] AS [ProductSlabCreatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[ProductSlabUpdatedBy] AS [ProductSlabUpdatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[ProductSlabIsDeleted] AS [ProductSlabIsDeleted], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageID] AS [MortgageID], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageDOB] AS [MortgageDOB], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageAge] AS [MortgageAge], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageEmplomentStatus] AS [MortgageEmplomentStatus], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageGeneratedDate] AS [MortgageGeneratedDate], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgagePeriod] AS [MortgagePeriod], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgagePropertyValue] AS [MortgagePropertyValue], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgagePropertyLocation] AS [MortgagePropertyLocation], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageCreditHistory] AS [MortgageCreditHistory], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageLoanValue] AS [MortgageLoanValue], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageCurrentDebt] AS [MortgageCurrentDebt], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageAnnualIncome] AS [MortgageAnnualIncome], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgagePropertyType] AS [MortgagePropertyType], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageMissAnyLoan] AS [MortgageMissAnyLoan], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageHadBankruptcy] AS [MortgageHadBankruptcy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageHadCCJ] AS [MortgageHadCCJ], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageAppliedIva] AS [MortgageAppliedIva], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageRateType] AS [MortgageRateType], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageRepaymentType] AS [MortgageRepaymentType], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LTV] AS [LTV], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageIsAdverseCredit] AS [MortgageIsAdverseCredit], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageCreatedOn] AS [MortgageCreatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageUpdatedOn] AS [MortgageUpdatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageCreatedBy] AS [MortgageCreatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageUpdatedBy] AS [MortgageUpdatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[MortgageIsLeadDeleted] AS [MortgageIsLeadDeleted], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[HealthID] AS [HealthID], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[HealthDOB] AS [HealthDOB], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[HealthAge] AS [HealthAge], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[HealthPeriod] AS [HealthPeriod], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[HealthPremiumType] AS [HealthPremiumType], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[HealthInsuranceTypeId] AS [HealthInsuranceTypeId], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[HealthFamilyMember] AS [HealthFamilyMember], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[HealthIsSmoker] AS [HealthIsSmoker], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[HealthPartnerGender] AS [HealthPartnerGender], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[HealthPremiumAmount] AS [HealthPremiumAmount], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[HealthCoverTypeHealth] AS [HealthCoverTypeHealth], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[HealthGeneratedDate] AS [HealthGeneratedDate], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[HealthCreatedOn] AS [HealthCreatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[HealthUpdatedOn] AS [HealthUpdatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[HealthCreatedBy] AS [HealthCreatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[HealthUpdatedBy] AS [HealthUpdatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[HealthDeleteStatus] AS [HealthDeleteStatus], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PensionID] AS [PensionID], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PensionGeneratedDate] AS [PensionGeneratedDate], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PensionAge] AS [PensionAge], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PensionDOB] AS [PensionDOB], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PersonalPensionType] AS [PersonalPensionType], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PensionPremiumType] AS [PensionPremiumType], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PensionValue] AS [PensionValue], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PensionType] AS [PensionType], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PensionAccessFund] AS [PensionAccessFund], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PensionExistPensions] AS [PensionExistPensions], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PensionTypeOther] AS [PensionTypeOther], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PensionIsCurrentlyPayingMoney] AS [PensionIsCurrentlyPayingMoney], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PensionCreatedOn] AS [PensionCreatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PensionUpdatedOn] AS [PensionUpdatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PensionTotalPensionValue] AS [PensionTotalPensionValue], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PensionCreatedBy] AS [PensionCreatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PensionUpdatedBy] AS [PensionUpdatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[PensionDeleteStatus] AS [PensionDeleteStatus], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LifeID] AS [LifeID], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LifeAge] AS [LifeAge], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LifeDob] AS [LifeDob], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LifeSingleOwnership] AS [LifeSingleOwnership], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LifePeriod] AS [LifePeriod], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LifeCreatedOn] AS [LifeCreatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LifeUpdatedOn] AS [LifeUpdatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LifeGeneratedDate] AS [LifeGeneratedDate], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LifeProductType] AS [LifeProductType], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LifePartnersName] AS [LifePartnersName], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LifeAdditionalInformation] AS [LifeAdditionalInformation], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LifePartnerSmoker] AS [LifePartnerSmoker], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LifeIsSmoker] AS [LifeIsSmoker], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LifePremiumType] AS [LifePremiumType], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LifeInsuranceType] AS [LifeInsuranceType], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LifeAmount] AS [LifeAmount], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LifePartnerDob] AS [LifePartnerDob], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LifeCreatedBy] AS [LifeCreatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LifeUpdatedBy] AS [LifeUpdatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LifeIsDeleted] AS [LifeIsDeleted], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[DebtID] AS [DebtID], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[DebtEmploymentStatus] AS [DebtEmploymentStatus], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[DebtLeadsResidentialStatus] AS [DebtLeadsResidentialStatus], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[DebtType] AS [DebtType], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[DebtHadCCJ] AS [DebtHadCCJ], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[DebtTotalUnsecuredDebt] AS [DebtTotalUnsecuredDebt], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[DebtTotalCreditors] AS [DebtTotalCreditors], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[DebtMonthlyRepayments] AS [DebtMonthlyRepayments], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[DebtMonthlyIncome] AS [DebtMonthlyIncome], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[DebtAge] AS [DebtAge], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[DebtDob] AS [DebtDob], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[DebtGeneratedDate] AS [DebtGeneratedDate], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[DebtCreatedOn] AS [DebtCreatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[DebtUpdatedOn] AS [DebtUpdatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[DebtCreatedBy] AS [DebtCreatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[DebtUpdatedBy] AS [DebtUpdatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[DebtCategory] AS [DebtCategory], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[DeptTypes] AS [DeptTypes], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[DebtIsDeleted] AS [DebtIsDeleted], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[AsuID] AS [AsuID], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[AsuAge] AS [AsuAge], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[AsuDob] AS [AsuDob], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[AsuPeriod] AS [AsuPeriod], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[AsuSmoker] AS [AsuSmoker], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[AsuAmount] AS [AsuAmount], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[AsuGeneratedDate] AS [AsuGeneratedDate], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[AsuCreatedOn] AS [AsuCreatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[AsuUpdatedOn] AS [AsuUpdatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[AsuAdditionalInformation] AS [AsuAdditionalInformation], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[AsuCreatedBy] AS [AsuCreatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[AsuUpdatedBy] AS [AsuUpdatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[AsuIsDeleted] AS [AsuIsDeleted], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[AsuCoverType] AS [AsuCoverType], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[AsuCoverFromType] AS [AsuCoverFromType], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[AsuIPASUEmploymentStatus] AS [AsuIPASUEmploymentStatus], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[AsuPremiumType] AS [AsuPremiumType], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[FuneralID] AS [FuneralID], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[FuneralAge] AS [FuneralAge], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[FuneralDob] AS [FuneralDob], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[FuneralGeneratedDate] AS [FuneralGeneratedDate], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[FuneralCreatedOn] AS [FuneralCreatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[FuneralUpdatedOn] AS [FuneralUpdatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[FuneralCreatedBy] AS [FuneralCreatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[FuneralUpdatedBy] AS [FuneralUpdatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[FuneralIsDeleted] AS [FuneralIsDeleted], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[EquityreleaseID] AS [EquityreleaseID], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[EquityreleaseAge] AS [EquityreleaseAge], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[EquityreleaseDob] AS [EquityreleaseDob], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[EquityreleaseHomeValue] AS [EquityreleaseHomeValue], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[EquityreleaseOutstandingMortgageValue] AS [EquityreleaseOutstandingMortgageValue], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[EquityreleaseAgeType] AS [EquityreleaseAgeType], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[EquityreleaseEquityType] AS [EquityreleaseEquityType], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[EquityreleaseGeneratedDate] AS [EquityreleaseGeneratedDate], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[EquityreleaseCreatedOn] AS [EquityreleaseCreatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[EquityreleaseUpdatedOn] AS [EquityreleaseUpdatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[EquityreleaseCreatedBy] AS [EquityreleaseCreatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[EquityreleaseUpdatedBy] AS [EquityreleaseUpdatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[EquityreleaseIsDeleted] AS [EquityreleaseIsDeleted], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[loanID] AS [loanID], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanDob] AS [LoanDob], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanAge] AS [LoanAge], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanPurpose] AS [LoanPurpose], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanPreviousAddressSince] AS [LoanPreviousAddressSince], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanPreviousAddress] AS [LoanPreviousAddress], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanPreviousPostCode] AS [LoanPreviousPostCode], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanPreviousCity] AS [LoanPreviousCity], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanEmployerName] AS [LoanEmployerName], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanEmployerSince] AS [LoanEmployerSince], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanOccupation] AS [LoanOccupation], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanBeenInDebt] AS [LoanBeenInDebt], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanGurantor] AS [LoanGurantor], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanGeneratedDate] AS [LoanGeneratedDate], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanTotalCreditors] AS [LoanTotalCreditors], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanGuarantorName] AS [LoanGuarantorName], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanGuarantorPhone] AS [LoanGuarantorPhone], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanGuarantorEmail] AS [LoanGuarantorEmail], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanPeriod] AS [LoanPeriod], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanEmploymentStatus] AS [LoanEmploymentStatus], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanMortgageLoanValue] AS [LoanMortgageLoanValue], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanCreditRating] AS [LoanCreditRating], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanAnnualIncome] AS [LoanAnnualIncome], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanCountryOfResidence] AS [LoanCountryOfResidence], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanMaritalStatus] AS [LoanMaritalStatus], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanMortgageBalance] AS [LoanMortgageBalance], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanPropertyValue] AS [LoanPropertyValue], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanAddressStartDate] AS [LoanAddressStartDate], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[loanHomeOwner] AS [loanHomeOwner], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanHadBankruptcy] AS [LoanHadBankruptcy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanCreatedOn] AS [LoanCreatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanUpdatedOn] AS [LoanUpdatedOn], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanCreatedBy] AS [LoanCreatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanUpdatedBy] AS [LoanUpdatedBy], 
+    [ILDS_SEARCH_DASHBOARD_ALLDATA].[LoanDeleteStatus] AS [LoanDeleteStatus]
+    FROM [dbo].[ILDS_SEARCH_DASHBOARD_ALLDATA] AS [ILDS_SEARCH_DASHBOARD_ALLDATA]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_ASULeads_CommonLeads" Association="Self.FK_ASULeads_CommonLeads">
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+      <End Role="ASULeads" EntitySet="ASULeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASULeads_UserMasters" Association="Self.FK_ASULeads_UserMasters">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="ASULeads" EntitySet="ASULeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommonLeads_BuyerMasters" Association="Self.FK_CommonLeads_BuyerMasters">
+      <End Role="BuyerMasters" EntitySet="BuyerMasters" />
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommonLeads_OrganizationMasters" Association="Self.FK_CommonLeads_OrganizationMasters">
+      <End Role="OrganizationMasters" EntitySet="OrganizationMasters" />
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommonLeads_ProductMasters" Association="Self.FK_CommonLeads_ProductMasters">
+      <End Role="ProductMasters" EntitySet="ProductMasters" />
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommonLeads_UserMasters" Association="Self.FK_CommonLeads_UserMasters">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommonLeads_WebsiteMasters" Association="Self.FK_CommonLeads_WebsiteMasters">
+      <End Role="WebsiteMasters" EntitySet="WebsiteMasters" />
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CorporateHealthLeads_CommonLeads" Association="Self.FK_CorporateHealthLeads_CommonLeads">
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+      <End Role="CorporateHealthLeads" EntitySet="CorporateHealthLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CorporateHealthLeads_UserMasters" Association="Self.FK_CorporateHealthLeads_UserMasters">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="CorporateHealthLeads" EntitySet="CorporateHealthLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_BuyerMasters_dbo_UserMasters_CreatedBy" Association="Self.FK_dbo_BuyerMasters_dbo_UserMasters_CreatedBy">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="BuyerMasters" EntitySet="BuyerMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_BuyerProductSchedules_dbo_BuyerMasters_BuyerMasterId" Association="Self.FK_dbo_BuyerProductSchedules_dbo_BuyerMasters_BuyerMasterId">
+      <End Role="BuyerMasters" EntitySet="BuyerMasters" />
+      <End Role="BuyerProductSchedules" EntitySet="BuyerProductSchedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_BuyerProductSchedules_dbo_ProductMasters_ProductMasterId" Association="Self.FK_dbo_BuyerProductSchedules_dbo_ProductMasters_ProductMasterId">
+      <End Role="ProductMasters" EntitySet="ProductMasters" />
+      <End Role="BuyerProductSchedules" EntitySet="BuyerProductSchedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_BuyerProductSchedules_dbo_UserMasters_CreatedBy" Association="Self.FK_dbo_BuyerProductSchedules_dbo_UserMasters_CreatedBy">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="BuyerProductSchedules" EntitySet="BuyerProductSchedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_MortgageLeads_dbo_UserMasters_CreatedBy" Association="Self.FK_dbo_MortgageLeads_dbo_UserMasters_CreatedBy">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="MortgageLeads" EntitySet="MortgageLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ProductMasters_dbo_UserMasters_CreatedBy" Association="Self.FK_dbo_ProductMasters_dbo_UserMasters_CreatedBy">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="ProductMasters" EntitySet="ProductMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ProductSlabs_dbo_ProductMasters_ProductMasterId" Association="Self.FK_dbo_ProductSlabs_dbo_ProductMasters_ProductMasterId">
+      <End Role="ProductMasters" EntitySet="ProductMasters" />
+      <End Role="ProductSlabs" EntitySet="ProductSlabs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ProductSlabs_dbo_UserMasters_CreatedBy" Association="Self.FK_dbo_ProductSlabs_dbo_UserMasters_CreatedBy">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="ProductSlabs" EntitySet="ProductSlabs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_WebsiteMasters_dbo_UserMasters_CreatedBy" Association="Self.FK_dbo_WebsiteMasters_dbo_UserMasters_CreatedBy">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="WebsiteMasters" EntitySet="WebsiteMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DebtLeads_CommonLeads" Association="Self.FK_DebtLeads_CommonLeads">
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+      <End Role="DebtLeads" EntitySet="DebtLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DebtLeads_UserMasters" Association="Self.FK_DebtLeads_UserMasters">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="DebtLeads" EntitySet="DebtLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EquityReleaseLeads_CommonLeads" Association="Self.FK_EquityReleaseLeads_CommonLeads">
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+      <End Role="EquityReleaseLeads" EntitySet="EquityReleaseLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EquityReleaseLeads_UserMasters" Association="Self.FK_EquityReleaseLeads_UserMasters">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="EquityReleaseLeads" EntitySet="EquityReleaseLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HealthLeads_CommonLeads" Association="Self.FK_HealthLeads_CommonLeads">
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+      <End Role="HealthLeads" EntitySet="HealthLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HealthLeads_UserMasters" Association="Self.FK_HealthLeads_UserMasters">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="HealthLeads" EntitySet="HealthLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LifeLeads_CommonLeads" Association="Self.FK_LifeLeads_CommonLeads">
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+      <End Role="LifeLeads" EntitySet="LifeLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LifeLeads_UserMasters" Association="Self.FK_LifeLeads_UserMasters">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="LifeLeads" EntitySet="LifeLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoanLeads_CommonLeads" Association="Self.FK_LoanLeads_CommonLeads">
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+      <End Role="LoanLeads" EntitySet="LoanLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoanLeads_UserMasters" Association="Self.FK_LoanLeads_UserMasters">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="LoanLeads" EntitySet="LoanLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MortgageLeads_CommonLeads" Association="Self.FK_MortgageLeads_CommonLeads">
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+      <End Role="MortgageLeads" EntitySet="MortgageLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PensionLeads_CommonLeads" Association="Self.FK_PensionLeads_CommonLeads">
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+      <End Role="PensionLeads" EntitySet="PensionLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PensionLeads_UserMasters" Association="Self.FK_PensionLeads_UserMasters">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="PensionLeads" EntitySet="PensionLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PrepaidFuneralLeads_PrepaidFuneralLeads" Association="Self.FK_PrepaidFuneralLeads_PrepaidFuneralLeads">
+      <End Role="CommonLeads" EntitySet="CommonLeads" />
+      <End Role="PrepaidFuneralLeads" EntitySet="PrepaidFuneralLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransferLogs_BuyerMasters" Association="Self.FK_TransferLogs_BuyerMasters">
+      <End Role="BuyerMasters" EntitySet="BuyerMasters" />
+      <End Role="TransferLogs" EntitySet="TransferLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransferLogs_ProductSlabs" Association="Self.FK_TransferLogs_ProductSlabs">
+      <End Role="ProductSlabs" EntitySet="ProductSlabs" />
+      <End Role="TransferLogs" EntitySet="TransferLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransferLogs_UserMasters" Association="Self.FK_TransferLogs_UserMasters">
+      <End Role="UserMasters" EntitySet="UserMasters" />
+      <End Role="TransferLogs" EntitySet="TransferLogs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

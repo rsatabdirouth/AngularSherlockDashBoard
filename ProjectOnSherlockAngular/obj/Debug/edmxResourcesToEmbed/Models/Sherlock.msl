@@ -1,0 +1,1049 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SatabdiModelStoreContainer" CdmEntityContainer="SatabdiEntities">
+    <EntitySetMapping Name="ASULeads">
+      <EntityTypeMapping TypeName="SatabdiModel.ASULead">
+        <MappingFragment StoreEntitySet="ASULeads">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LeadId" ColumnName="LeadId" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Dob" ColumnName="Dob" />
+          <ScalarProperty Name="Smoker" ColumnName="Smoker" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="GeneratedDate" ColumnName="GeneratedDate" />
+          <ScalarProperty Name="PremiumType" ColumnName="PremiumType" />
+          <ScalarProperty Name="CoverType" ColumnName="CoverType" />
+          <ScalarProperty Name="CoverFormType" ColumnName="CoverFormType" />
+          <ScalarProperty Name="IPASUEmploymentStatus" ColumnName="IPASUEmploymentStatus" />
+          <ScalarProperty Name="AdditionalInformation" ColumnName="AdditionalInformation" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BuyerMasters">
+      <EntityTypeMapping TypeName="SatabdiModel.BuyerMaster">
+        <MappingFragment StoreEntitySet="BuyerMasters">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BuyerName" ColumnName="BuyerName" />
+          <ScalarProperty Name="BuyerAddress" ColumnName="BuyerAddress" />
+          <ScalarProperty Name="BuyerPincode" ColumnName="BuyerPincode" />
+          <ScalarProperty Name="BuyerPocName" ColumnName="BuyerPocName" />
+          <ScalarProperty Name="BuyerContactNumber" ColumnName="BuyerContactNumber" />
+          <ScalarProperty Name="BuyerPocContactNumber" ColumnName="BuyerPocContactNumber" />
+          <ScalarProperty Name="BuyerType" ColumnName="BuyerType" />
+          <ScalarProperty Name="IcoNo" ColumnName="IcoNo" />
+          <ScalarProperty Name="BuyerEmail" ColumnName="BuyerEmail" />
+          <ScalarProperty Name="FcaNo" ColumnName="FcaNo" />
+          <ScalarProperty Name="IcoExpDate" ColumnName="IcoExpDate" />
+          <ScalarProperty Name="CompanyRegistrationNo" ColumnName="CompanyRegistrationNo" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="IsSendNotifyMail" ColumnName="IsSendNotifyMail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BuyerProductSchedules">
+      <EntityTypeMapping TypeName="SatabdiModel.BuyerProductSchedule">
+        <MappingFragment StoreEntitySet="BuyerProductSchedules">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BuyerMasterId" ColumnName="BuyerMasterId" />
+          <ScalarProperty Name="ProductMasterId" ColumnName="ProductMasterId" />
+          <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
+          <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
+          <ScalarProperty Name="ActiveState" ColumnName="ActiveState" />
+          <ScalarProperty Name="Demand" ColumnName="Demand" />
+          <ScalarProperty Name="TimePeriod" ColumnName="TimePeriod" />
+          <ScalarProperty Name="DailyDemand" ColumnName="DailyDemand" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommonLeads">
+      <EntityTypeMapping TypeName="SatabdiModel.CommonLead">
+        <MappingFragment StoreEntitySet="CommonLeads">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+          <ScalarProperty Name="Homephone" ColumnName="Homephone" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="WebsiteMasterId" ColumnName="WebsiteMasterId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductMasterId" ColumnName="ProductMasterId" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="MatchType" ColumnName="MatchType" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="LeadStatus" ColumnName="LeadStatus" />
+          <ScalarProperty Name="DNC" ColumnName="DNC" />
+          <ScalarProperty Name="SourceUid" ColumnName="SourceUid" />
+          <ScalarProperty Name="PostcodeOutWard" ColumnName="PostcodeOutWard" />
+          <ScalarProperty Name="PostcodeInWard" ColumnName="PostcodeInWard" />
+          <ScalarProperty Name="OrganizationMasterId" ColumnName="OrganizationMasterId" />
+          <ScalarProperty Name="OperatorName" ColumnName="OperatorName" />
+          <ScalarProperty Name="ContactTime" ColumnName="ContactTime" />
+          <ScalarProperty Name="LeadCategory" ColumnName="LeadCategory" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="OrganizationHashCode" ColumnName="OrganizationHashCode" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="BuyerMaster_ID" ColumnName="BuyerMaster_ID" />
+          <ScalarProperty Name="OperatorSpecificComments" ColumnName="OperatorSpecificComments" />
+          <ScalarProperty Name="LeadType" ColumnName="LeadType" />
+          <ScalarProperty Name="Opt" ColumnName="Opt" />
+          <ScalarProperty Name="LeadComment" ColumnName="LeadComment" />
+          <ScalarProperty Name="NotifyPrice" ColumnName="NotifyPrice" />
+          <ScalarProperty Name="AdditionalInformation" ColumnName="AdditionalInformation" />
+          <ScalarProperty Name="UserAgent" ColumnName="UserAgent" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CorporateHealthLeads">
+      <EntityTypeMapping TypeName="SatabdiModel.CorporateHealthLead">
+        <MappingFragment StoreEntitySet="CorporateHealthLeads">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LeadId" ColumnName="LeadId" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="GeneratedDate" ColumnName="GeneratedDate" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Dob" ColumnName="Dob" />
+          <ScalarProperty Name="AgeType" ColumnName="AgeType" />
+          <ScalarProperty Name="EquityType" ColumnName="EquityType" />
+          <ScalarProperty Name="HomeValue" ColumnName="HomeValue" />
+          <ScalarProperty Name="OutstandingMortgageValue" ColumnName="OutstandingMortgageValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DebtLeads">
+      <EntityTypeMapping TypeName="SatabdiModel.DebtLead">
+        <MappingFragment StoreEntitySet="DebtLeads">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LeadId" ColumnName="LeadId" />
+          <ScalarProperty Name="DebtEmploymentStatus" ColumnName="DebtEmploymentStatus" />
+          <ScalarProperty Name="ResidentialStatus" ColumnName="ResidentialStatus" />
+          <ScalarProperty Name="HadCcj" ColumnName="HadCcj" />
+          <ScalarProperty Name="DebtType" ColumnName="DebtType" />
+          <ScalarProperty Name="TotalUnsecuredDebt" ColumnName="TotalUnsecuredDebt" />
+          <ScalarProperty Name="TotalCreditors" ColumnName="TotalCreditors" />
+          <ScalarProperty Name="MonthlyRepayments" ColumnName="MonthlyRepayments" />
+          <ScalarProperty Name="MonthlyIncome" ColumnName="MonthlyIncome" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Dob" ColumnName="Dob" />
+          <ScalarProperty Name="GeneratedDate" ColumnName="GeneratedDate" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DebtCategory" ColumnName="DebtCategory" />
+          <ScalarProperty Name="DebtTypes" ColumnName="DebtTypes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EquityReleaseLeads">
+      <EntityTypeMapping TypeName="SatabdiModel.EquityReleaseLead">
+        <MappingFragment StoreEntitySet="EquityReleaseLeads">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LeadId" ColumnName="LeadId" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Dob" ColumnName="Dob" />
+          <ScalarProperty Name="HomeValue" ColumnName="HomeValue" />
+          <ScalarProperty Name="OutstandingMortgageValue" ColumnName="OutstandingMortgageValue" />
+          <ScalarProperty Name="AgeType" ColumnName="AgeType" />
+          <ScalarProperty Name="EquityType" ColumnName="EquityType" />
+          <ScalarProperty Name="GeneratedDate" ColumnName="GeneratedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HealthLeads">
+      <EntityTypeMapping TypeName="SatabdiModel.HealthLead">
+        <MappingFragment StoreEntitySet="HealthLeads">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LeadId" ColumnName="LeadId" />
+          <ScalarProperty Name="Dob" ColumnName="Dob" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="PremiumtypeId" ColumnName="PremiumtypeId" />
+          <ScalarProperty Name="InsuranceTypeid" ColumnName="InsuranceTypeid" />
+          <ScalarProperty Name="FamilyMember" ColumnName="FamilyMember" />
+          <ScalarProperty Name="Smoker" ColumnName="Smoker" />
+          <ScalarProperty Name="PartnerGender" ColumnName="PartnerGender" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CoverTypeHealth" ColumnName="CoverTypeHealth" />
+          <ScalarProperty Name="GeneratedDate" ColumnName="GeneratedDate" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeadStatusByNames">
+      <EntityTypeMapping TypeName="SatabdiModel.LeadStatusByName">
+        <MappingFragment StoreEntitySet="LeadStatusByName">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LeadStatusName" ColumnName="LeadStatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LifeLeads">
+      <EntityTypeMapping TypeName="SatabdiModel.LifeLead">
+        <MappingFragment StoreEntitySet="LifeLeads">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LeadId" ColumnName="LeadId" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Dob" ColumnName="Dob" />
+          <ScalarProperty Name="Single" ColumnName="Single" />
+          <ScalarProperty Name="Smoker" ColumnName="Smoker" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="PremiumType" ColumnName="PremiumType" />
+          <ScalarProperty Name="InsuranceType" ColumnName="InsuranceType" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="GeneratedDate" ColumnName="GeneratedDate" />
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="PartnerTitle" ColumnName="PartnerTitle" />
+          <ScalarProperty Name="PartnerFirstName" ColumnName="PartnerFirstName" />
+          <ScalarProperty Name="PartnerLastName" ColumnName="PartnerLastName" />
+          <ScalarProperty Name="PartnerSmoker" ColumnName="PartnerSmoker" />
+          <ScalarProperty Name="PartnerDob" ColumnName="PartnerDob" />
+          <ScalarProperty Name="AdditionalInformation" ColumnName="AdditionalInformation" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoanLeads">
+      <EntityTypeMapping TypeName="SatabdiModel.LoanLead">
+        <MappingFragment StoreEntitySet="LoanLeads">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LeadId" ColumnName="LeadId" />
+          <ScalarProperty Name="Dob" ColumnName="Dob" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="LoanPurpose" ColumnName="LoanPurpose" />
+          <ScalarProperty Name="PreviousAddressSince" ColumnName="PreviousAddressSince" />
+          <ScalarProperty Name="PreviousPostCode" ColumnName="PreviousPostCode" />
+          <ScalarProperty Name="PreviousCity" ColumnName="PreviousCity" />
+          <ScalarProperty Name="PreviousAddress" ColumnName="PreviousAddress" />
+          <ScalarProperty Name="EmployerName" ColumnName="EmployerName" />
+          <ScalarProperty Name="EmployedSince" ColumnName="EmployedSince" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="BeenInDebt" ColumnName="BeenInDebt" />
+          <ScalarProperty Name="LoanGurantor" ColumnName="LoanGurantor" />
+          <ScalarProperty Name="TotalCreditors" ColumnName="TotalCreditors" />
+          <ScalarProperty Name="GeneratedDate" ColumnName="GeneratedDate" />
+          <ScalarProperty Name="GurantorName" ColumnName="GurantorName" />
+          <ScalarProperty Name="GurantorPhone" ColumnName="GurantorPhone" />
+          <ScalarProperty Name="GurantorEmail" ColumnName="GurantorEmail" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="LoanEmploymentStatus" ColumnName="LoanEmploymentStatus" />
+          <ScalarProperty Name="LoanCreditRating" ColumnName="LoanCreditRating" />
+          <ScalarProperty Name="LoanAnnualIncome" ColumnName="LoanAnnualIncome" />
+          <ScalarProperty Name="LoanCountryOfResidence" ColumnName="LoanCountryOfResidence" />
+          <ScalarProperty Name="LoanMaritalStatus" ColumnName="LoanMaritalStatus" />
+          <ScalarProperty Name="MortgageBalance" ColumnName="MortgageBalance" />
+          <ScalarProperty Name="LoanPropertyValue" ColumnName="LoanPropertyValue" />
+          <ScalarProperty Name="HomeOwner" ColumnName="HomeOwner" />
+          <ScalarProperty Name="MortgageLoanValue" ColumnName="MortgageLoanValue" />
+          <ScalarProperty Name="AddressStartDate" ColumnName="AddressStartDate" />
+          <ScalarProperty Name="HadBankruptcy" ColumnName="HadBankruptcy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MortgageLeads">
+      <EntityTypeMapping TypeName="SatabdiModel.MortgageLead">
+        <MappingFragment StoreEntitySet="MortgageLeads">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LeadId" ColumnName="LeadId" />
+          <ScalarProperty Name="Dob" ColumnName="Dob" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="EmploymentStatus" ColumnName="EmploymentStatus" />
+          <ScalarProperty Name="GeneratedDate" ColumnName="GeneratedDate" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="PropertyValue" ColumnName="PropertyValue" />
+          <ScalarProperty Name="LoanValue" ColumnName="LoanValue" />
+          <ScalarProperty Name="CurrentDebt" ColumnName="CurrentDebt" />
+          <ScalarProperty Name="PropertyType" ColumnName="PropertyType" />
+          <ScalarProperty Name="PropertyLocation" ColumnName="PropertyLocation" />
+          <ScalarProperty Name="CreditHistory" ColumnName="CreditHistory" />
+          <ScalarProperty Name="AnnualIncome" ColumnName="AnnualIncome" />
+          <ScalarProperty Name="MissAnyLoan" ColumnName="MissAnyLoan" />
+          <ScalarProperty Name="HadBankruptcy" ColumnName="HadBankruptcy" />
+          <ScalarProperty Name="AppliedIva" ColumnName="AppliedIva" />
+          <ScalarProperty Name="HadCcj" ColumnName="HadCcj" />
+          <ScalarProperty Name="RateType" ColumnName="RateType" />
+          <ScalarProperty Name="RepaymentType" ColumnName="RepaymentType" />
+          <ScalarProperty Name="LTV" ColumnName="LTV" />
+          <ScalarProperty Name="AdverseCredit" ColumnName="AdverseCredit" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="CommonLead_ID" ColumnName="CommonLead_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrganizationMasters">
+      <EntityTypeMapping TypeName="SatabdiModel.OrganizationMaster">
+        <MappingFragment StoreEntitySet="OrganizationMasters">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OrganizationName" ColumnName="OrganizationName" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="OrganizationHashCode" ColumnName="OrganizationHashCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PensionLeads">
+      <EntityTypeMapping TypeName="SatabdiModel.PensionLead">
+        <MappingFragment StoreEntitySet="PensionLeads">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LeadId" ColumnName="LeadId" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="GeneratedDate" ColumnName="GeneratedDate" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Dob" ColumnName="Dob" />
+          <ScalarProperty Name="PersonalPensionType" ColumnName="PersonalPensionType" />
+          <ScalarProperty Name="PensionPremiumType" ColumnName="PensionPremiumType" />
+          <ScalarProperty Name="Pensionvalue" ColumnName="Pensionvalue" />
+          <ScalarProperty Name="Pensiontype" ColumnName="Pensiontype" />
+          <ScalarProperty Name="PensionAccessFund" ColumnName="PensionAccessFund" />
+          <ScalarProperty Name="ExistPensions" ColumnName="ExistPensions" />
+          <ScalarProperty Name="PensionTypeOther" ColumnName="PensionTypeOther" />
+          <ScalarProperty Name="IsCurrentlyPayingMoney" ColumnName="IsCurrentlyPayingMoney" />
+          <ScalarProperty Name="TotalPensionValue" ColumnName="TotalPensionValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrepaidFuneralLeads">
+      <EntityTypeMapping TypeName="SatabdiModel.PrepaidFuneralLead">
+        <MappingFragment StoreEntitySet="PrepaidFuneralLeads">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LeadId" ColumnName="LeadId" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Dob" ColumnName="Dob" />
+          <ScalarProperty Name="GeneratedDate" ColumnName="GeneratedDate" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductMasters">
+      <EntityTypeMapping TypeName="SatabdiModel.ProductMaster">
+        <MappingFragment StoreEntitySet="ProductMasters">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ParentProductId" ColumnName="ParentProductId" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="IsMultipleBuyer" ColumnName="IsMultipleBuyer" />
+          <ScalarProperty Name="State" ColumnName="State" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductSlabs">
+      <EntityTypeMapping TypeName="SatabdiModel.ProductSlab">
+        <MappingFragment StoreEntitySet="ProductSlabs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProductMasterId" ColumnName="ProductMasterId" />
+          <ScalarProperty Name="SlabName" ColumnName="SlabName" />
+          <ScalarProperty Name="BuyerSlabName" ColumnName="BuyerSlabName" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ProductFormula" ColumnName="ProductFormula" />
+          <ScalarProperty Name="CommonFormula" ColumnName="CommonFormula" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransferLogs">
+      <EntityTypeMapping TypeName="SatabdiModel.TransferLog">
+        <MappingFragment StoreEntitySet="TransferLogs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GeneratedDateTime" ColumnName="GeneratedDateTime" />
+          <ScalarProperty Name="TransferDateTime" ColumnName="TransferDateTime" />
+          <ScalarProperty Name="BuyerIntegrationTypeID" ColumnName="BuyerIntegrationTypeID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TransferredTo" ColumnName="TransferredTo" />
+          <ScalarProperty Name="ProductSlabId" ColumnName="ProductSlabId" />
+          <ScalarProperty Name="IsActualPrice" ColumnName="IsActualPrice" />
+          <ScalarProperty Name="LeadId" ColumnName="LeadId" />
+          <ScalarProperty Name="BuyerReturnLeadId" ColumnName="BuyerReturnLeadId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Return" ColumnName="Return" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="BuyerProductScheduleId" ColumnName="BuyerProductScheduleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserMasters">
+      <EntityTypeMapping TypeName="SatabdiModel.UserMaster">
+        <MappingFragment StoreEntitySet="UserMasters">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Verificationcode" ColumnName="Verificationcode" />
+          <ScalarProperty Name="EmailVerified" ColumnName="EmailVerified" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="GeneratedDateTime" ColumnName="GeneratedDateTime" />
+          <ScalarProperty Name="OrganizationMasterId" ColumnName="OrganizationMasterId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WebsiteMasters">
+      <EntityTypeMapping TypeName="SatabdiModel.WebsiteMaster">
+        <MappingFragment StoreEntitySet="WebsiteMasters">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="WebsiteAddress" ColumnName="WebsiteAddress" />
+          <ScalarProperty Name="WebsiteStatus" ColumnName="WebsiteStatus" />
+          <ScalarProperty Name="WebsiteName" ColumnName="WebsiteName" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ILDS_SEARCH_DASHBOARD_ALLDATA">
+      <EntityTypeMapping TypeName="SatabdiModel.ILDS_SEARCH_DASHBOARD_ALLDATA">
+        <MappingFragment StoreEntitySet="ILDS_SEARCH_DASHBOARD_ALLDATA">
+          <ScalarProperty Name="commonleadID" ColumnName="commonleadID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+          <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="WebsiteID" ColumnName="WebsiteID" />
+          <ScalarProperty Name="WebsiteName" ColumnName="WebsiteName" />
+          <ScalarProperty Name="WebsiteAddress" ColumnName="WebsiteAddress" />
+          <ScalarProperty Name="WebsiteStatus" ColumnName="WebsiteStatus" />
+          <ScalarProperty Name="WebsiteCreatedOn" ColumnName="WebsiteCreatedOn" />
+          <ScalarProperty Name="WebsiteUpdatedOn" ColumnName="WebsiteUpdatedOn" />
+          <ScalarProperty Name="WebsiteCreatedBy" ColumnName="WebsiteCreatedBy" />
+          <ScalarProperty Name="WebsiteUpdatedBy" ColumnName="WebsiteUpdatedBy" />
+          <ScalarProperty Name="WebsiteIsWebsiteDeleted" ColumnName="WebsiteIsWebsiteDeleted" />
+          <ScalarProperty Name="SiteCreatorCompany" ColumnName="SiteCreatorCompany" />
+          <ScalarProperty Name="SiteDeveloperCompany" ColumnName="SiteDeveloperCompany" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductMasterId" ColumnName="ProductMasterId" />
+          <ScalarProperty Name="ParentProductId" ColumnName="ParentProductId" />
+          <ScalarProperty Name="IsMultipleBuyer" ColumnName="IsMultipleBuyer" />
+          <ScalarProperty Name="ProductCreatedOn" ColumnName="ProductCreatedOn" />
+          <ScalarProperty Name="ProductUpdatedOn" ColumnName="ProductUpdatedOn" />
+          <ScalarProperty Name="ProductCreatedBy" ColumnName="ProductCreatedBy" />
+          <ScalarProperty Name="ProductUpdatedBy" ColumnName="ProductUpdatedBy" />
+          <ScalarProperty Name="ProductIsProductDeleted" ColumnName="ProductIsProductDeleted" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="MatchType" ColumnName="MatchType" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="LeadStatus" ColumnName="LeadStatus" />
+          <ScalarProperty Name="DNC" ColumnName="DNC" />
+          <ScalarProperty Name="SourceUid" ColumnName="SourceUid" />
+          <ScalarProperty Name="PostcodeOutWard" ColumnName="PostcodeOutWard" />
+          <ScalarProperty Name="PostcodeInWard" ColumnName="PostcodeInWard" />
+          <ScalarProperty Name="OrganizationMasterId" ColumnName="OrganizationMasterId" />
+          <ScalarProperty Name="OrganizationName" ColumnName="OrganizationName" />
+          <ScalarProperty Name="OrganizationHashCode" ColumnName="OrganizationHashCode" />
+          <ScalarProperty Name="OperatorName" ColumnName="OperatorName" />
+          <ScalarProperty Name="ContactTime" ColumnName="ContactTime" />
+          <ScalarProperty Name="LeadCategory" ColumnName="LeadCategory" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="OperatorSpecificComments" ColumnName="OperatorSpecificComments" />
+          <ScalarProperty Name="LeadType" ColumnName="LeadType" />
+          <ScalarProperty Name="Opt" ColumnName="Opt" />
+          <ScalarProperty Name="LeadComment" ColumnName="LeadComment" />
+          <ScalarProperty Name="NotifyPrice" ColumnName="NotifyPrice" />
+          <ScalarProperty Name="AdditionalInformation" ColumnName="AdditionalInformation" />
+          <ScalarProperty Name="UserAgent" ColumnName="UserAgent" />
+          <ScalarProperty Name="TransferlogID" ColumnName="TransferlogID" />
+          <ScalarProperty Name="TransferlogDescription" ColumnName="TransferlogDescription" />
+          <ScalarProperty Name="BuyerName" ColumnName="BuyerName" />
+          <ScalarProperty Name="Transferloggeneratedon" ColumnName="Transferloggeneratedon" />
+          <ScalarProperty Name="TransferlogTransferredOn" ColumnName="TransferlogTransferredOn" />
+          <ScalarProperty Name="TransferlogUpdatedOn" ColumnName="TransferlogUpdatedOn" />
+          <ScalarProperty Name="TransferlogPrice" ColumnName="TransferlogPrice" />
+          <ScalarProperty Name="TransferlogIsActualPrice" ColumnName="TransferlogIsActualPrice" />
+          <ScalarProperty Name="TransferlogBuyerIntegrationTypeID" ColumnName="TransferlogBuyerIntegrationTypeID" />
+          <ScalarProperty Name="TransferlogUserId" ColumnName="TransferlogUserId" />
+          <ScalarProperty Name="BuyerScheduleBuyerProductScheduleId" ColumnName="BuyerScheduleBuyerProductScheduleId" />
+          <ScalarProperty Name="BuyerScheduleStartDateTime" ColumnName="BuyerScheduleStartDateTime" />
+          <ScalarProperty Name="BuyerScheduleEndDateTime" ColumnName="BuyerScheduleEndDateTime" />
+          <ScalarProperty Name="BuyerScheduleTimePeriod" ColumnName="BuyerScheduleTimePeriod" />
+          <ScalarProperty Name="BuyerScheduleActiveState" ColumnName="BuyerScheduleActiveState" />
+          <ScalarProperty Name="BuyerScheduleCreatedOn" ColumnName="BuyerScheduleCreatedOn" />
+          <ScalarProperty Name="BuyerScheduleUpdatedOn" ColumnName="BuyerScheduleUpdatedOn" />
+          <ScalarProperty Name="BuyerScheduleCreatedBy" ColumnName="BuyerScheduleCreatedBy" />
+          <ScalarProperty Name="BuyerScheduleUpdatedBy" ColumnName="BuyerScheduleUpdatedBy" />
+          <ScalarProperty Name="BuyerScheduleDemand" ColumnName="BuyerScheduleDemand" />
+          <ScalarProperty Name="BuyerScheduleDailyDemand" ColumnName="BuyerScheduleDailyDemand" />
+          <ScalarProperty Name="BuyerSchedulePaymentMode" ColumnName="BuyerSchedulePaymentMode" />
+          <ScalarProperty Name="BuyerScheduleIsBuyerDeleted" ColumnName="BuyerScheduleIsBuyerDeleted" />
+          <ScalarProperty Name="BuyerAddress" ColumnName="BuyerAddress" />
+          <ScalarProperty Name="BuyerPincode" ColumnName="BuyerPincode" />
+          <ScalarProperty Name="BuyerPocName" ColumnName="BuyerPocName" />
+          <ScalarProperty Name="BuyerContactNumber" ColumnName="BuyerContactNumber" />
+          <ScalarProperty Name="BuyerPocContactNumber" ColumnName="BuyerPocContactNumber" />
+          <ScalarProperty Name="BuyerType" ColumnName="BuyerType" />
+          <ScalarProperty Name="BuyerIcoNo" ColumnName="BuyerIcoNo" />
+          <ScalarProperty Name="BuyerEmail" ColumnName="BuyerEmail" />
+          <ScalarProperty Name="BuyerFcaNo" ColumnName="BuyerFcaNo" />
+          <ScalarProperty Name="BuyerIcoExpDate" ColumnName="BuyerIcoExpDate" />
+          <ScalarProperty Name="BuyerCompanyRegistrationNo" ColumnName="BuyerCompanyRegistrationNo" />
+          <ScalarProperty Name="BuyerCreatedOn" ColumnName="BuyerCreatedOn" />
+          <ScalarProperty Name="BuyerUpdatedOn" ColumnName="BuyerUpdatedOn" />
+          <ScalarProperty Name="BuyerCreatedBy" ColumnName="BuyerCreatedBy" />
+          <ScalarProperty Name="BuyerUpdatedBy" ColumnName="BuyerUpdatedBy" />
+          <ScalarProperty Name="BuyerIsDeleted" ColumnName="BuyerIsDeleted" />
+          <ScalarProperty Name="TransferlogProductSlabId" ColumnName="TransferlogProductSlabId" />
+          <ScalarProperty Name="ProductSlabSlabName" ColumnName="ProductSlabSlabName" />
+          <ScalarProperty Name="ProductSlabBuyerSlabName" ColumnName="ProductSlabBuyerSlabName" />
+          <ScalarProperty Name="ProductSlabProductFormula" ColumnName="ProductSlabProductFormula" />
+          <ScalarProperty Name="ProductSlabCommonFormula" ColumnName="ProductSlabCommonFormula" />
+          <ScalarProperty Name="ProductSlabCreatedOn" ColumnName="ProductSlabCreatedOn" />
+          <ScalarProperty Name="ProductSlabUpdatedOn" ColumnName="ProductSlabUpdatedOn" />
+          <ScalarProperty Name="ProductSlabCreatedBy" ColumnName="ProductSlabCreatedBy" />
+          <ScalarProperty Name="ProductSlabUpdatedBy" ColumnName="ProductSlabUpdatedBy" />
+          <ScalarProperty Name="ProductSlabIsDeleted" ColumnName="ProductSlabIsDeleted" />
+          <ScalarProperty Name="MortgageID" ColumnName="MortgageID" />
+          <ScalarProperty Name="MortgageDOB" ColumnName="MortgageDOB" />
+          <ScalarProperty Name="MortgageAge" ColumnName="MortgageAge" />
+          <ScalarProperty Name="MortgageEmplomentStatus" ColumnName="MortgageEmplomentStatus" />
+          <ScalarProperty Name="MortgageGeneratedDate" ColumnName="MortgageGeneratedDate" />
+          <ScalarProperty Name="MortgagePeriod" ColumnName="MortgagePeriod" />
+          <ScalarProperty Name="MortgagePropertyValue" ColumnName="MortgagePropertyValue" />
+          <ScalarProperty Name="MortgagePropertyLocation" ColumnName="MortgagePropertyLocation" />
+          <ScalarProperty Name="MortgageCreditHistory" ColumnName="MortgageCreditHistory" />
+          <ScalarProperty Name="MortgageLoanValue" ColumnName="MortgageLoanValue" />
+          <ScalarProperty Name="MortgageCurrentDebt" ColumnName="MortgageCurrentDebt" />
+          <ScalarProperty Name="MortgageAnnualIncome" ColumnName="MortgageAnnualIncome" />
+          <ScalarProperty Name="MortgagePropertyType" ColumnName="MortgagePropertyType" />
+          <ScalarProperty Name="MortgageMissAnyLoan" ColumnName="MortgageMissAnyLoan" />
+          <ScalarProperty Name="MortgageHadBankruptcy" ColumnName="MortgageHadBankruptcy" />
+          <ScalarProperty Name="MortgageHadCCJ" ColumnName="MortgageHadCCJ" />
+          <ScalarProperty Name="MortgageAppliedIva" ColumnName="MortgageAppliedIva" />
+          <ScalarProperty Name="MortgageRateType" ColumnName="MortgageRateType" />
+          <ScalarProperty Name="MortgageRepaymentType" ColumnName="MortgageRepaymentType" />
+          <ScalarProperty Name="LTV" ColumnName="LTV" />
+          <ScalarProperty Name="MortgageIsAdverseCredit" ColumnName="MortgageIsAdverseCredit" />
+          <ScalarProperty Name="MortgageCreatedOn" ColumnName="MortgageCreatedOn" />
+          <ScalarProperty Name="MortgageUpdatedOn" ColumnName="MortgageUpdatedOn" />
+          <ScalarProperty Name="MortgageCreatedBy" ColumnName="MortgageCreatedBy" />
+          <ScalarProperty Name="MortgageUpdatedBy" ColumnName="MortgageUpdatedBy" />
+          <ScalarProperty Name="MortgageIsLeadDeleted" ColumnName="MortgageIsLeadDeleted" />
+          <ScalarProperty Name="HealthID" ColumnName="HealthID" />
+          <ScalarProperty Name="HealthDOB" ColumnName="HealthDOB" />
+          <ScalarProperty Name="HealthAge" ColumnName="HealthAge" />
+          <ScalarProperty Name="HealthPeriod" ColumnName="HealthPeriod" />
+          <ScalarProperty Name="HealthPremiumType" ColumnName="HealthPremiumType" />
+          <ScalarProperty Name="HealthInsuranceTypeId" ColumnName="HealthInsuranceTypeId" />
+          <ScalarProperty Name="HealthFamilyMember" ColumnName="HealthFamilyMember" />
+          <ScalarProperty Name="HealthIsSmoker" ColumnName="HealthIsSmoker" />
+          <ScalarProperty Name="HealthPartnerGender" ColumnName="HealthPartnerGender" />
+          <ScalarProperty Name="HealthPremiumAmount" ColumnName="HealthPremiumAmount" />
+          <ScalarProperty Name="HealthCoverTypeHealth" ColumnName="HealthCoverTypeHealth" />
+          <ScalarProperty Name="HealthGeneratedDate" ColumnName="HealthGeneratedDate" />
+          <ScalarProperty Name="HealthCreatedOn" ColumnName="HealthCreatedOn" />
+          <ScalarProperty Name="HealthUpdatedOn" ColumnName="HealthUpdatedOn" />
+          <ScalarProperty Name="HealthCreatedBy" ColumnName="HealthCreatedBy" />
+          <ScalarProperty Name="HealthUpdatedBy" ColumnName="HealthUpdatedBy" />
+          <ScalarProperty Name="HealthDeleteStatus" ColumnName="HealthDeleteStatus" />
+          <ScalarProperty Name="PensionID" ColumnName="PensionID" />
+          <ScalarProperty Name="PensionGeneratedDate" ColumnName="PensionGeneratedDate" />
+          <ScalarProperty Name="PensionAge" ColumnName="PensionAge" />
+          <ScalarProperty Name="PensionDOB" ColumnName="PensionDOB" />
+          <ScalarProperty Name="PersonalPensionType" ColumnName="PersonalPensionType" />
+          <ScalarProperty Name="PensionPremiumType" ColumnName="PensionPremiumType" />
+          <ScalarProperty Name="PensionValue" ColumnName="PensionValue" />
+          <ScalarProperty Name="PensionType" ColumnName="PensionType" />
+          <ScalarProperty Name="PensionAccessFund" ColumnName="PensionAccessFund" />
+          <ScalarProperty Name="PensionExistPensions" ColumnName="PensionExistPensions" />
+          <ScalarProperty Name="PensionTypeOther" ColumnName="PensionTypeOther" />
+          <ScalarProperty Name="PensionIsCurrentlyPayingMoney" ColumnName="PensionIsCurrentlyPayingMoney" />
+          <ScalarProperty Name="PensionCreatedOn" ColumnName="PensionCreatedOn" />
+          <ScalarProperty Name="PensionUpdatedOn" ColumnName="PensionUpdatedOn" />
+          <ScalarProperty Name="PensionTotalPensionValue" ColumnName="PensionTotalPensionValue" />
+          <ScalarProperty Name="PensionCreatedBy" ColumnName="PensionCreatedBy" />
+          <ScalarProperty Name="PensionUpdatedBy" ColumnName="PensionUpdatedBy" />
+          <ScalarProperty Name="PensionDeleteStatus" ColumnName="PensionDeleteStatus" />
+          <ScalarProperty Name="LifeID" ColumnName="LifeID" />
+          <ScalarProperty Name="LifeAge" ColumnName="LifeAge" />
+          <ScalarProperty Name="LifeDob" ColumnName="LifeDob" />
+          <ScalarProperty Name="LifeSingleOwnership" ColumnName="LifeSingleOwnership" />
+          <ScalarProperty Name="LifePeriod" ColumnName="LifePeriod" />
+          <ScalarProperty Name="LifeCreatedOn" ColumnName="LifeCreatedOn" />
+          <ScalarProperty Name="LifeUpdatedOn" ColumnName="LifeUpdatedOn" />
+          <ScalarProperty Name="LifeGeneratedDate" ColumnName="LifeGeneratedDate" />
+          <ScalarProperty Name="LifeProductType" ColumnName="LifeProductType" />
+          <ScalarProperty Name="LifePartnersName" ColumnName="LifePartnersName" />
+          <ScalarProperty Name="LifeAdditionalInformation" ColumnName="LifeAdditionalInformation" />
+          <ScalarProperty Name="LifePartnerSmoker" ColumnName="LifePartnerSmoker" />
+          <ScalarProperty Name="LifeIsSmoker" ColumnName="LifeIsSmoker" />
+          <ScalarProperty Name="LifePremiumType" ColumnName="LifePremiumType" />
+          <ScalarProperty Name="LifeInsuranceType" ColumnName="LifeInsuranceType" />
+          <ScalarProperty Name="LifeAmount" ColumnName="LifeAmount" />
+          <ScalarProperty Name="LifePartnerDob" ColumnName="LifePartnerDob" />
+          <ScalarProperty Name="LifeCreatedBy" ColumnName="LifeCreatedBy" />
+          <ScalarProperty Name="LifeUpdatedBy" ColumnName="LifeUpdatedBy" />
+          <ScalarProperty Name="LifeIsDeleted" ColumnName="LifeIsDeleted" />
+          <ScalarProperty Name="DebtID" ColumnName="DebtID" />
+          <ScalarProperty Name="DebtEmploymentStatus" ColumnName="DebtEmploymentStatus" />
+          <ScalarProperty Name="DebtLeadsResidentialStatus" ColumnName="DebtLeadsResidentialStatus" />
+          <ScalarProperty Name="DebtType" ColumnName="DebtType" />
+          <ScalarProperty Name="DebtHadCCJ" ColumnName="DebtHadCCJ" />
+          <ScalarProperty Name="DebtTotalUnsecuredDebt" ColumnName="DebtTotalUnsecuredDebt" />
+          <ScalarProperty Name="DebtTotalCreditors" ColumnName="DebtTotalCreditors" />
+          <ScalarProperty Name="DebtMonthlyRepayments" ColumnName="DebtMonthlyRepayments" />
+          <ScalarProperty Name="DebtMonthlyIncome" ColumnName="DebtMonthlyIncome" />
+          <ScalarProperty Name="DebtAge" ColumnName="DebtAge" />
+          <ScalarProperty Name="DebtDob" ColumnName="DebtDob" />
+          <ScalarProperty Name="DebtGeneratedDate" ColumnName="DebtGeneratedDate" />
+          <ScalarProperty Name="DebtCreatedOn" ColumnName="DebtCreatedOn" />
+          <ScalarProperty Name="DebtUpdatedOn" ColumnName="DebtUpdatedOn" />
+          <ScalarProperty Name="DebtCreatedBy" ColumnName="DebtCreatedBy" />
+          <ScalarProperty Name="DebtUpdatedBy" ColumnName="DebtUpdatedBy" />
+          <ScalarProperty Name="DebtCategory" ColumnName="DebtCategory" />
+          <ScalarProperty Name="DeptTypes" ColumnName="DeptTypes" />
+          <ScalarProperty Name="DebtIsDeleted" ColumnName="DebtIsDeleted" />
+          <ScalarProperty Name="AsuID" ColumnName="AsuID" />
+          <ScalarProperty Name="AsuAge" ColumnName="AsuAge" />
+          <ScalarProperty Name="AsuDob" ColumnName="AsuDob" />
+          <ScalarProperty Name="AsuPeriod" ColumnName="AsuPeriod" />
+          <ScalarProperty Name="AsuSmoker" ColumnName="AsuSmoker" />
+          <ScalarProperty Name="AsuAmount" ColumnName="AsuAmount" />
+          <ScalarProperty Name="AsuGeneratedDate" ColumnName="AsuGeneratedDate" />
+          <ScalarProperty Name="AsuCreatedOn" ColumnName="AsuCreatedOn" />
+          <ScalarProperty Name="AsuUpdatedOn" ColumnName="AsuUpdatedOn" />
+          <ScalarProperty Name="AsuAdditionalInformation" ColumnName="AsuAdditionalInformation" />
+          <ScalarProperty Name="AsuCreatedBy" ColumnName="AsuCreatedBy" />
+          <ScalarProperty Name="AsuUpdatedBy" ColumnName="AsuUpdatedBy" />
+          <ScalarProperty Name="AsuIsDeleted" ColumnName="AsuIsDeleted" />
+          <ScalarProperty Name="AsuCoverType" ColumnName="AsuCoverType" />
+          <ScalarProperty Name="AsuCoverFromType" ColumnName="AsuCoverFromType" />
+          <ScalarProperty Name="AsuIPASUEmploymentStatus" ColumnName="AsuIPASUEmploymentStatus" />
+          <ScalarProperty Name="AsuPremiumType" ColumnName="AsuPremiumType" />
+          <ScalarProperty Name="FuneralID" ColumnName="FuneralID" />
+          <ScalarProperty Name="FuneralAge" ColumnName="FuneralAge" />
+          <ScalarProperty Name="FuneralDob" ColumnName="FuneralDob" />
+          <ScalarProperty Name="FuneralGeneratedDate" ColumnName="FuneralGeneratedDate" />
+          <ScalarProperty Name="FuneralCreatedOn" ColumnName="FuneralCreatedOn" />
+          <ScalarProperty Name="FuneralUpdatedOn" ColumnName="FuneralUpdatedOn" />
+          <ScalarProperty Name="FuneralCreatedBy" ColumnName="FuneralCreatedBy" />
+          <ScalarProperty Name="FuneralUpdatedBy" ColumnName="FuneralUpdatedBy" />
+          <ScalarProperty Name="FuneralIsDeleted" ColumnName="FuneralIsDeleted" />
+          <ScalarProperty Name="EquityreleaseID" ColumnName="EquityreleaseID" />
+          <ScalarProperty Name="EquityreleaseAge" ColumnName="EquityreleaseAge" />
+          <ScalarProperty Name="EquityreleaseDob" ColumnName="EquityreleaseDob" />
+          <ScalarProperty Name="EquityreleaseHomeValue" ColumnName="EquityreleaseHomeValue" />
+          <ScalarProperty Name="EquityreleaseOutstandingMortgageValue" ColumnName="EquityreleaseOutstandingMortgageValue" />
+          <ScalarProperty Name="EquityreleaseAgeType" ColumnName="EquityreleaseAgeType" />
+          <ScalarProperty Name="EquityreleaseEquityType" ColumnName="EquityreleaseEquityType" />
+          <ScalarProperty Name="EquityreleaseGeneratedDate" ColumnName="EquityreleaseGeneratedDate" />
+          <ScalarProperty Name="EquityreleaseCreatedOn" ColumnName="EquityreleaseCreatedOn" />
+          <ScalarProperty Name="EquityreleaseUpdatedOn" ColumnName="EquityreleaseUpdatedOn" />
+          <ScalarProperty Name="EquityreleaseCreatedBy" ColumnName="EquityreleaseCreatedBy" />
+          <ScalarProperty Name="EquityreleaseUpdatedBy" ColumnName="EquityreleaseUpdatedBy" />
+          <ScalarProperty Name="EquityreleaseIsDeleted" ColumnName="EquityreleaseIsDeleted" />
+          <ScalarProperty Name="loanID" ColumnName="loanID" />
+          <ScalarProperty Name="LoanDob" ColumnName="LoanDob" />
+          <ScalarProperty Name="LoanAge" ColumnName="LoanAge" />
+          <ScalarProperty Name="LoanPurpose" ColumnName="LoanPurpose" />
+          <ScalarProperty Name="LoanPreviousAddressSince" ColumnName="LoanPreviousAddressSince" />
+          <ScalarProperty Name="LoanPreviousAddress" ColumnName="LoanPreviousAddress" />
+          <ScalarProperty Name="LoanPreviousPostCode" ColumnName="LoanPreviousPostCode" />
+          <ScalarProperty Name="LoanPreviousCity" ColumnName="LoanPreviousCity" />
+          <ScalarProperty Name="LoanEmployerName" ColumnName="LoanEmployerName" />
+          <ScalarProperty Name="LoanEmployerSince" ColumnName="LoanEmployerSince" />
+          <ScalarProperty Name="LoanOccupation" ColumnName="LoanOccupation" />
+          <ScalarProperty Name="LoanBeenInDebt" ColumnName="LoanBeenInDebt" />
+          <ScalarProperty Name="LoanGurantor" ColumnName="LoanGurantor" />
+          <ScalarProperty Name="LoanGeneratedDate" ColumnName="LoanGeneratedDate" />
+          <ScalarProperty Name="LoanTotalCreditors" ColumnName="LoanTotalCreditors" />
+          <ScalarProperty Name="LoanGuarantorName" ColumnName="LoanGuarantorName" />
+          <ScalarProperty Name="LoanGuarantorPhone" ColumnName="LoanGuarantorPhone" />
+          <ScalarProperty Name="LoanGuarantorEmail" ColumnName="LoanGuarantorEmail" />
+          <ScalarProperty Name="LoanPeriod" ColumnName="LoanPeriod" />
+          <ScalarProperty Name="LoanEmploymentStatus" ColumnName="LoanEmploymentStatus" />
+          <ScalarProperty Name="LoanMortgageLoanValue" ColumnName="LoanMortgageLoanValue" />
+          <ScalarProperty Name="LoanCreditRating" ColumnName="LoanCreditRating" />
+          <ScalarProperty Name="LoanAnnualIncome" ColumnName="LoanAnnualIncome" />
+          <ScalarProperty Name="LoanCountryOfResidence" ColumnName="LoanCountryOfResidence" />
+          <ScalarProperty Name="LoanMaritalStatus" ColumnName="LoanMaritalStatus" />
+          <ScalarProperty Name="LoanMortgageBalance" ColumnName="LoanMortgageBalance" />
+          <ScalarProperty Name="LoanPropertyValue" ColumnName="LoanPropertyValue" />
+          <ScalarProperty Name="LoanAddressStartDate" ColumnName="LoanAddressStartDate" />
+          <ScalarProperty Name="loanHomeOwner" ColumnName="loanHomeOwner" />
+          <ScalarProperty Name="LoanHadBankruptcy" ColumnName="LoanHadBankruptcy" />
+          <ScalarProperty Name="LoanCreatedOn" ColumnName="LoanCreatedOn" />
+          <ScalarProperty Name="LoanUpdatedOn" ColumnName="LoanUpdatedOn" />
+          <ScalarProperty Name="LoanCreatedBy" ColumnName="LoanCreatedBy" />
+          <ScalarProperty Name="LoanUpdatedBy" ColumnName="LoanUpdatedBy" />
+          <ScalarProperty Name="LoanDeleteStatus" ColumnName="LoanDeleteStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="SatabdiModel.Store.Fn_GetChildProducts" FunctionImportName="Fn_GetChildProducts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SatabdiModel.Fn_GetChildProducts_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ParenProductId" ColumnName="ParenProductId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LEADINFO_DATA" FunctionName="SatabdiModel.Store.SP_LEADINFO_DATA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SatabdiModel.SP_LEADINFO_DATA_Result">
+          <ScalarProperty Name="commonleadID" ColumnName="commonleadID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+          <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="WebsiteID" ColumnName="WebsiteID" />
+          <ScalarProperty Name="WebsiteName" ColumnName="WebsiteName" />
+          <ScalarProperty Name="WebsiteAddress" ColumnName="WebsiteAddress" />
+          <ScalarProperty Name="WebsiteStatus" ColumnName="WebsiteStatus" />
+          <ScalarProperty Name="WebsiteCreatedOn" ColumnName="WebsiteCreatedOn" />
+          <ScalarProperty Name="WebsiteUpdatedOn" ColumnName="WebsiteUpdatedOn" />
+          <ScalarProperty Name="WebsiteCreatedBy" ColumnName="WebsiteCreatedBy" />
+          <ScalarProperty Name="WebsiteUpdatedBy" ColumnName="WebsiteUpdatedBy" />
+          <ScalarProperty Name="WebsiteIsWebsiteDeleted" ColumnName="WebsiteIsWebsiteDeleted" />
+          <ScalarProperty Name="SiteCreatorCompany" ColumnName="SiteCreatorCompany" />
+          <ScalarProperty Name="SiteDeveloperCompany" ColumnName="SiteDeveloperCompany" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductMasterId" ColumnName="ProductMasterId" />
+          <ScalarProperty Name="ParentProductId" ColumnName="ParentProductId" />
+          <ScalarProperty Name="IsMultipleBuyer" ColumnName="IsMultipleBuyer" />
+          <ScalarProperty Name="ProductCreatedOn" ColumnName="ProductCreatedOn" />
+          <ScalarProperty Name="ProductUpdatedOn" ColumnName="ProductUpdatedOn" />
+          <ScalarProperty Name="ProductCreatedBy" ColumnName="ProductCreatedBy" />
+          <ScalarProperty Name="ProductUpdatedBy" ColumnName="ProductUpdatedBy" />
+          <ScalarProperty Name="ProductIsProductDeleted" ColumnName="ProductIsProductDeleted" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="MatchType" ColumnName="MatchType" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="LeadStatus" ColumnName="LeadStatus" />
+          <ScalarProperty Name="DNC" ColumnName="DNC" />
+          <ScalarProperty Name="SourceUid" ColumnName="SourceUid" />
+          <ScalarProperty Name="PostcodeOutWard" ColumnName="PostcodeOutWard" />
+          <ScalarProperty Name="PostcodeInWard" ColumnName="PostcodeInWard" />
+          <ScalarProperty Name="OrganizationMasterId" ColumnName="OrganizationMasterId" />
+          <ScalarProperty Name="OrganizationName" ColumnName="OrganizationName" />
+          <ScalarProperty Name="OrganizationHashCode" ColumnName="OrganizationHashCode" />
+          <ScalarProperty Name="OperatorName" ColumnName="OperatorName" />
+          <ScalarProperty Name="ContactTime" ColumnName="ContactTime" />
+          <ScalarProperty Name="LeadCategory" ColumnName="LeadCategory" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="OperatorSpecificComments" ColumnName="OperatorSpecificComments" />
+          <ScalarProperty Name="LeadType" ColumnName="LeadType" />
+          <ScalarProperty Name="Opt" ColumnName="Opt" />
+          <ScalarProperty Name="LeadComment" ColumnName="LeadComment" />
+          <ScalarProperty Name="NotifyPrice" ColumnName="NotifyPrice" />
+          <ScalarProperty Name="AdditionalInformation" ColumnName="AdditionalInformation" />
+          <ScalarProperty Name="UserAgent" ColumnName="UserAgent" />
+          <ScalarProperty Name="TransferlogID" ColumnName="TransferlogID" />
+          <ScalarProperty Name="TransferlogDescription" ColumnName="TransferlogDescription" />
+          <ScalarProperty Name="BuyerName" ColumnName="BuyerName" />
+          <ScalarProperty Name="Transferloggeneratedon" ColumnName="Transferloggeneratedon" />
+          <ScalarProperty Name="TransferlogTransferredOn" ColumnName="TransferlogTransferredOn" />
+          <ScalarProperty Name="TransferlogUpdatedOn" ColumnName="TransferlogUpdatedOn" />
+          <ScalarProperty Name="TransferlogPrice" ColumnName="TransferlogPrice" />
+          <ScalarProperty Name="TransferlogIsActualPrice" ColumnName="TransferlogIsActualPrice" />
+          <ScalarProperty Name="TransferlogBuyerIntegrationTypeID" ColumnName="TransferlogBuyerIntegrationTypeID" />
+          <ScalarProperty Name="TransferlogUserId" ColumnName="TransferlogUserId" />
+          <ScalarProperty Name="BuyerScheduleBuyerProductScheduleId" ColumnName="BuyerScheduleBuyerProductScheduleId" />
+          <ScalarProperty Name="BuyerScheduleStartDateTime" ColumnName="BuyerScheduleStartDateTime" />
+          <ScalarProperty Name="BuyerScheduleEndDateTime" ColumnName="BuyerScheduleEndDateTime" />
+          <ScalarProperty Name="BuyerScheduleTimePeriod" ColumnName="BuyerScheduleTimePeriod" />
+          <ScalarProperty Name="BuyerScheduleActiveState" ColumnName="BuyerScheduleActiveState" />
+          <ScalarProperty Name="BuyerScheduleCreatedOn" ColumnName="BuyerScheduleCreatedOn" />
+          <ScalarProperty Name="BuyerScheduleUpdatedOn" ColumnName="BuyerScheduleUpdatedOn" />
+          <ScalarProperty Name="BuyerScheduleCreatedBy" ColumnName="BuyerScheduleCreatedBy" />
+          <ScalarProperty Name="BuyerScheduleUpdatedBy" ColumnName="BuyerScheduleUpdatedBy" />
+          <ScalarProperty Name="BuyerScheduleDemand" ColumnName="BuyerScheduleDemand" />
+          <ScalarProperty Name="BuyerScheduleDailyDemand" ColumnName="BuyerScheduleDailyDemand" />
+          <ScalarProperty Name="BuyerSchedulePaymentMode" ColumnName="BuyerSchedulePaymentMode" />
+          <ScalarProperty Name="BuyerScheduleIsBuyerDeleted" ColumnName="BuyerScheduleIsBuyerDeleted" />
+          <ScalarProperty Name="BuyerAddress" ColumnName="BuyerAddress" />
+          <ScalarProperty Name="BuyerPincode" ColumnName="BuyerPincode" />
+          <ScalarProperty Name="BuyerPocName" ColumnName="BuyerPocName" />
+          <ScalarProperty Name="BuyerContactNumber" ColumnName="BuyerContactNumber" />
+          <ScalarProperty Name="BuyerPocContactNumber" ColumnName="BuyerPocContactNumber" />
+          <ScalarProperty Name="BuyerType" ColumnName="BuyerType" />
+          <ScalarProperty Name="BuyerIcoNo" ColumnName="BuyerIcoNo" />
+          <ScalarProperty Name="BuyerEmail" ColumnName="BuyerEmail" />
+          <ScalarProperty Name="BuyerFcaNo" ColumnName="BuyerFcaNo" />
+          <ScalarProperty Name="BuyerIcoExpDate" ColumnName="BuyerIcoExpDate" />
+          <ScalarProperty Name="BuyerCompanyRegistrationNo" ColumnName="BuyerCompanyRegistrationNo" />
+          <ScalarProperty Name="BuyerCreatedOn" ColumnName="BuyerCreatedOn" />
+          <ScalarProperty Name="BuyerUpdatedOn" ColumnName="BuyerUpdatedOn" />
+          <ScalarProperty Name="BuyerCreatedBy" ColumnName="BuyerCreatedBy" />
+          <ScalarProperty Name="BuyerUpdatedBy" ColumnName="BuyerUpdatedBy" />
+          <ScalarProperty Name="BuyerIsDeleted" ColumnName="BuyerIsDeleted" />
+          <ScalarProperty Name="TransferlogProductSlabId" ColumnName="TransferlogProductSlabId" />
+          <ScalarProperty Name="ProductSlabSlabName" ColumnName="ProductSlabSlabName" />
+          <ScalarProperty Name="ProductSlabBuyerSlabName" ColumnName="ProductSlabBuyerSlabName" />
+          <ScalarProperty Name="ProductSlabProductFormula" ColumnName="ProductSlabProductFormula" />
+          <ScalarProperty Name="ProductSlabCommonFormula" ColumnName="ProductSlabCommonFormula" />
+          <ScalarProperty Name="ProductSlabCreatedOn" ColumnName="ProductSlabCreatedOn" />
+          <ScalarProperty Name="ProductSlabUpdatedOn" ColumnName="ProductSlabUpdatedOn" />
+          <ScalarProperty Name="ProductSlabCreatedBy" ColumnName="ProductSlabCreatedBy" />
+          <ScalarProperty Name="ProductSlabUpdatedBy" ColumnName="ProductSlabUpdatedBy" />
+          <ScalarProperty Name="ProductSlabIsDeleted" ColumnName="ProductSlabIsDeleted" />
+          <ScalarProperty Name="MortgageID" ColumnName="MortgageID" />
+          <ScalarProperty Name="MortgageDOB" ColumnName="MortgageDOB" />
+          <ScalarProperty Name="MortgageAge" ColumnName="MortgageAge" />
+          <ScalarProperty Name="MortgageEmplomentStatus" ColumnName="MortgageEmplomentStatus" />
+          <ScalarProperty Name="MortgageGeneratedDate" ColumnName="MortgageGeneratedDate" />
+          <ScalarProperty Name="MortgagePeriod" ColumnName="MortgagePeriod" />
+          <ScalarProperty Name="MortgagePropertyValue" ColumnName="MortgagePropertyValue" />
+          <ScalarProperty Name="MortgagePropertyLocation" ColumnName="MortgagePropertyLocation" />
+          <ScalarProperty Name="MortgageCreditHistory" ColumnName="MortgageCreditHistory" />
+          <ScalarProperty Name="MortgageLoanValue" ColumnName="MortgageLoanValue" />
+          <ScalarProperty Name="MortgageCurrentDebt" ColumnName="MortgageCurrentDebt" />
+          <ScalarProperty Name="MortgageAnnualIncome" ColumnName="MortgageAnnualIncome" />
+          <ScalarProperty Name="MortgagePropertyType" ColumnName="MortgagePropertyType" />
+          <ScalarProperty Name="MortgageMissAnyLoan" ColumnName="MortgageMissAnyLoan" />
+          <ScalarProperty Name="MortgageHadBankruptcy" ColumnName="MortgageHadBankruptcy" />
+          <ScalarProperty Name="MortgageHadCCJ" ColumnName="MortgageHadCCJ" />
+          <ScalarProperty Name="MortgageAppliedIva" ColumnName="MortgageAppliedIva" />
+          <ScalarProperty Name="MortgageRateType" ColumnName="MortgageRateType" />
+          <ScalarProperty Name="MortgageRepaymentType" ColumnName="MortgageRepaymentType" />
+          <ScalarProperty Name="LTV" ColumnName="LTV" />
+          <ScalarProperty Name="MortgageIsAdverseCredit" ColumnName="MortgageIsAdverseCredit" />
+          <ScalarProperty Name="MortgageCreatedOn" ColumnName="MortgageCreatedOn" />
+          <ScalarProperty Name="MortgageUpdatedOn" ColumnName="MortgageUpdatedOn" />
+          <ScalarProperty Name="MortgageCreatedBy" ColumnName="MortgageCreatedBy" />
+          <ScalarProperty Name="MortgageUpdatedBy" ColumnName="MortgageUpdatedBy" />
+          <ScalarProperty Name="MortgageIsLeadDeleted" ColumnName="MortgageIsLeadDeleted" />
+          <ScalarProperty Name="HealthID" ColumnName="HealthID" />
+          <ScalarProperty Name="HealthDOB" ColumnName="HealthDOB" />
+          <ScalarProperty Name="HealthAge" ColumnName="HealthAge" />
+          <ScalarProperty Name="HealthPeriod" ColumnName="HealthPeriod" />
+          <ScalarProperty Name="HealthPremiumType" ColumnName="HealthPremiumType" />
+          <ScalarProperty Name="HealthInsuranceTypeId" ColumnName="HealthInsuranceTypeId" />
+          <ScalarProperty Name="HealthFamilyMember" ColumnName="HealthFamilyMember" />
+          <ScalarProperty Name="HealthIsSmoker" ColumnName="HealthIsSmoker" />
+          <ScalarProperty Name="HealthPartnerGender" ColumnName="HealthPartnerGender" />
+          <ScalarProperty Name="HealthPremiumAmount" ColumnName="HealthPremiumAmount" />
+          <ScalarProperty Name="HealthCoverTypeHealth" ColumnName="HealthCoverTypeHealth" />
+          <ScalarProperty Name="HealthGeneratedDate" ColumnName="HealthGeneratedDate" />
+          <ScalarProperty Name="HealthCreatedOn" ColumnName="HealthCreatedOn" />
+          <ScalarProperty Name="HealthUpdatedOn" ColumnName="HealthUpdatedOn" />
+          <ScalarProperty Name="HealthCreatedBy" ColumnName="HealthCreatedBy" />
+          <ScalarProperty Name="HealthUpdatedBy" ColumnName="HealthUpdatedBy" />
+          <ScalarProperty Name="HealthDeleteStatus" ColumnName="HealthDeleteStatus" />
+          <ScalarProperty Name="PensionID" ColumnName="PensionID" />
+          <ScalarProperty Name="PensionGeneratedDate" ColumnName="PensionGeneratedDate" />
+          <ScalarProperty Name="PensionAge" ColumnName="PensionAge" />
+          <ScalarProperty Name="PensionDOB" ColumnName="PensionDOB" />
+          <ScalarProperty Name="PersonalPensionType" ColumnName="PersonalPensionType" />
+          <ScalarProperty Name="PensionPremiumType" ColumnName="PensionPremiumType" />
+          <ScalarProperty Name="PensionValue" ColumnName="PensionValue" />
+          <ScalarProperty Name="PensionType" ColumnName="PensionType" />
+          <ScalarProperty Name="PensionAccessFund" ColumnName="PensionAccessFund" />
+          <ScalarProperty Name="PensionExistPensions" ColumnName="PensionExistPensions" />
+          <ScalarProperty Name="PensionTypeOther" ColumnName="PensionTypeOther" />
+          <ScalarProperty Name="PensionIsCurrentlyPayingMoney" ColumnName="PensionIsCurrentlyPayingMoney" />
+          <ScalarProperty Name="PensionCreatedOn" ColumnName="PensionCreatedOn" />
+          <ScalarProperty Name="PensionUpdatedOn" ColumnName="PensionUpdatedOn" />
+          <ScalarProperty Name="PensionTotalPensionValue" ColumnName="PensionTotalPensionValue" />
+          <ScalarProperty Name="PensionCreatedBy" ColumnName="PensionCreatedBy" />
+          <ScalarProperty Name="PensionUpdatedBy" ColumnName="PensionUpdatedBy" />
+          <ScalarProperty Name="PensionDeleteStatus" ColumnName="PensionDeleteStatus" />
+          <ScalarProperty Name="LifeID" ColumnName="LifeID" />
+          <ScalarProperty Name="LifeAge" ColumnName="LifeAge" />
+          <ScalarProperty Name="LifeDob" ColumnName="LifeDob" />
+          <ScalarProperty Name="LifeSingleOwnership" ColumnName="LifeSingleOwnership" />
+          <ScalarProperty Name="LifePeriod" ColumnName="LifePeriod" />
+          <ScalarProperty Name="LifeCreatedOn" ColumnName="LifeCreatedOn" />
+          <ScalarProperty Name="LifeUpdatedOn" ColumnName="LifeUpdatedOn" />
+          <ScalarProperty Name="LifeGeneratedDate" ColumnName="LifeGeneratedDate" />
+          <ScalarProperty Name="LifeProductType" ColumnName="LifeProductType" />
+          <ScalarProperty Name="LifePartnersName" ColumnName="LifePartnersName" />
+          <ScalarProperty Name="LifeAdditionalInformation" ColumnName="LifeAdditionalInformation" />
+          <ScalarProperty Name="LifePartnerSmoker" ColumnName="LifePartnerSmoker" />
+          <ScalarProperty Name="LifeIsSmoker" ColumnName="LifeIsSmoker" />
+          <ScalarProperty Name="LifePremiumType" ColumnName="LifePremiumType" />
+          <ScalarProperty Name="LifeInsuranceType" ColumnName="LifeInsuranceType" />
+          <ScalarProperty Name="LifeAmount" ColumnName="LifeAmount" />
+          <ScalarProperty Name="LifePartnerDob" ColumnName="LifePartnerDob" />
+          <ScalarProperty Name="LifeCreatedBy" ColumnName="LifeCreatedBy" />
+          <ScalarProperty Name="LifeUpdatedBy" ColumnName="LifeUpdatedBy" />
+          <ScalarProperty Name="LifeIsDeleted" ColumnName="LifeIsDeleted" />
+          <ScalarProperty Name="DebtID" ColumnName="DebtID" />
+          <ScalarProperty Name="DebtEmploymentStatus" ColumnName="DebtEmploymentStatus" />
+          <ScalarProperty Name="DebtLeadsResidentialStatus" ColumnName="DebtLeadsResidentialStatus" />
+          <ScalarProperty Name="DebtType" ColumnName="DebtType" />
+          <ScalarProperty Name="DebtHadCCJ" ColumnName="DebtHadCCJ" />
+          <ScalarProperty Name="DebtTotalUnsecuredDebt" ColumnName="DebtTotalUnsecuredDebt" />
+          <ScalarProperty Name="DebtTotalCreditors" ColumnName="DebtTotalCreditors" />
+          <ScalarProperty Name="DebtMonthlyRepayments" ColumnName="DebtMonthlyRepayments" />
+          <ScalarProperty Name="DebtMonthlyIncome" ColumnName="DebtMonthlyIncome" />
+          <ScalarProperty Name="DebtAge" ColumnName="DebtAge" />
+          <ScalarProperty Name="DebtDob" ColumnName="DebtDob" />
+          <ScalarProperty Name="DebtGeneratedDate" ColumnName="DebtGeneratedDate" />
+          <ScalarProperty Name="DebtCreatedOn" ColumnName="DebtCreatedOn" />
+          <ScalarProperty Name="DebtUpdatedOn" ColumnName="DebtUpdatedOn" />
+          <ScalarProperty Name="DebtCreatedBy" ColumnName="DebtCreatedBy" />
+          <ScalarProperty Name="DebtUpdatedBy" ColumnName="DebtUpdatedBy" />
+          <ScalarProperty Name="DebtCategory" ColumnName="DebtCategory" />
+          <ScalarProperty Name="DeptTypes" ColumnName="DeptTypes" />
+          <ScalarProperty Name="DebtIsDeleted" ColumnName="DebtIsDeleted" />
+          <ScalarProperty Name="AsuID" ColumnName="AsuID" />
+          <ScalarProperty Name="AsuAge" ColumnName="AsuAge" />
+          <ScalarProperty Name="AsuDob" ColumnName="AsuDob" />
+          <ScalarProperty Name="AsuPeriod" ColumnName="AsuPeriod" />
+          <ScalarProperty Name="AsuSmoker" ColumnName="AsuSmoker" />
+          <ScalarProperty Name="AsuAmount" ColumnName="AsuAmount" />
+          <ScalarProperty Name="AsuGeneratedDate" ColumnName="AsuGeneratedDate" />
+          <ScalarProperty Name="AsuCreatedOn" ColumnName="AsuCreatedOn" />
+          <ScalarProperty Name="AsuUpdatedOn" ColumnName="AsuUpdatedOn" />
+          <ScalarProperty Name="AsuAdditionalInformation" ColumnName="AsuAdditionalInformation" />
+          <ScalarProperty Name="AsuCreatedBy" ColumnName="AsuCreatedBy" />
+          <ScalarProperty Name="AsuUpdatedBy" ColumnName="AsuUpdatedBy" />
+          <ScalarProperty Name="AsuIsDeleted" ColumnName="AsuIsDeleted" />
+          <ScalarProperty Name="AsuCoverType" ColumnName="AsuCoverType" />
+          <ScalarProperty Name="AsuCoverFromType" ColumnName="AsuCoverFromType" />
+          <ScalarProperty Name="AsuIPASUEmploymentStatus" ColumnName="AsuIPASUEmploymentStatus" />
+          <ScalarProperty Name="AsuPremiumType" ColumnName="AsuPremiumType" />
+          <ScalarProperty Name="FuneralID" ColumnName="FuneralID" />
+          <ScalarProperty Name="FuneralAge" ColumnName="FuneralAge" />
+          <ScalarProperty Name="FuneralDob" ColumnName="FuneralDob" />
+          <ScalarProperty Name="FuneralGeneratedDate" ColumnName="FuneralGeneratedDate" />
+          <ScalarProperty Name="FuneralCreatedOn" ColumnName="FuneralCreatedOn" />
+          <ScalarProperty Name="FuneralUpdatedOn" ColumnName="FuneralUpdatedOn" />
+          <ScalarProperty Name="FuneralCreatedBy" ColumnName="FuneralCreatedBy" />
+          <ScalarProperty Name="FuneralUpdatedBy" ColumnName="FuneralUpdatedBy" />
+          <ScalarProperty Name="FuneralIsDeleted" ColumnName="FuneralIsDeleted" />
+          <ScalarProperty Name="EquityreleaseID" ColumnName="EquityreleaseID" />
+          <ScalarProperty Name="EquityreleaseAge" ColumnName="EquityreleaseAge" />
+          <ScalarProperty Name="EquityreleaseDob" ColumnName="EquityreleaseDob" />
+          <ScalarProperty Name="EquityreleaseHomeValue" ColumnName="EquityreleaseHomeValue" />
+          <ScalarProperty Name="EquityreleaseOutstandingMortgageValue" ColumnName="EquityreleaseOutstandingMortgageValue" />
+          <ScalarProperty Name="EquityreleaseAgeType" ColumnName="EquityreleaseAgeType" />
+          <ScalarProperty Name="EquityreleaseEquityType" ColumnName="EquityreleaseEquityType" />
+          <ScalarProperty Name="EquityreleaseGeneratedDate" ColumnName="EquityreleaseGeneratedDate" />
+          <ScalarProperty Name="EquityreleaseCreatedOn" ColumnName="EquityreleaseCreatedOn" />
+          <ScalarProperty Name="EquityreleaseUpdatedOn" ColumnName="EquityreleaseUpdatedOn" />
+          <ScalarProperty Name="EquityreleaseCreatedBy" ColumnName="EquityreleaseCreatedBy" />
+          <ScalarProperty Name="EquityreleaseUpdatedBy" ColumnName="EquityreleaseUpdatedBy" />
+          <ScalarProperty Name="EquityreleaseIsDeleted" ColumnName="EquityreleaseIsDeleted" />
+          <ScalarProperty Name="loanID" ColumnName="loanID" />
+          <ScalarProperty Name="LoanDob" ColumnName="LoanDob" />
+          <ScalarProperty Name="LoanAge" ColumnName="LoanAge" />
+          <ScalarProperty Name="LoanPurpose" ColumnName="LoanPurpose" />
+          <ScalarProperty Name="LoanPreviousAddressSince" ColumnName="LoanPreviousAddressSince" />
+          <ScalarProperty Name="LoanPreviousAddress" ColumnName="LoanPreviousAddress" />
+          <ScalarProperty Name="LoanPreviousPostCode" ColumnName="LoanPreviousPostCode" />
+          <ScalarProperty Name="LoanPreviousCity" ColumnName="LoanPreviousCity" />
+          <ScalarProperty Name="LoanEmployerName" ColumnName="LoanEmployerName" />
+          <ScalarProperty Name="LoanEmployerSince" ColumnName="LoanEmployerSince" />
+          <ScalarProperty Name="LoanOccupation" ColumnName="LoanOccupation" />
+          <ScalarProperty Name="LoanBeenInDebt" ColumnName="LoanBeenInDebt" />
+          <ScalarProperty Name="LoanGurantor" ColumnName="LoanGurantor" />
+          <ScalarProperty Name="LoanGeneratedDate" ColumnName="LoanGeneratedDate" />
+          <ScalarProperty Name="LoanTotalCreditors" ColumnName="LoanTotalCreditors" />
+          <ScalarProperty Name="LoanGuarantorName" ColumnName="LoanGuarantorName" />
+          <ScalarProperty Name="LoanGuarantorPhone" ColumnName="LoanGuarantorPhone" />
+          <ScalarProperty Name="LoanGuarantorEmail" ColumnName="LoanGuarantorEmail" />
+          <ScalarProperty Name="LoanPeriod" ColumnName="LoanPeriod" />
+          <ScalarProperty Name="LoanEmploymentStatus" ColumnName="LoanEmploymentStatus" />
+          <ScalarProperty Name="LoanMortgageLoanValue" ColumnName="LoanMortgageLoanValue" />
+          <ScalarProperty Name="LoanCreditRating" ColumnName="LoanCreditRating" />
+          <ScalarProperty Name="LoanAnnualIncome" ColumnName="LoanAnnualIncome" />
+          <ScalarProperty Name="LoanCountryOfResidence" ColumnName="LoanCountryOfResidence" />
+          <ScalarProperty Name="LoanMaritalStatus" ColumnName="LoanMaritalStatus" />
+          <ScalarProperty Name="LoanMortgageBalance" ColumnName="LoanMortgageBalance" />
+          <ScalarProperty Name="LoanPropertyValue" ColumnName="LoanPropertyValue" />
+          <ScalarProperty Name="LoanAddressStartDate" ColumnName="LoanAddressStartDate" />
+          <ScalarProperty Name="loanHomeOwner" ColumnName="loanHomeOwner" />
+          <ScalarProperty Name="LoanHadBankruptcy" ColumnName="LoanHadBankruptcy" />
+          <ScalarProperty Name="LoanCreatedOn" ColumnName="LoanCreatedOn" />
+          <ScalarProperty Name="LoanUpdatedOn" ColumnName="LoanUpdatedOn" />
+          <ScalarProperty Name="LoanCreatedBy" ColumnName="LoanCreatedBy" />
+          <ScalarProperty Name="LoanUpdatedBy" ColumnName="LoanUpdatedBy" />
+          <ScalarProperty Name="LoanDeleteStatus" ColumnName="LoanDeleteStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

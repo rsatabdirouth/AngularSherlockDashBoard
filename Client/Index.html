@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html ng-app="mainApp" ng-controller="mainCtrl as main">
+<head>    
+    
+    <link rel="shortcut icon" href="">
+    {{main.title}}
+    <title>ILds Search Lead data</title>
+    <style>
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+	<meta charset="utf-8" />
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+
+</head>
+<body>
+   
+<ng-view></ng-view>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="assets/js/angular.js"></script>
+    <script src="assets/js/angular-route.js"></script>
+    <script src="component/app.module.js"></script>
+    <script src="component/app.ctrl.js"></script>
+    <script src="component/app.route.js"></script>
+    <script src="component/app.Service.js"></script>
+    <script src="component/dashboard/dashboard.ctrl.js"></script>
+</body>
+</html>

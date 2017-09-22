@@ -1,0 +1,119 @@
+﻿
+
+<!DOCTYPE html>
+<html ng-app="mainApp" ng-controller="dash">
+<head>
+   
+    <title>kjkjk</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+   <h2> {{dash.title}}  </h2>
+ 
+  
+    <div class="container">
+        <table id="MyTable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>commonleadID</th>
+                    <th>Website</th>
+                    <th>FullName</th>
+                    <th>PostCode</th>
+                    <th>ProductName</th>
+
+                </tr>
+            </thead>
+            <tbody ng-repeat="lead in dash.pagedPost">
+                <tr>
+                    <td>{{lead.commonleadID}}</td>
+                    <td>{{lead.WebsiteName}}</td>
+                    <td>{{lead.FullName}}</td>
+                    <td>{{lead.PostCode}}</td>
+                    <td>{{lead.ProductName}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <nav aria-label="...">
+            <ul class="pagination">
+                <li ng-class="dash.currentPage == 1? 'disabled': ''">
+                    <a href="javascript:" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li ng-click="dash.pageChange(page)" ng-repeat="page in dash.pages" ng-class="dash.currentPage == page ? 'active' : ''"><a href="javascript:">{{page}}</a></li>
+                <li ng-class="dash.currentPage == dash.pages.length ? 'disabled': ''">
+                    <a href="javascript:" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <ng-form id="userForm">
+        <div class="container">
+            <div class="col-md-3">
+                <h2>ProductList</h2>
+                <select id="productid">
+                    <option value="0" label="Please Select"></option>
+                    <option ng-repeat="product in dash.productlist" value="{{product.ID}}"
+                            ng-selected="{{ product.Selected == true }}" >
+                        {{product.ProductName}}
+                    </option>
+                </select>
+            </div>
+
+            <div class="col-md-3">
+                <h2>WebsiteList</h2>
+                <select id="websiteName">
+                    <option value="0" label="Please Select"></option>
+                    <option  ng-repeat="website in dash.websiteList" value="{{website.ID}}"
+                            ng-selected="{{ website.Selected == true }}">
+                        {{website.WebsiteName}}
+                    </option>
+                </select>
+            </div>
+
+            <div class="col-md-3">
+                <h2>BuyerList</h2>
+                <select id="buyerName">
+                    <option value="0" label="Please Select"></option>
+                    <option ng-repeat="buyer in dash.BuyerList" value="{{buyer.ID}}"
+                            ng-selected="{{ buyer.Selected == true }}">
+                        {{buyer.BuyerName}}
+                    </option>
+                </select>
+            </div>
+
+            <div class="col-md-3">
+                <h2>LeadStatus</h2>
+                <select id="leadStatus">
+                    <option value="0" label="Please Select"></option>
+                    <option ng-repeat="status in dash.leadStatus" value="{{status.ID}}"
+                            ng-model="leadStatus" ng-selected="{{ status.Selected == true }}">
+                        {{status.LeadStatusName}}
+                    </option>
+                </select>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-3"><h2>SearchById</h2><input type="text" ng-model="leadId" id="leadId" ng-click="getlead(leadId)" /></div>
+            <div class="col-md-3"><h2>SearchByName</h2><input type="text" ng-model="fullName" id="fullName" ng-click="getlead(fullName)" /></div>
+            <div class="col-md-3"><h2>SearchByEmail</h2><input type="text" ng-model="email" id="email" ng-click="getlead(email)" /></div>
+            <div class="col-md-3"><h2>SearchByPhone</h2><input type="text" ng-model="homePhone" id="homePhone" ng-click="getlead(homePhone)" /></div>
+
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="clearfix"></div>
+        <div>
+            <input type="submit" value="Search" />
+            <input type="button"  id="new" value="Clear" ng-click="dash.clear()">
+           
+        </div>
+
+    </ng-form>
+</body>
+</html>
